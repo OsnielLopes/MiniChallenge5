@@ -13,38 +13,39 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager:CLLocationManager = CLLocationManager()
-    var lastValidLocation: CLLocation!
+    var lastValidCoordinate: Coordinate!
     let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     let regionRadius: CLLocationDistance = 1000
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Configuring the map
         centerMapOnLocation(location: initialLocation)
- 
+        
         //Configuring the locationManager
         checkLocationAuthorizationStatus()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //distanceFilter for the locationManager is not defined, keeping the default value
         locationManager.startUpdatingLocation()
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func didTouchSave(_ sender: Any) {
-        let message:String = "Sua localização atual é "+String(describing: lastValidLocation.coordinate)
+        let message:String = "Sua localização atual é "+String(describing: lastValidCoordinate)
         let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        lastValidLocation = locations.last
+        lastValidCoordinate = locations.last?.toCoordinate()
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -62,13 +63,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

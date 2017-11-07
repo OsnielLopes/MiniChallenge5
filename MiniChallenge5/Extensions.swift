@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import MapKit
+
+extension CLLocation {
+    func toCoordinate() -> Coordinate {
+        return Coordinate(latitude: self.coordinate.latitude, longitute: self.coordinate.longitude)
+    }
+}

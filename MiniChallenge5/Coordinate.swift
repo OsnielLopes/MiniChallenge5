@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct Coordinate: Codable, Equatable {
+    
+    var latitude: Double
+    var longitute: Double
+    
+    static func ==(lhs: Coordinate, rhs: Coordinate) -> Bool {
+        if (lhs.latitude == rhs.latitude) && (lhs.longitute == rhs.longitute){
+            return true
+        }
+        return false
+    }
+}
