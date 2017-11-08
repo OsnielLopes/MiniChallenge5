@@ -8,6 +8,7 @@
 
 import MapKit
 import UIKit
+import Alamofire
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -43,24 +44,32 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
-        let url = URL(string:"http://exemplo1nodejs.herokuapp.com/circuito")
-        let task = URLSession.shared.dataTask(with:url!) {
-            (data,response,error) in
-            if let data = data,
-            let html = String(data: data, encoding: String.Encoding.utf8) {
-                
-                print("Response: \(html)")
-                
-                // JSON Decoder
-                let jsonData = html.data(using:.utf8)!
-                print("-> JSON DATA \(jsonData)")
-                let decoder = JSONDecoder()
-                let u = try! decoder.decode(String.self,from:jsonData)
-                print("-> JSON DECODED \(u)")
-                // Essa variável 'u' é o seu json de resposta decodificado
-            }
+        Alamofire.request(.GET, "https://exemplo1nodejs.herokuapp.com/circuito")
+            .response { request, response, data, error in
+                print(request)
+                print(response)
+                print(error)
         }
-        task.resume()
+        
+//        let url = URL(string:"https://exemplo1nodejs.herokuapp.com/circuito")
+//        let task = URLSession.shared.dataTask(with:url!) {
+//            (data,response,error) in
+//            print(error.debugDescription)
+//            if let data = data,
+//            let html = String(data: data, encoding: String.Encoding.utf8) {
+//
+//                print("Response: \(html)")
+//
+//                // JSON Decoder
+//                let jsonData = html.data(using:.utf8)!
+//                print("-> JSON DATA \(jsonData)")
+//                let decoder = JSONDecoder()
+//                let u = try! decoder.decode(String.self,from:jsonData)
+//                print("-> JSON DECODED \(u)")
+//                // Essa variável 'u' é o seu json de resposta decodificado
+//            }
+//        }
+//        task.resume()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
