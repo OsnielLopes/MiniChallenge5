@@ -42,6 +42,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        
+        let url = URL(string:"http://exemplo1nodejs.herokuapp.com/circuito")
+        let task = URLSession.shared.dataTask(with:url!) {
+            (data,response,error) in
+            if let data = data,
+            let html = String(data: data, encoding: String.Encoding.utf8) {
+                
+                print("Response: \(html)")
+                
+                // JSON Decoder
+                let jsonData = html.data(using:.utf8)!
+                print("-> JSON DATA \(jsonData)")
+                let decoder = JSONDecoder()
+                let u = try! decoder.decode(String.self,from:jsonData)
+                print("-> JSON DECODED \(u)")
+                // Essa variável 'u' é o seu json de resposta decodificado
+            }
+        }
+        task.resume()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
