@@ -44,11 +44,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
-        Alamofire.request(.GET, "https://exemplo1nodejs.herokuapp.com/circuito")
-            .response { request, response, data, error in
-                print(request)
-                print(response)
-                print(error)
+        Alamofire.request("https://exemplo1nodejs.herokuapp.com/circuito").response {
+            (response) in
+            print(String(data: response.data!, encoding: String.Encoding.utf8) ?? "empty space")
         }
         
 //        let url = URL(string:"https://exemplo1nodejs.herokuapp.com/circuito")
