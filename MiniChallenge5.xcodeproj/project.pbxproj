@@ -21,8 +21,8 @@
 		4996C9081FB105EB00A9C1FB /* Circuito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9071FB105EB00A9C1FB /* Circuito.swift */; };
 		4996C90A1FB20F0200A9C1FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9091FB20F0200A9C1FB /* Extensions.swift */; };
 		4996C90C1FB20F1E00A9C1FB /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C90B1FB20F1E00A9C1FB /* Coordinate.swift */; };
-		4996C90E1FB2339F00A9C1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4996C90D1FB2339F00A9C1FB /* GoogleService-Info.plist */; };
 		4E61A50783D6CB220B032375 /* Pods_MiniChallenge5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */; };
+		B0D3F71A1FB3979F002CD1BB /* Auxiliar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D3F7191FB3979F002CD1BB /* Auxiliar.storyboard */; };
 		EBE1D634E98A7DD75FF1DCBC /* Pods_MiniChallenge5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B6B2734D54564CF69B1EF2 /* Pods_MiniChallenge5.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,13 +64,13 @@
 		4996C9071FB105EB00A9C1FB /* Circuito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuito.swift; sourceTree = "<group>"; };
 		4996C9091FB20F0200A9C1FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4996C90B1FB20F1E00A9C1FB /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		4996C90D1FB2339F00A9C1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5885A99FD75184EE377452D0 /* Pods-MiniChallenge5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E4CD335496BCE8F7D32985C /* Pods-MiniChallenge5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5/Pods-MiniChallenge5.debug.xcconfig"; sourceTree = "<group>"; };
 		683DB0CD8C2DF432E8731A82 /* Pods-MiniChallenge5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8546D37CF4375CCE5024DFE2 /* Pods_MiniChallenge5Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniChallenge5Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862BD4D4EAD841E271117D65 /* Pods-MiniChallenge5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5/Pods-MiniChallenge5.release.xcconfig"; sourceTree = "<group>"; };
 		9F1999E63424E1C3D405115D /* Pods-MiniChallenge5Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5Tests/Pods-MiniChallenge5Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B0D3F7191FB3979F002CD1BB /* Auxiliar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auxiliar.storyboard; sourceTree = "<group>"; };
 		B3B8989FF731D2B7FB4A2D89 /* Pods-MiniChallenge5Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5Tests/Pods-MiniChallenge5Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9B6B2734D54564CF69B1EF2 /* Pods_MiniChallenge5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniChallenge5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,7 +153,7 @@
 				4996C8DB1FB0BAE200A9C1FB /* Assets.xcassets */,
 				4996C8DD1FB0BAE200A9C1FB /* LaunchScreen.storyboard */,
 				4996C8E01FB0BAE200A9C1FB /* Info.plist */,
-				4996C90D1FB2339F00A9C1FB /* GoogleService-Info.plist */,
+				B0D3F7191FB3979F002CD1BB /* Auxiliar.storyboard */,
 			);
 			path = MiniChallenge5;
 			sourceTree = "<group>";
@@ -310,8 +310,8 @@
 			files = (
 				4996C8D51FB0BAE200A9C1FB /* art.scnassets in Resources */,
 				4996C8DF1FB0BAE200A9C1FB /* LaunchScreen.storyboard in Resources */,
-				4996C90E1FB2339F00A9C1FB /* GoogleService-Info.plist in Resources */,
 				4996C8DC1FB0BAE200A9C1FB /* Assets.xcassets in Resources */,
+				B0D3F71A1FB3979F002CD1BB /* Auxiliar.storyboard in Resources */,
 				4996C8DA1FB0BAE200A9C1FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,7 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = BUP56BZHCB;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
@@ -676,7 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = BUP56BZHCB;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
