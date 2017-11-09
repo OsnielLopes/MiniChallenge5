@@ -14,3 +14,5 @@ extension CLLocation {
         return Coordinate(latitude: self.coordinate.latitude, longitute: self.coordinate.longitude)
     }
 }
+
+
