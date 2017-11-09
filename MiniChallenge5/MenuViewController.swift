@@ -8,7 +8,7 @@
 
 import UIKit
 
-class menuConstraints: UIViewController {
+class MenuViewController: UIViewController {
     
     // Declaração das contraints dos botões
     @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!

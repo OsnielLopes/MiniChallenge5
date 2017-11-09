@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="-1649" y="1216"/>
         </scene>
-        <!--Menu Constraints-->
+        <!--Menu View Controller-->
         <scene sceneID="C0j-Qq-Wqq">
             <objects>
-                <viewController id="RO2-zD-AVY" customClass="menuConstraints" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RO2-zD-AVY" customClass="MenuViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VJN-Sa-W9W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,7 @@
         <!--Create Circuit View Controller-->
         <scene sceneID="yRx-js-qLV">
             <objects>
-                <viewController id="i85-ZI-DMa" customClass="createCircuitViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i85-ZI-DMa" customClass="CreateCircuitViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
