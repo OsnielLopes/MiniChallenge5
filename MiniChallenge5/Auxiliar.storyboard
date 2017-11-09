@@ -10,17 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="aNW-3r-qU6">
             <objects>
-                <viewController id="A4J-RY-3Mq" sceneMemberID="viewController">
+                <viewController id="A4J-RY-3Mq" customClass="AboutViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VhJ-6H-KNh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-km-KgG">
-                                <rect key="frame" x="16" y="172" width="123" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-km-KgG">
+                                <rect key="frame" x="40" y="120" width="500" height="500"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-HD-2kT">
                                 <rect key="frame" x="16" y="467" width="123" height="123"/>
@@ -51,7 +50,7 @@
                                 <color key="textColor" red="0.99863034490000002" green="0.32426795359999999" blue="0.21408164499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Desenvolvedores:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rz-7D-wyA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desenvolvedores:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rz-7D-wyA">
                                 <rect key="frame" x="119.5" y="80" width="136.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.9986303448677063" green="0.32426795363426208" blue="0.21408164501190186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,10 +59,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16860446333885193" green="0.16864064335823059" blue="0.16860216856002808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7pA-km-KgG" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="120" id="0fl-CM-aqU"/>
+                            <constraint firstItem="2rz-7D-wyA" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="80" id="IGx-3E-E8j"/>
                             <constraint firstItem="2rz-7D-wyA" firstAttribute="centerX" secondItem="VhJ-6H-KNh" secondAttribute="centerX" id="YHD-PC-Z7Q"/>
+                            <constraint firstItem="7pA-km-KgG" firstAttribute="leading" secondItem="VhJ-6H-KNh" secondAttribute="leading" constant="40" id="gKP-yb-Cuo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="31S-aR-gqq"/>
                     </view>
+                    <connections>
+                        <outlet property="image1LeadingConstraint" destination="gKP-yb-Cuo" id="jIY-7k-86F"/>
+                        <outlet property="image1TopConstraint" destination="0fl-CM-aqU" id="Abx-Ub-4Ra"/>
+                        <outlet property="titleLabelConstraint" destination="IGx-3E-E8j" id="Q7I-XU-yOb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H43-wd-2lh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
