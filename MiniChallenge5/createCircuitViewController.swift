@@ -8,7 +8,7 @@
 
 import UIKit
 
-class createCircuitViewController: UIViewController {
+class CreateCircuitViewController: UIViewController {
     
     // Declaração das constraints
     
