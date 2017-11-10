@@ -17,6 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var lastValidCoordinate: Coordinate!
     let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     let regionRadius: CLLocationDistance = 1000
+    var circuit = Circuit(coordinates: [Coordinate]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         //distanceFilter for the locationManager is not defined, keeping the default value
         locationManager.startUpdatingLocation()
         
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,35 +41,50 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func didTouchSave(_ sender: Any) {
+        
+        if lastValidCoordinate != nil{
+            circuit.coordinates.append(lastValidCoordinate)
+        }
+        
         let message:String = "Sua localização atual é "+String(describing: lastValidCoordinate)
         let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
-        Alamofire.request("https://exemplo1nodejs.herokuapp.com/circuito").response {
-            (response) in
-            print(String(data: response.data!, encoding: String.Encoding.utf8) ?? "empty space")
-        }
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try! jsonEncoder.encode(lastValidCoordinate)
         
-//        let url = URL(string:"https://exemplo1nodejs.herokuapp.com/circuito")
-//        let task = URLSession.shared.dataTask(with:url!) {
-//            (data,response,error) in
-//            print(error.debugDescription)
-//            if let data = data,
-//            let html = String(data: data, encoding: String.Encoding.utf8) {
+//        Alamofire.request("https://exemplo1nodejs.herokuapp.com/circuito").response {
+//            (response) in
+//            print("Get begore inserting:",String(data: response.data!, encoding: String.Encoding.utf8) ?? "empty space")
+//        }
 //
-//                print("Response: \(html)")
+//        var parameters: [[String:Any]] = []
 //
-//                // JSON Decoder
-//                let jsonData = html.data(using:.utf8)!
-//                print("-> JSON DATA \(jsonData)")
-//                let decoder = JSONDecoder()
-//                let u = try! decoder.decode(String.self,from:jsonData)
-//                print("-> JSON DECODED \(u)")
-//                // Essa variável 'u' é o seu json de resposta decodificado
+//        for c in circuit.coordinates {
+//            let p: [String:Any] = ["coordinate":["lat":c.latitude,"long":c.longitude]]
+//            parameters.append(p)
+//        }
+//
+//        let param: Parameters = ["circuit": parameters]
+        
+        let data = String(data: jsonData, encoding: String.Encoding.utf8)
+//
+        Alamofire.request("https://exemplo1nodejs.herokuapp.com/circuito", method: .post, parameters: data, encoding: JSONEncoding.default)
+//
+//        var t: Circuit!
+//
+//        Alamofire.request("https://exemplo1nodejs.herokuapp.com/circuito").response {
+//            (response) in
+//            let jsonDecoder = JSONDecoder()
+//            do {
+//                t = try jsonDecoder.decode(Circuit.self, from: response.data!)
+//                print(t)
+//            } catch let e {
+//                print(e.localizedDescription)
+//                print(String(data: response.data!, encoding: String.Encoding.utf8) ?? "empty space")
 //            }
 //        }
-//        task.resume()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

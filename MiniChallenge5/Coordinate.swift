@@ -7,16 +7,11 @@
 //
 
 import Foundation
+import MapKit
 
-struct Coordinate: Codable, Equatable {
+struct Coordinate: Codable {
     
     var latitude: Double
-    var longitute: Double
+    var longitude: Double
     
-    static func ==(lhs: Coordinate, rhs: Coordinate) -> Bool {
-        if (lhs.latitude == rhs.latitude) && (lhs.longitute == rhs.longitute){
-            return true
-        }
-        return false
-    }
 }

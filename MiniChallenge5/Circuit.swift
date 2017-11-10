@@ -9,12 +9,12 @@
 import MapKit
 import Foundation
 
-class Circuito: Codable {
+struct Circuit: Codable {
 
-    var coordinates: [Coordinate]!
+    var coordinates: [Coordinate]
 
-    init (_ coordinates: [Coordinate]){
-        self.coordinates = coordinates
+    enum CodingKeys: String, CodingKey{
+        case coordinates = "circuit"
     }
 
 //    func getCoordinates() -> [Coordinate] {

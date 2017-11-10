@@ -11,6 +11,6 @@ import MapKit
 
 extension CLLocation {
     func toCoordinate() -> Coordinate {
-        return Coordinate(latitude: self.coordinate.latitude, longitute: self.coordinate.longitude)
+        return Coordinate(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
     }
 }
