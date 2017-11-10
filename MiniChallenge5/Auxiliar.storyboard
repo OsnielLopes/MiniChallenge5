@@ -19,37 +19,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-km-KgG">
-                                <rect key="frame" x="40" y="120" width="123" height="123"/>
+                                <rect key="frame" x="40" y="120" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="123" id="1zo-DC-wZm"/>
-                                    <constraint firstAttribute="width" constant="123" id="p6o-7N-DaN"/>
+                                    <constraint firstAttribute="height" constant="100" id="1zo-DC-wZm"/>
+                                    <constraint firstAttribute="width" constant="100" id="p6o-7N-DaN"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-HD-2kT">
-                                <rect key="frame" x="16" y="467" width="123" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-HD-2kT">
+                                <rect key="frame" x="16" y="333" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="2zl-fl-IPZ"/>
+                                    <constraint firstAttribute="height" constant="100" id="HIh-fR-hKb"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="XFd-av-vip">
-                                <rect key="frame" x="16" y="319" width="123" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="XFd-av-vip">
+                                <rect key="frame" x="16" y="219" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="B3A-OR-N2Q"/>
+                                    <constraint firstAttribute="width" constant="100" id="x75-UQ-Hc7"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Osniel Teixeira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnF-0o-iBj">
-                                <rect key="frame" x="147" y="223" width="212" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Osniel Teixeira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnF-0o-iBj">
+                                <rect key="frame" x="150" y="170" width="110.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99863034490000002" green="0.32426795359999999" blue="0.21408164499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vinícius Cano Santos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxC-dv-jPX">
-                                <rect key="frame" x="147" y="518" width="212" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinícius Cano Santos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxC-dv-jPX">
+                                <rect key="frame" x="126" y="410" width="161" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99863034490000002" green="0.32426795359999999" blue="0.21408164499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Renan Soarez Germano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-yH-KcU">
-                                <rect key="frame" x="147" y="370" width="212" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renan Soarez Germano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-yH-KcU">
+                                <rect key="frame" x="126" y="290" width="180.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99863034490000002" green="0.32426795359999999" blue="0.21408164499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -63,16 +66,36 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16860446333885193" green="0.16864064335823059" blue="0.16860216856002808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UlQ-HD-2kT" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="333" id="0ES-HT-NMt"/>
                             <constraint firstItem="7pA-km-KgG" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="120" id="0fl-CM-aqU"/>
+                            <constraint firstItem="RnF-0o-iBj" firstAttribute="leading" secondItem="7pA-km-KgG" secondAttribute="trailing" constant="10" id="HzB-g5-8Zh"/>
                             <constraint firstItem="2rz-7D-wyA" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="80" id="IGx-3E-E8j"/>
+                            <constraint firstItem="KxC-dv-jPX" firstAttribute="leading" secondItem="UlQ-HD-2kT" secondAttribute="trailing" constant="10" id="ILu-e2-G3e"/>
+                            <constraint firstItem="XFd-av-vip" firstAttribute="leading" secondItem="VhJ-6H-KNh" secondAttribute="leading" constant="16" id="Mxu-sa-5bL"/>
+                            <constraint firstItem="XFd-av-vip" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="219" id="Nh3-D2-Y1z"/>
+                            <constraint firstItem="UlQ-HD-2kT" firstAttribute="leading" secondItem="VhJ-6H-KNh" secondAttribute="leading" constant="16" id="TOH-ER-ULK"/>
+                            <constraint firstItem="1qk-yH-KcU" firstAttribute="leading" secondItem="XFd-av-vip" secondAttribute="trailing" constant="10" id="U0Q-Ox-dj0"/>
+                            <constraint firstItem="1qk-yH-KcU" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="290" id="UNe-2T-gDv"/>
+                            <constraint firstItem="KxC-dv-jPX" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="410" id="XgM-p6-uIx"/>
                             <constraint firstItem="2rz-7D-wyA" firstAttribute="centerX" secondItem="VhJ-6H-KNh" secondAttribute="centerX" id="YHD-PC-Z7Q"/>
                             <constraint firstItem="7pA-km-KgG" firstAttribute="leading" secondItem="VhJ-6H-KNh" secondAttribute="leading" constant="40" id="gKP-yb-Cuo"/>
+                            <constraint firstItem="RnF-0o-iBj" firstAttribute="top" secondItem="VhJ-6H-KNh" secondAttribute="top" constant="170" id="hFm-N3-toz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="31S-aR-gqq"/>
                     </view>
                     <connections>
                         <outlet property="image1LeadingConstraint" destination="gKP-yb-Cuo" id="jIY-7k-86F"/>
                         <outlet property="image1TopConstraint" destination="0fl-CM-aqU" id="Abx-Ub-4Ra"/>
+                        <outlet property="image2LeadingConstraint" destination="Mxu-sa-5bL" id="0Ka-Wn-ata"/>
+                        <outlet property="image2TopConstraint" destination="Nh3-D2-Y1z" id="NRL-Y9-16W"/>
+                        <outlet property="image3LeadingConstraint" destination="TOH-ER-ULK" id="njP-PS-Npe"/>
+                        <outlet property="image3TopConstraint" destination="0ES-HT-NMt" id="XMt-Kv-wRR"/>
+                        <outlet property="nameLabel1LeadingConstraint" destination="HzB-g5-8Zh" id="7Ck-MJ-cYi"/>
+                        <outlet property="nameLabel1TopConstraint" destination="hFm-N3-toz" id="h1q-Za-Mte"/>
+                        <outlet property="nameLabel2LeadingConstraint" destination="U0Q-Ox-dj0" id="SxW-bH-dSh"/>
+                        <outlet property="nameLabel2TopConstraint" destination="UNe-2T-gDv" id="hWn-Y1-LBD"/>
+                        <outlet property="nameLabel3LeadingConstraint" destination="ILu-e2-G3e" id="ITn-9S-0wu"/>
+                        <outlet property="nameLabel3TopConstraint" destination="XgM-p6-uIx" id="HC3-fw-PRW"/>
                         <outlet property="titleLabelConstraint" destination="IGx-3E-E8j" id="Q7I-XU-yOb"/>
                     </connections>
                 </viewController>

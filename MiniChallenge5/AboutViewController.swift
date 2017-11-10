@@ -16,7 +16,22 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var image1TopConstraint: NSLayoutConstraint!
     @IBOutlet weak var image1LeadingConstraint: NSLayoutConstraint!
     
-
+    @IBOutlet weak var image2TopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var image2LeadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var image3TopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var image3LeadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var nameLabel1TopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nameLabel1LeadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var nameLabel2TopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nameLabel2LeadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var nameLabel3TopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nameLabel3LeadingConstraint: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +45,20 @@ class AboutViewController: UIViewController {
         image1TopConstraint.constant = self.view.frame.size.height * 0.194
         image1LeadingConstraint.constant = self.view.frame.size.width * 0.106
 
-
+        image2TopConstraint.constant = self.view.frame.size.height * 0.354
+        image2LeadingConstraint.constant = self.view.frame.size.width * 0.106
+        
+        image3TopConstraint.constant = self.view.frame.size.height * 0.514
+        image3LeadingConstraint.constant = self.view.frame.size.width * 0.106
+        
+        nameLabel1TopConstraint.constant = self.view.frame.size.height * 0.243
+        nameLabel1LeadingConstraint.constant = self.view.frame.size.width * 0.050
+        
+        nameLabel2TopConstraint.constant = self.view.frame.size.height * 0.403
+        nameLabel2LeadingConstraint.constant = self.view.frame.size.width * 0.050
+        
+        nameLabel3TopConstraint.constant = self.view.frame.size.height * 0.563
+        nameLabel3LeadingConstraint.constant = self.view.frame.size.width * 0.050
     }
     
     override func didReceiveMemoryWarning() {
