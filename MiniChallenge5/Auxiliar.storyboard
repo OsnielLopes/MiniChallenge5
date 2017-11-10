@@ -91,6 +91,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkE-rZ-WFT">
                                 <rect key="frame" x="87" y="349" width="200" height="45"/>
                                 <state key="normal" image="SignIn_Button"/>
+                                <connections>
+                                    <segue destination="Lvc-x0-wo5" kind="show" id="tak-co-JfM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kl-Nb-aOu">
                                 <rect key="frame" x="87" y="434" width="200" height="45"/>
@@ -133,8 +136,10 @@
                         <viewLayoutGuide key="safeArea" id="3gX-TN-TCW"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="NMV-ws-dov" id="XCJ-5b-sBJ"/>
                         <outlet property="emailTextFieldLeadingConstraint" destination="xAW-Dj-20W" id="nkW-Bt-mWm"/>
                         <outlet property="emailTextFieldTopConstraint" destination="mM6-uN-6Nt" id="JTx-Th-n5z"/>
+                        <outlet property="passwordTextField" destination="EEM-f5-18Q" id="mhd-Dw-zCQ"/>
                         <outlet property="passwordTextFieldLeadingConstraint" destination="Gws-nK-SUx" id="AG2-HI-pmV"/>
                         <outlet property="passwordTextFieldTopConstraint" destination="uWf-hJ-bju" id="j55-Au-iTQ"/>
                         <outlet property="signInButtonTopConstraint" destination="t33-mm-vVj" id="ePm-ur-xhH"/>
@@ -144,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuG-Me-xkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3570.4000000000001" y="406.14692653673166"/>
+            <point key="canvasLocation" x="-3438" y="406"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="C0j-Qq-Wqq">
