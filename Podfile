@@ -7,8 +7,6 @@ target 'MiniChallenge5' do
 
   # Pods for MiniChallenge5
 
-pod 'Alamofire'
-
   target 'MiniChallenge5Tests' do
     inherit! :search_paths
     # Pods for testing
