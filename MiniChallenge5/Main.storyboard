@@ -252,28 +252,11 @@
                     <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Para adicionar um arco no circuito apenas fique no local desejado e clique em qualquer lugar da tela." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmJ-pg-SMJ">
-                                <rect key="frame" x="50" y="100" width="275" height="65"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99863034490000002" green="0.32426795359999999" blue="0.21408164499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bmJ-pg-SMJ" secondAttribute="trailing" constant="50" id="232-Wz-h1I"/>
-                            <constraint firstItem="bmJ-pg-SMJ" firstAttribute="top" secondItem="iXd-mH-xkB" secondAttribute="top" constant="100" id="ocv-cL-Zhv"/>
-                            <constraint firstItem="bmJ-pg-SMJ" firstAttribute="leading" secondItem="iXd-mH-xkB" secondAttribute="leading" constant="50" id="vt0-rc-7kV"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ul1-ZB-RuP"/>
                     </view>
                     <navigationItem key="navigationItem" id="OIJ-ZA-9vh"/>
                     <connections>
-                        <outlet property="labelConstraints" destination="ocv-cL-Zhv" id="KMj-d5-wht"/>
-                        <outlet property="labelExplanation" destination="bmJ-pg-SMJ" id="PqF-VN-l1B"/>
-                        <outlet property="labelLeadingConstraint" destination="vt0-rc-7kV" id="fsn-d6-Wdb"/>
-                        <outlet property="labelTrailingConstraint" destination="232-Wz-h1I" id="YFt-iz-fgh"/>
                         <outlet property="sceneView" destination="iXd-mH-xkB" id="74u-6E-6wx"/>
                     </connections>
                 </viewController>

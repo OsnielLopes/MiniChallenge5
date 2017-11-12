@@ -13,10 +13,6 @@ import ARKit
 class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
     
     //MARK: Outlets
-    @IBOutlet weak var labelExplanation: UILabel!
-    @IBOutlet weak var labelConstraints: NSLayoutConstraint!
-    @IBOutlet weak var labelLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var labelTrailingConstraint: NSLayoutConstraint!
     @IBOutlet var sceneView: ARSCNView!
     
     //MARK: Properties
@@ -37,9 +33,9 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
         super.viewWillAppear(animated);
         
         //Setting up constraints
-        self.labelConstraints.constant = self.view.frame.size.height * 0.149
-        self.labelLeadingConstraint.constant = self.view.frame.size.width * 0.106
-        self.labelTrailingConstraint.constant = self.view.frame.size.width * 0.106
+//        self.labelConstraints.constant = self.view.frame.size.height * 0.149
+//        self.labelLeadingConstraint.constant = self.view.frame.size.width * 0.106
+//        self.labelTrailingConstraint.constant = self.view.frame.size.width * 0.106
         
         //Initializing ARKit session (here, the access to the camera will be necessary)
         let configuration = ARWorldTrackingConfiguration()
