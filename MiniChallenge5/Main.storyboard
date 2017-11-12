@@ -203,7 +203,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sZ-IQ-Cg0">
                                 <rect key="frame" x="88" y="349" width="200" height="45"/>
-                                <state key="normal" image="Create_Button"/>
+                                <state key="normal" image="Locations_Button"/>
                                 <connections>
                                     <segue destination="MgU-CU-ylD" kind="show" id="nLH-hT-1V3"/>
                                 </connections>
@@ -340,8 +340,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Create_Button" width="200" height="45"/>
         <image name="Developers_Button" width="200" height="45"/>
+        <image name="Locations_Button" width="200" height="45"/>
         <image name="Play_Button" width="200" height="45"/>
         <image name="SignIn_Button" width="200" height="45"/>
         <image name="SignUp_Button" width="200" height="45"/>
