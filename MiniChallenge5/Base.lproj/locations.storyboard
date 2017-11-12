@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wmz-Wl-mqe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4ue-sT-9kl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -38,20 +38,24 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1z9-5F-HI2">
                                 <rect key="frame" x="0.0" y="40" width="375" height="500.5"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xg-L7-vol">
-                                <rect key="frame" x="164" y="560.5" width="47" height="30"/>
-                                <state key="normal" title="Salvar!"/>
-                                <connections>
-                                    <action selector="didTouchSave:" destination="Wmz-Wl-mqe" eventType="touchUpInside" id="qom-Hp-UOH"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vsb-5u-127">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="jhj-Kw-ZgW">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m9s-mo-67w">
+                                            <connections>
+                                                <action selector="didTouchSave:" destination="Wmz-Wl-mqe" id="spd-3G-iLZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1z9-5F-HI2" firstAttribute="centerX" secondItem="JFC-hU-kL2" secondAttribute="centerX" id="7W3-v8-J8n"/>
                             <constraint firstItem="1z9-5F-HI2" firstAttribute="top" secondItem="JFC-hU-kL2" secondAttribute="top" constant="40" id="89b-YO-uSl"/>
-                            <constraint firstItem="6xg-L7-vol" firstAttribute="top" secondItem="1z9-5F-HI2" secondAttribute="bottom" constant="20" id="H1e-UJ-VuU"/>
-                            <constraint firstItem="6xg-L7-vol" firstAttribute="centerX" secondItem="JFC-hU-kL2" secondAttribute="centerX" id="Sk6-Qo-ZtM"/>
                             <constraint firstItem="1z9-5F-HI2" firstAttribute="width" secondItem="JFC-hU-kL2" secondAttribute="width" id="ant-bL-j1T"/>
                             <constraint firstItem="1z9-5F-HI2" firstAttribute="height" secondItem="JFC-hU-kL2" secondAttribute="height" multiplier="0.75" id="mGM-Ji-GkL"/>
                         </constraints>
