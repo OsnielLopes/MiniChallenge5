@@ -8,7 +8,7 @@
 
 import MapKit
 import UIKit
-import Alamofire
+//import Alamofire
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -52,39 +52,35 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         self.present(alert, animated: true, completion: nil)
         
         let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(lastValidCoordinate)
-        
-//        Alamofire.request("https://exemplo1nodejs.herokuapp.com/circuito").response {
-//            (response) in
-//            print("Get begore inserting:",String(data: response.data!, encoding: String.Encoding.utf8) ?? "empty space")
-//        }
-//
-//        var parameters: [[String:Any]] = []
-//
-//        for c in circuit.coordinates {
-//            let p: [String:Any] = ["coordinate":["lat":c.latitude,"long":c.longitude]]
-//            parameters.append(p)
-//        }
-//
-//        let param: Parameters = ["circuit": parameters]
-        
-        let data = String(data: jsonData, encoding: String.Encoding.utf8)
-//
-        Alamofire.request("https://exemplo1nodejs.herokuapp.com/circuito", method: .post, parameters: data, encoding: JSONEncoding.default)
-//
-//        var t: Circuit!
-//
-//        Alamofire.request("https://exemplo1nodejs.herokuapp.com/circuito").response {
-//            (response) in
-//            let jsonDecoder = JSONDecoder()
-//            do {
-//                t = try jsonDecoder.decode(Circuit.self, from: response.data!)
-//                print(t)
-//            } catch let e {
-//                print(e.localizedDescription)
-//                print(String(data: response.data!, encoding: String.Encoding.utf8) ?? "empty space")
-//            }
-//        }
+        do {
+            let jsonData = try jsonEncoder.encode(circuit)
+            
+            let url = URL(string: "https://exemplo1nodejs.herokuapp.com/circuito")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            let task = URLSession.shared.uploadTask(with: request, from: jsonData) { data, response, error in
+                if let error = error {
+                    // handle the transport error
+                    print(error.localizedDescription)
+                    return
+                }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    // handle the server error
+                    return
+                }
+//                if response.mimeType == "text/plain" || response.mimeType == "text/plain",
+//                                    let data = data {
+//                                    // use the data
+//                                }
+            }
+            task.resume()
+            
+        } catch {
+            print("Impossible to generate JSON from circuit")
+        }
+
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
