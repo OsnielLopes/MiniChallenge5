@@ -218,6 +218,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOR-bC-zMT">
                                 <rect key="frame" x="87" y="265" width="200" height="45"/>
                                 <state key="normal" image="Play_Button"/>
+                                <connections>
+                                    <segue destination="i85-ZI-DMa" kind="show" id="0RO-Jw-02B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16860446333885193" green="0.16864064335823059" blue="0.16860216856002808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -246,11 +249,11 @@
         <scene sceneID="yRx-js-qLV">
             <objects>
                 <viewController id="i85-ZI-DMa" customClass="CreateCircuitViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB">
+                    <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Para adicionar um arco no circuito apenas fique no local desejado e clique em qualquer lugar da tela." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmJ-pg-SMJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Para adicionar um arco no circuito apenas fique no local desejado e clique em qualquer lugar da tela." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmJ-pg-SMJ">
                                 <rect key="frame" x="50" y="100" width="275" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99863034490000002" green="0.32426795359999999" blue="0.21408164499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -265,10 +268,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ul1-ZB-RuP"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OIJ-ZA-9vh"/>
                     <connections>
                         <outlet property="labelConstraints" destination="ocv-cL-Zhv" id="KMj-d5-wht"/>
+                        <outlet property="labelExplanation" destination="bmJ-pg-SMJ" id="PqF-VN-l1B"/>
                         <outlet property="labelLeadingConstraint" destination="vt0-rc-7kV" id="fsn-d6-Wdb"/>
                         <outlet property="labelTrailingConstraint" destination="232-Wz-h1I" id="YFt-iz-fgh"/>
+                        <outlet property="sceneView" destination="iXd-mH-xkB" id="74u-6E-6wx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDM-mA-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
