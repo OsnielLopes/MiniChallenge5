@@ -13,6 +13,7 @@ class MenuViewController: UIViewController {
     // Declaração das contraints dos botões
     @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var createCircuitButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var locationsMapButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var aboutButtonConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -29,7 +30,8 @@ class MenuViewController: UIViewController {
         // Constraints dos botões
         playButtonConstraint.constant = self.view.frame.size.height * 0.397
         createCircuitButtonConstraint.constant = self.view.frame.size.height * 0.523
-        aboutButtonConstraint.constant = self.view.frame.size.height * 0.650
+        locationsMapButtonConstraint.constant = self.view.frame.size.height * 0.652
+        aboutButtonConstraint.constant = self.view.frame.size.height * 0.779
     }
 
     override func didReceiveMemoryWarning() {
