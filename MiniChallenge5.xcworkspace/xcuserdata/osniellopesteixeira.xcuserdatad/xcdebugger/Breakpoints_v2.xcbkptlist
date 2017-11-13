@@ -2,4 +2,62 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "MiniChallenge5/MapViewController.swift"
+            timestampString = "532230697.143932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "didTouchSave(_:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po String(data: jsonData, encoding: .utf8)">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniChallenge5.MapViewController.didTouchSave(Any) -&gt; ()"
+                  moduleName = "MiniChallenge5"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osniellopesteixeira/Documents/MackMobile/MiniChallenge%205/MiniChallenge5/MiniChallenge5/MapViewController.swift"
+                  timestampString = "532230697.433336"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "688">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MiniChallenge5.MapViewController.didTouchSave(Any) -&gt; ()"
+                  moduleName = "MiniChallenge5"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osniellopesteixeira/Documents/MackMobile/MiniChallenge%205/MiniChallenge5/MiniChallenge5/MapViewController.swift"
+                  timestampString = "532230697.435518"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
