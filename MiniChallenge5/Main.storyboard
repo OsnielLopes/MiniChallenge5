@@ -203,13 +203,13 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sZ-IQ-Cg0">
                                 <rect key="frame" x="88" y="349" width="200" height="45"/>
-                                <state key="normal" image="Locations_Button"/>
+                                <state key="normal" image="LocationsList_Button"/>
                                 <connections>
                                     <segue destination="FDL-uo-S5C" kind="show" id="RvY-dB-2Uw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLn-QW-ChP">
-                                <rect key="frame" x="87" y="434" width="200" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLn-QW-ChP">
+                                <rect key="frame" x="87" y="520" width="200" height="45"/>
                                 <state key="normal" image="Developers_Button"/>
                                 <connections>
                                     <segue destination="A4J-RY-3Mq" kind="show" id="jgR-eb-AIG"/>
@@ -222,6 +222,10 @@
                                     <segue destination="i85-ZI-DMa" kind="show" id="0RO-Jw-02B"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb9-hv-WeP">
+                                <rect key="frame" x="87" y="435" width="200" height="45"/>
+                                <state key="normal" image="LocationsMap_Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16860446333885193" green="0.16864064335823059" blue="0.16860216856002808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -230,6 +234,8 @@
                             <constraint firstItem="sLn-QW-ChP" firstAttribute="centerX" secondItem="EYC-SC-3n9" secondAttribute="centerX" id="cSc-WL-1Rp"/>
                             <constraint firstItem="1sZ-IQ-Cg0" firstAttribute="top" secondItem="VJN-Sa-W9W" secondAttribute="top" constant="349" id="eIr-p9-ehu"/>
                             <constraint firstItem="IOR-bC-zMT" firstAttribute="top" secondItem="VJN-Sa-W9W" secondAttribute="top" constant="265" id="etO-20-gsC"/>
+                            <constraint firstItem="bb9-hv-WeP" firstAttribute="centerX" secondItem="VJN-Sa-W9W" secondAttribute="centerX" id="k2n-9L-TVU"/>
+                            <constraint firstItem="bb9-hv-WeP" firstAttribute="top" secondItem="VJN-Sa-W9W" secondAttribute="top" constant="435" id="w1v-EA-2na"/>
                             <constraint firstItem="sLn-QW-ChP" firstAttribute="top" secondItem="VJN-Sa-W9W" secondAttribute="top" constant="434" id="yfY-Te-0cG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EYC-SC-3n9"/>
@@ -238,6 +244,7 @@
                     <connections>
                         <outlet property="aboutButtonConstraint" destination="yfY-Te-0cG" id="6dI-HR-2E4"/>
                         <outlet property="createCircuitButtonConstraint" destination="eIr-p9-ehu" id="CMd-s7-Gdj"/>
+                        <outlet property="locationsMapButtonConstraint" destination="w1v-EA-2na" id="cby-3g-y7W"/>
                         <outlet property="playButtonConstraint" destination="etO-20-gsC" id="HQ7-aK-mA4"/>
                     </connections>
                 </viewController>
@@ -314,7 +321,8 @@
     </scenes>
     <resources>
         <image name="Developers_Button" width="200" height="45"/>
-        <image name="Locations_Button" width="200" height="45"/>
+        <image name="LocationsList_Button" width="200" height="45"/>
+        <image name="LocationsMap_Button" width="200" height="45"/>
         <image name="Play_Button" width="200" height="45"/>
         <image name="SignIn_Button" width="200" height="45"/>
         <image name="SignUp_Button" width="200" height="45"/>
