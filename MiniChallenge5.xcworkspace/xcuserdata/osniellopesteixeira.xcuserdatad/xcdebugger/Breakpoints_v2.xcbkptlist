@@ -34,7 +34,7 @@
                   moduleName = "MiniChallenge5"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/osniellopesteixeira/Documents/MackMobile/MiniChallenge%205/MiniChallenge5/MiniChallenge5/MapViewController.swift"
-                  timestampString = "532230697.433336"
+                  timestampString = "533060234.218091"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
@@ -49,7 +49,7 @@
                   moduleName = "MiniChallenge5"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/osniellopesteixeira/Documents/MackMobile/MiniChallenge%205/MiniChallenge5/MiniChallenge5/MapViewController.swift"
-                  timestampString = "532230697.435518"
+                  timestampString = "533060234.224952"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -57,6 +57,22 @@
                   offsetFromSymbolStart = "36">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MiniChallenge5/CreateCircuitViewController.swift"
+            timestampString = "533060233.760525"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "renderer(_:updateAtTime:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

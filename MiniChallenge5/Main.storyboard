@@ -262,17 +262,33 @@
                     <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyA-bE-yi8">
+                                <rect key="frame" x="110" y="626" width="154" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Ul1-ZB-RuP"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OIJ-ZA-9vh"/>
+                    <navigationItem key="navigationItem" id="OIJ-ZA-9vh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="start_again" id="Dh0-zy-HaU">
+                            <connections>
+                                <action selector="restart:" destination="i85-ZI-DMa" id="9vi-aa-4y1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="sceneView" destination="iXd-mH-xkB" id="74u-6E-6wx"/>
+                        <outlet property="time" destination="fyA-bE-yi8" id="4OA-nR-NH4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDM-mA-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-479" y="-246"/>
+            <point key="canvasLocation" x="-479.19999999999999" y="-246.02698650674665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jKe-vH-GWr">
@@ -459,5 +475,6 @@
         <image name="SignIn_Button" width="200" height="45"/>
         <image name="SignUp_Button" width="200" height="45"/>
         <image name="perfil" width="500" height="500"/>
+        <image name="start_again" width="140" height="140"/>
     </resources>
 </document>
