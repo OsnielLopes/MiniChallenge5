@@ -34,8 +34,12 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Coloca uma imagem no background da view
+        let backgroundImage = UIImageView(frame: self.view.frame)
+        backgroundImage.image = UIImage(named: "background_image")
+        self.view.insertSubview(backgroundImage, at: 0)
 
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
