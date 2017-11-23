@@ -12,24 +12,27 @@ class MenuViewController: UIViewController {
     
     // Declaração das contraints dos botões
     @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!
-    @IBOutlet weak var createCircuitButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var locationsMapButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var aboutButtonConstraint: NSLayoutConstraint!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Coloca uma imagem no background da view
+        let backgroundImage = UIImageView(frame: self.view.frame)
+        backgroundImage.image = UIImage(named: "background_image")
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         // Deixa a navigation bar transparente
             navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         // Deixa a navigation bar sem sombra
             navigationController?.navigationBar.shadowImage = UIImage()
+        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         // Constraints dos botões
-        playButtonConstraint.constant = self.view.frame.size.height * 0.397
-        createCircuitButtonConstraint.constant = self.view.frame.size.height * 0.523
+        playButtonConstraint.constant = self.view.frame.size.height * 0.523
         locationsMapButtonConstraint.constant = self.view.frame.size.height * 0.652
         aboutButtonConstraint.constant = self.view.frame.size.height * 0.779
     }
