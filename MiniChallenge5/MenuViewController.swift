@@ -10,6 +10,9 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    //Declaração da constraint da imagem do círculo
+    @IBOutlet weak var circleImageTopConstraint: NSLayoutConstraint!
+    
     // Declaração das contraints dos botões
     @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var locationsMapButtonConstraint: NSLayoutConstraint!
@@ -39,7 +42,9 @@ class MenuViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Constraints dos botões
+        // Constraints
+        circleImageTopConstraint.constant = self.view.frame.size.height * 0.149
+        
         playButtonConstraint.constant = self.view.frame.size.height * 0.523
         locationsMapButtonConstraint.constant = self.view.frame.size.height * 0.652
         aboutButtonConstraint.constant = self.view.frame.size.height * 0.779
