@@ -22,6 +22,7 @@
 		4996C90A1FB20F0200A9C1FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9091FB20F0200A9C1FB /* Extensions.swift */; };
 		4996C90C1FB20F1E00A9C1FB /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C90B1FB20F1E00A9C1FB /* Coordinate.swift */; };
 		4E61A50783D6CB220B032375 /* Pods_MiniChallenge5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */; };
+		B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */; };
 		B0D3F71A1FB3979F002CD1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D3F7191FB3979F002CD1BB /* Main.storyboard */; };
 		B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC31FB4B7050058992D /* MenuViewController.swift */; };
 		B0E69CC61FB4D8F40058992D /* CreateCircuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC51FB4D8F40058992D /* CreateCircuitViewController.swift */; };
@@ -74,6 +75,7 @@
 		8546D37CF4375CCE5024DFE2 /* Pods_MiniChallenge5Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniChallenge5Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862BD4D4EAD841E271117D65 /* Pods-MiniChallenge5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5/Pods-MiniChallenge5.release.xcconfig"; sourceTree = "<group>"; };
 		9F1999E63424E1C3D405115D /* Pods-MiniChallenge5Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5Tests/Pods-MiniChallenge5Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B0D3F7191FB3979F002CD1BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0E69CC31FB4B7050058992D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B0E69CC51FB4D8F40058992D /* CreateCircuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCircuitViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				4996C8E01FB0BAE200A9C1FB /* Info.plist */,
 				B0D3F7191FB3979F002CD1BB /* Main.storyboard */,
 				4940F16D1FB924C100663456 /* LocationTableViewCell.swift */,
+				B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */,
 				B0E69CC71FB4EF790058992D /* AboutViewController.swift */,
 				B0E69CC51FB4D8F40058992D /* CreateCircuitViewController.swift */,
 				B0E69CC31FB4B7050058992D /* MenuViewController.swift */,
@@ -512,6 +515,7 @@
 				4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */,
 				4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */,
 				B0E69CC61FB4D8F40058992D /* CreateCircuitViewController.swift in Sources */,
+				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
 				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
 				4996C9081FB105EB00A9C1FB /* Circuit.swift in Sources */,
 				B0E69CCA1FB61FAD0058992D /* SignInViewController.swift in Sources */,

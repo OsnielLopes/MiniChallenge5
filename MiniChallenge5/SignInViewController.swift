@@ -40,6 +40,12 @@ class SignInViewController: UIViewController {
         
         self.view.insertSubview(filterImage, at: 0)
         self.view.insertSubview(backgroundImage, at: 0)
+        
+        // Deixa a navigation bar transparente
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        // Deixa a navigation bar sem sombra
+        navigationController?.navigationBar.shadowImage = UIImage()
 
     }
     
