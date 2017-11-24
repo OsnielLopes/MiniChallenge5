@@ -20,7 +20,7 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Coloca uma imagem no background da view
+        //Coloca imagem e filtro no background da view
         let backgroundImage = UIImageView(frame: self.view.frame)
         let filterImage = UIImageView(frame: self.view.frame)
         
