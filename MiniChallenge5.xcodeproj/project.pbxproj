@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38B0B6A3E59379536E30D0A9 /* Pods_MiniChallenge5Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8546D37CF4375CCE5024DFE2 /* Pods_MiniChallenge5Tests.framework */; };
+		457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789AB1FC9FE4700DDB63B /* Faction.swift */; };
 		4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4940F16D1FB924C100663456 /* LocationTableViewCell.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniChallenge5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		457789AB1FC9FE4700DDB63B /* Faction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faction.swift; sourceTree = "<group>"; };
 		4940F16D1FB924C100663456 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		4996C8CF1FB0BAE200A9C1FB /* MiniChallenge5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		457789AA1FC9FE3600DDB63B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				457789AB1FC9FE4700DDB63B /* Faction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		49516B5B1FC48563006FC4F4 /* AR */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		4996C8D11FB0BAE200A9C1FB /* MiniChallenge5 */ = {
 			isa = PBXGroup;
 			children = (
+				457789AA1FC9FE3600DDB63B /* Model */,
 				49516B5B1FC48563006FC4F4 /* AR */,
 				4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */,
 				4996C8D41FB0BAE200A9C1FB /* art.scnassets */,
@@ -517,6 +528,7 @@
 				B0E69CC61FB4D8F40058992D /* CreateCircuitViewController.swift in Sources */,
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
 				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
+				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,
 				4996C9081FB105EB00A9C1FB /* Circuit.swift in Sources */,
 				B0E69CCA1FB61FAD0058992D /* SignInViewController.swift in Sources */,
 				4996C90C1FB20F1E00A9C1FB /* Coordinate.swift in Sources */,
