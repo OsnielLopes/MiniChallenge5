@@ -9,7 +9,7 @@
 import Foundation
 
 struct Player: Codable{
-    var id: Int
+    var id: Int?
     var name: String
     var email: String
     var password: String
