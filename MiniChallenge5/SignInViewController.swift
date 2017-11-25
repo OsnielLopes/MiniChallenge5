@@ -31,8 +31,22 @@ class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Coloca imagem e filtro no background da view
+        let backgroundImage = UIImageView(frame: self.view.frame)
+        let filterImage = UIImageView(frame: self.view.frame)
+        
+        backgroundImage.image = UIImage(named: "background_image")
+        filterImage.image = UIImage(named: "filter")
+        
+        self.view.insertSubview(filterImage, at: 0)
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        // Deixa a navigation bar transparente
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        // Deixa a navigation bar sem sombra
+        navigationController?.navigationBar.shadowImage = UIImage()
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,12 +57,12 @@ class SignInViewController: UIViewController {
         emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.350
         emailTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         emailTextField.setBottomBorder()
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 83.0/255, blue: 56.0/255, alpha: 1)])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.428
         passwordTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         passwordTextField.setBottomBorder()
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 83.0/255, blue: 56.0/255, alpha: 1)])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         signInButtonTopConstraint.constant = self.view.frame.size.height * 0.523
         signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.650

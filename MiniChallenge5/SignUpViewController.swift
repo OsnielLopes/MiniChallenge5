@@ -1,25 +1,18 @@
 //
-//  testeViewController.swift
+//  SignUpViewController.swift
 //  MiniChallenge5
 //
-//  Created by Vinícius Cano Santos on 09/11/17.
+//  Created by Vinícius Cano Santos on 24/11/17.
 //  Copyright © 2017 Osniel Lopes Teixeira. All rights reserved.
 //
 
 import UIKit
 
-class MenuViewController: UIViewController {
-    
-    //Declaração da constraint da imagem do círculo
-    @IBOutlet weak var circleImageTopConstraint: NSLayoutConstraint!
-    
-    // Declaração das contraints dos botões
-    @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!
-    @IBOutlet weak var locationsMapButtonConstraint: NSLayoutConstraint!
-    @IBOutlet weak var aboutButtonConstraint: NSLayoutConstraint!
+class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //Coloca imagem e filtro no background da view
         let backgroundImage = UIImageView(frame: self.view.frame)
         let filterImage = UIImageView(frame: self.view.frame)
@@ -29,25 +22,11 @@ class MenuViewController: UIViewController {
         
         self.view.insertSubview(filterImage, at: 0)
         self.view.insertSubview(backgroundImage, at: 0)
-        
-        
-        
-        // Deixa a navigation bar transparente
-            navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
-        // Deixa a navigation bar sem sombra
-            navigationController?.navigationBar.shadowImage = UIImage()
-        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Constraints
-        circleImageTopConstraint.constant = self.view.frame.size.height * 0.149
         
-        playButtonConstraint.constant = self.view.frame.size.height * 0.523
-        locationsMapButtonConstraint.constant = self.view.frame.size.height * 0.652
-        aboutButtonConstraint.constant = self.view.frame.size.height * 0.779
     }
 
     override func didReceiveMemoryWarning() {
