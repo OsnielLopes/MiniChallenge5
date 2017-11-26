@@ -14,10 +14,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager:CLLocationManager = CLLocationManager()
-    var lastValidCoordinate: Coordinate!
+    var lastValidPoint: Point!
     let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     let regionRadius: CLLocationDistance = 1000
-    var circuit = Circuit(coordinates: [Coordinate]())
+    var circuit: Circuit = Circuit.init(id: nil)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func didTouchSave(_ sender: Any) {
         
-        if lastValidCoordinate != nil{
+        if lastValidPoint != nil{
             let jsonEncoder = JSONEncoder()
             do {
                 let jsonData = try jsonEncoder.encode(circuit)
@@ -68,7 +69,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     }
                 }
                 task.resume()
-                circuit.coordinates.append(lastValidCoordinate)
+                circuit.points.append(lastValidPoint)
                 updatePins()
             } catch {
                 print("Impossible to generate JSON from circuit")
@@ -80,7 +81,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Map
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        lastValidCoordinate = locations.last?.toCoordinate()
+        lastValidPoint = locations.last?.toCoordinate()
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -98,7 +99,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updatePins() {
-        for l in circuit.coordinates{
+        for l in circuit.points{
             mapView.addAnnotation(MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: l.latitude, longitude: l.longitude)))
         }
     }
