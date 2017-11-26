@@ -91,11 +91,63 @@ class PlayerDataManager{
     
     //MARK: Update Player
     func update(player: Player, callback: @escaping (_ : Player) -> Void){
-        
+        let jsonEncoder = JSONEncoder()
+        do {
+            let url = URL(string: "https://cyber-runner.herokuapp.com/player/\(player.id!)")!
+            var p = player
+            p.id = nil
+            let jsonData = try jsonEncoder.encode(p)
+            var request = URLRequest(url: url)
+            request.httpMethod = "PUT"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            let task = URLSession.shared.uploadTask(with: request, from: jsonData) { data, response, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                if let data = data{
+                    let decoder = JSONDecoder()
+                    do {
+                        let player: Player = try decoder.decode(Player.self, from: data)
+                        callback(player)
+                    } catch {
+                        print("Impossible to decode to Faction from data")
+                    }
+                }
+            }
+            task.resume()
+        } catch {
+            print("Impossible to generate JSON from circuit")
+        }
     }
     
     //MARK: Delete Player
     func delete (id: Int, callback: @escaping (_ : Player) -> Void){
-        
+        let jsonEncoder = JSONEncoder()
+        do {
+            let url = URL(string: "https://cyber-runner.herokuapp.com/player/\(id)")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                if let data = data{
+                    let decoder = JSONDecoder()
+                    do {
+                        let player: Player = try decoder.decode(Player.self, from: data)
+                        callback(player)
+                    } catch {
+                        print("Impossible to decode to Faction from data")
+                    }
+                }
+            }
+            task.resume()
+        } catch {
+            print("Impossible to generate JSON from circuit")
+        }
     }
 }
