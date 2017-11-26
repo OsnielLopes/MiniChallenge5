@@ -16,7 +16,7 @@ class PlayerDataManager{
         do {
             let jsonData = try jsonEncoder.encode(player)
             
-            print("Encoded Data: \(String(data: jsonData, encoding: .utf8))")
+//            print("Encoded Data: \(String(data: jsonData, encoding: .utf8))")
             let url = URL(string: "https://cyber-runner.herokuapp.com/player")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -27,8 +27,8 @@ class PlayerDataManager{
                     print(error.localizedDescription)
                     return
                 }
-                let httpResponse = response as! HTTPURLResponse
-                print("Request Status Code: \(httpResponse.statusCode)")
+//                let httpResponse = response as! HTTPURLResponse
+//                print("Request Status Code: \(httpResponse.statusCode)")
                 if let data = data{
                     let decoder = JSONDecoder()
                     do {
@@ -47,12 +47,46 @@ class PlayerDataManager{
     
     //MARK: Read all Players
     func read(callback: @escaping (_ : [Player]) -> Void){
+        let url = URL(string: "https://cyber-runner.herokuapp.com/player")!
         
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            if let data = data{
+                let decoder = JSONDecoder()
+                do {
+                    let players: [Player] = try decoder.decode([Player].self, from: data)
+                    callback(players)
+                } catch {
+                    print("Impossible to decode to Faction from data")
+                }
+            }
+        }
+        task.resume()
     }
     
     //MARK: Read Player by id
     func readById(id: Int, callback: @escaping (_ : Player) -> Void){
+        let url = URL(string: "https://cyber-runner.herokuapp.com/player/\(id)")!
         
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            if let data = data{
+                let decoder = JSONDecoder()
+                do {
+                    let player: Player = try decoder.decode(Player.self, from: data)
+                    callback(player)
+                } catch {
+                    print("Impossible to decode to Faction from data")
+                }
+            }
+        }
+        task.resume()
     }
     
     //MARK: Update Player
