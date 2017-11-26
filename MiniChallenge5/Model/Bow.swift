@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Point: Codable{
+struct Bow: Codable{
     //MARK: Properties
     var id: Int?
     var latitude: Double

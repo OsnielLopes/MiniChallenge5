@@ -14,7 +14,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager:CLLocationManager = CLLocationManager()
-    var lastValidPoint: Point!
+    var lastValidBow: Bow!
     let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     let regionRadius: CLLocationDistance = 1000
     var circuit: Circuit = Circuit.init(id: nil)
@@ -51,7 +51,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func didTouchSave(_ sender: Any) {
         
-        if lastValidPoint != nil{
+        if lastValidBow != nil{
             let jsonEncoder = JSONEncoder()
             do {
                 let jsonData = try jsonEncoder.encode(circuit)
@@ -69,7 +69,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     }
                 }
                 task.resume()
-                circuit.points.append(lastValidPoint)
+                circuit.bows.append(lastValidBow)
                 updatePins()
             } catch {
                 print("Impossible to generate JSON from circuit")
@@ -81,7 +81,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Map
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        lastValidPoint = locations.last?.toCoordinate()
+        lastValidBow = locations.last?.toCoordinate()
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -99,7 +99,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updatePins() {
-        for l in circuit.points{
+        for l in circuit.bows{
             mapView.addAnnotation(MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: l.latitude, longitude: l.longitude)))
         }
     }
