@@ -186,6 +186,7 @@
 				4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */,
 				4996C8D41FB0BAE200A9C1FB /* art.scnassets */,
 				4996C9071FB105EB00A9C1FB /* Circuit.swift */,
+				B0AD2D381FCA27960028CA39 /* ViewControllers */,
 				4996C90B1FB20F1E00A9C1FB /* Coordinate.swift */,
 				4996C9091FB20F0200A9C1FB /* Extensions.swift */,
 				4996C8DB1FB0BAE200A9C1FB /* Assets.xcassets */,
@@ -193,12 +194,6 @@
 				4996C8E01FB0BAE200A9C1FB /* Info.plist */,
 				B0D3F7191FB3979F002CD1BB /* Main.storyboard */,
 				4940F16D1FB924C100663456 /* LocationTableViewCell.swift */,
-				B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */,
-				B0E69CC71FB4EF790058992D /* AboutViewController.swift */,
-				B0E69CC51FB4D8F40058992D /* CreateCircuitViewController.swift */,
-				B0E69CC31FB4B7050058992D /* MenuViewController.swift */,
-				4996C9051FB0D12200A9C1FB /* MapViewController.swift */,
-				B0E69CC91FB61FAD0058992D /* SignInViewController.swift */,
 			);
 			path = MiniChallenge5;
 			sourceTree = "<group>";
@@ -230,6 +225,19 @@
 				3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0AD2D381FCA27960028CA39 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0E69CC31FB4B7050058992D /* MenuViewController.swift */,
+				B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */,
+				B0E69CC91FB61FAD0058992D /* SignInViewController.swift */,
+				4996C9051FB0D12200A9C1FB /* MapViewController.swift */,
+				B0E69CC51FB4D8F40058992D /* CreateCircuitViewController.swift */,
+				B0E69CC71FB4EF790058992D /* AboutViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
