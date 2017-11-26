@@ -9,6 +9,7 @@
 import Foundation
 
 struct Faction: Codable{
+    //MARK: Properties
     var id: Int?
     var name: String
 }
