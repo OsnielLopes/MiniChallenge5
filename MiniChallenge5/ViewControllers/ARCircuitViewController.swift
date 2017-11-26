@@ -10,11 +10,13 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDelegate{
+class ARCircuitViewController: UIViewController, ARSKViewDelegate {
     
     //MARK: Outlets
+
+    @IBOutlet var sceneView: ARSKView!
     @IBOutlet weak var time: UILabel!
-    @IBOutlet var sceneView: ARSCNView!
+    
     
     //MARK: Properties
     var bow: SCNNode!
@@ -33,7 +35,14 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
     //MARK: Life cicle functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpScene()
+        sceneView = sceneView as! ARSKView
+        self.sceneView.delegate = self
+        sceneView!.delegate = self
+        let scene = SKScene()
+        scene.scaleMode = .resizeFill
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.sceneView.presentScene(scene)
+
         self.setUpBow()
         
         //set up geometries
@@ -258,19 +267,7 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
     }
     
     
-    
-    
     //MARK: Setup functions
-    private func setUpScene(){
-        self.sceneView.delegate = self
-        self.sceneView.antialiasingMode = .multisampling4X
-        self.sceneView.autoenablesDefaultLighting = true
-        //self.sceneView.showsStatistics = true
-        
-        //Creating and adding a new scene
-        let scene = SCNScene()
-        self.sceneView.scene = scene
-    }
     
     private func setUpBow(){
         self.bow = SCNNode()
