@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
+class CreateCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDelegate{
     
     //MARK: Outlets
     @IBOutlet weak var time: UILabel!
@@ -129,6 +129,8 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
     //MARK: Anchor callback functions
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if !anchor.isKind(of: ARPlaneAnchor.self) {
+            
+            let bowGeometry = SCNGeometry()
             
             let newBow = bow.clone()
             newBow.eulerAngles.y = (self.sceneView.session.currentFrame?.camera.eulerAngles.y)!
