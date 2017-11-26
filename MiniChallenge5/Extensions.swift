@@ -10,8 +10,8 @@ import Foundation
 import MapKit
 
 extension CLLocation {
-    func toCoordinate() -> Coordinate {
-        return Coordinate(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
+    func toCoordinate() -> Point {
+        return Point(id: nil, latitude: self.coordinate.latitude, longitude: self.coordinate.longitude, circuit: nil)
     }
 }
 

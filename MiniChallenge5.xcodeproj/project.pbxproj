@@ -22,9 +22,7 @@
 		4996C8F51FB0BAE200A9C1FB /* MiniChallenge5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C8F41FB0BAE200A9C1FB /* MiniChallenge5UITests.swift */; };
 		4996C9041FB0BEA600A9C1FB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4996C9031FB0BEA600A9C1FB /* MapKit.framework */; };
 		4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9051FB0D12200A9C1FB /* MapViewController.swift */; };
-		4996C9081FB105EB00A9C1FB /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9071FB105EB00A9C1FB /* Circuit.swift */; };
 		4996C90A1FB20F0200A9C1FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9091FB20F0200A9C1FB /* Extensions.swift */; };
-		4996C90C1FB20F1E00A9C1FB /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C90B1FB20F1E00A9C1FB /* Coordinate.swift */; };
 		4E61A50783D6CB220B032375 /* Pods_MiniChallenge5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */; };
 		B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */; };
 		B0D3F71A1FB3979F002CD1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D3F7191FB3979F002CD1BB /* Main.storyboard */; };
@@ -74,9 +72,7 @@
 		4996C8F61FB0BAE200A9C1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4996C9031FB0BEA600A9C1FB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4996C9051FB0D12200A9C1FB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		4996C9071FB105EB00A9C1FB /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		4996C9091FB20F0200A9C1FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		4996C90B1FB20F1E00A9C1FB /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		5885A99FD75184EE377452D0 /* Pods-MiniChallenge5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E4CD335496BCE8F7D32985C /* Pods-MiniChallenge5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5/Pods-MiniChallenge5.debug.xcconfig"; sourceTree = "<group>"; };
 		683DB0CD8C2DF432E8731A82 /* Pods-MiniChallenge5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +136,8 @@
 			children = (
 				493BE1701FCB295500709040 /* Player.swift */,
 				457789AB1FC9FE4700DDB63B /* Faction.swift */,
+				457789BA1FCB397200DDB63B /* Point.swift */,
+				457789BC1FCB3B5600DDB63B /* Circuit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,9 +189,7 @@
 				49516B5B1FC48563006FC4F4 /* AR */,
 				4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */,
 				4996C8D41FB0BAE200A9C1FB /* art.scnassets */,
-				4996C9071FB105EB00A9C1FB /* Circuit.swift */,
 				B0AD2D381FCA27960028CA39 /* ViewControllers */,
-				4996C90B1FB20F1E00A9C1FB /* Coordinate.swift */,
 				4996C9091FB20F0200A9C1FB /* Extensions.swift */,
 				4996C8DB1FB0BAE200A9C1FB /* Assets.xcassets */,
 				4996C8DD1FB0BAE200A9C1FB /* LaunchScreen.storyboard */,
@@ -551,15 +547,16 @@
 				B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */,
 				B0E69CC81FB4EF790058992D /* AboutViewController.swift in Sources */,
 				4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */,
+				457789B91FCB32FC00DDB63B /* PlayerDataManager.swift in Sources */,
 				4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */,
 				B0E69CC61FB4D8F40058992D /* ARCircuitViewController.swift in Sources */,
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
 				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,
-				4996C9081FB105EB00A9C1FB /* Circuit.swift in Sources */,
 				457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */,
 				B0E69CCA1FB61FAD0058992D /* SignInViewController.swift in Sources */,
-				4996C90C1FB20F1E00A9C1FB /* Coordinate.swift in Sources */,
+				457789BD1FCB3B5600DDB63B /* Circuit.swift in Sources */,
+				457789B71FCB32F100DDB63B /* Player.swift in Sources */,
 				49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
