@@ -11,7 +11,7 @@ import Foundation
 struct Circuit: Codable{
     //MARK: Properties
     var id: Int?
-    var points: [Point] = [Point]()
+    var bows: [Bow] = [Bow]()
     
     //MARK: Types
     enum CodingKeys: String, CodingKey {
