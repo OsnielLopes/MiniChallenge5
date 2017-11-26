@@ -20,6 +20,8 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
     var bow: SCNNode!
     let nodeName = "bow"
     var bows = [ARBowAnchor]()
+    var greenGeometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
+    var redGeometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
     var passage:Int = 0
     var startTime = TimeInterval()
     var isTimeCounting = false
@@ -33,6 +35,10 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
         super.viewDidLoad()
         self.setUpScene()
         self.setUpBow()
+        
+        //set up geometries
+        greenGeometry.firstMaterial?.diffuse.contents = UIColor.green
+        redGeometry.firstMaterial?.diffuse.contents = UIColor.red
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,8 +177,6 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
     //MARK: Scene lifetime
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
-        print(self.sceneView.session.currentFrame?.camera.transform)
-        
         if isTimeCounting
         {
             var elapsedTime: TimeInterval = time - startTime
@@ -187,12 +191,10 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
             let strFraction = String(format: "%02d", fraction)
             
             //concatenate minuets, seconds and milliseconds as assign it to the UILabel
-            print("\(strSeconds):\(strFraction)")
             DispatchQueue.main.async {
                 self.time.text = "\(strSeconds):\(strFraction)"
             }
         }
-        
         
         if let currentFrame = self.sceneView.session.currentFrame{
             if bows.count > 0 && !didEndCircuit() {
@@ -209,20 +211,30 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
                         closerBow = bowAnchor
                     }
                 }
+                
                 for bowAnchor in bows {
-                    if bowAnchor.transform != closerBow?.transform{
+                    if bowAnchor != closerBow{
+                        
+//                        let greenMaterial = SCNMaterial()
+//                        greenMaterial.diffuse.contents = UIColor.green
+//                        self.sceneView.node(for: closerBow!)?.geometry?.firstMaterial = greenMaterial
+                        
 //                        let geometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
 //                        geometry.materials.first?.diffuse.contents = UIColor.green
-                        self.sceneView.node(for: closerBow!)?.geometry?.firstMaterial?.diffuse.contents = UIColor.green
-//
-//                        self.sceneView.node(for: closerBow!)?.geometry = geometry
+                        self.sceneView.node(for: bowAnchor)?.childNodes[0].geometry = greenGeometry
+                        //                        self.sceneView.node(for: closerBow!)?.geometry = geometry
 //                        self.sceneView.node(for: closerBow!)?.eulerAngles.x = Float.pi/2
                     }
                 }
-//                let geometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
+                
+                
+                
+//                let greenMaterial = SCNMaterial()
+//                greenMaterial.diffuse.contents = UIColor.red
+//                self.sceneView.node(for: closerBow!)?.geometry?.firstMaterial = greenMaterial
 //                geometry.materials.first?.diffuse.contents = UIColor.red
 //                self.sceneView.node(for: closerBow!)?.geometry = nil
-                self.sceneView.node(for: closerBow!)?.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+                self.sceneView.node(for: closerBow!)?.childNodes[0].geometry = redGeometry
 //                self.sceneView.node(for: closerBow!)?.geometry = geometry
 //                self.sceneView.node(for: closerBow!)?.eulerAngles.x = Float.pi/2
                 
@@ -237,9 +249,6 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
                         }
                         print("-------------------PASSOU, oloco meu!!!----------------")
                         passage = 0
-                        let geometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
-                        geometry.materials.first?.diffuse.contents = UIColor.green
-                        self.sceneView.node(for: closerBow!)?.geometry = geometry
                         closerBow?.pass()
                         if didEndCircuit(){
                             isTimeCounting = false
@@ -276,9 +285,7 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate{
     }
     
     private func setUpBow(){
-        let geometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
-        geometry.materials.first?.diffuse.contents = UIColor.green
-        self.bow = SCNNode(geometry: geometry)
+        self.bow = SCNNode()
         self.bow.eulerAngles.x = Float.pi/2
         self.bow.name = nodeName
     }

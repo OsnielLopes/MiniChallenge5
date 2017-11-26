@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "MiniChallenge5/MapViewController.swift"
-            timestampString = "532230697.143932"
+            timestampString = "533242148.346451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -34,7 +34,7 @@
                   moduleName = "MiniChallenge5"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/osniellopesteixeira/Documents/MackMobile/MiniChallenge%205/MiniChallenge5/MiniChallenge5/MapViewController.swift"
-                  timestampString = "533060234.218091"
+                  timestampString = "533242148.69171"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
@@ -49,7 +49,7 @@
                   moduleName = "MiniChallenge5"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/osniellopesteixeira/Documents/MackMobile/MiniChallenge%205/MiniChallenge5/MiniChallenge5/MapViewController.swift"
-                  timestampString = "533060234.224952"
+                  timestampString = "533242148.694608"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -66,13 +66,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MiniChallenge5/CreateCircuitViewController.swift"
-            timestampString = "533060233.760525"
+            timestampString = "533242148.34656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "renderer(_:updateAtTime:)"
-            landmarkType = "7">
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
