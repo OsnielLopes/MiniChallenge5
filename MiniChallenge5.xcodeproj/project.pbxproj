@@ -14,6 +14,7 @@
 		457789B91FCB32FC00DDB63B /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789B81FCB32FC00DDB63B /* PlayerDataManager.swift */; };
 		457789BB1FCB397200DDB63B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789BA1FCB397200DDB63B /* Point.swift */; };
 		457789BD1FCB3B5600DDB63B /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789BC1FCB3B5600DDB63B /* Circuit.swift */; };
+		457789BF1FCB493600DDB63B /* CircuitDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789BE1FCB493600DDB63B /* CircuitDataManager.swift */; };
 		4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4940F16D1FB924C100663456 /* LocationTableViewCell.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 		457789B81FCB32FC00DDB63B /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
 		457789BA1FCB397200DDB63B /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		457789BC1FCB3B5600DDB63B /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
+		457789BE1FCB493600DDB63B /* CircuitDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitDataManager.swift; sourceTree = "<group>"; };
 		4940F16D1FB924C100663456 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		4996C8CF1FB0BAE200A9C1FB /* MiniChallenge5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 			children = (
 				457789B81FCB32FC00DDB63B /* PlayerDataManager.swift */,
 				457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */,
+				457789BE1FCB493600DDB63B /* CircuitDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,
 				457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */,
+				457789BF1FCB493600DDB63B /* CircuitDataManager.swift in Sources */,
 				B0E69CCA1FB61FAD0058992D /* SignInViewController.swift in Sources */,
 				457789BD1FCB3B5600DDB63B /* Circuit.swift in Sources */,
 				457789B71FCB32F100DDB63B /* Player.swift in Sources */,
@@ -720,7 +724,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
@@ -736,7 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
