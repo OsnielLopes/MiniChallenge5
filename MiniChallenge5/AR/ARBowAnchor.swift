@@ -11,6 +11,7 @@ import ARKit
 class ARBowAnchor: ARAnchor {
     
     var didPass: Bool = false
+    var isNext: Bool = false
     
     override init(transform matrix: matrix_float4x4) {
         super.init(transform: matrix)

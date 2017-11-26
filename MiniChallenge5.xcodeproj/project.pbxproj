@@ -10,6 +10,8 @@
 		38B0B6A3E59379536E30D0A9 /* Pods_MiniChallenge5Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8546D37CF4375CCE5024DFE2 /* Pods_MiniChallenge5Tests.framework */; };
 		457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789AB1FC9FE4700DDB63B /* Faction.swift */; };
 		457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */; };
+		493BE1711FCB295500709040 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493BE1701FCB295500709040 /* Player.swift */; };
+		493BE1731FCB296900709040 /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493BE1721FCB296900709040 /* PlayerDataManager.swift */; };
 		4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4940F16D1FB924C100663456 /* LocationTableViewCell.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */; };
@@ -27,7 +29,7 @@
 		B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */; };
 		B0D3F71A1FB3979F002CD1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D3F7191FB3979F002CD1BB /* Main.storyboard */; };
 		B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC31FB4B7050058992D /* MenuViewController.swift */; };
-		B0E69CC61FB4D8F40058992D /* CreateCircuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC51FB4D8F40058992D /* CreateCircuitViewController.swift */; };
+		B0E69CC61FB4D8F40058992D /* ARCircuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC51FB4D8F40058992D /* ARCircuitViewController.swift */; };
 		B0E69CC81FB4EF790058992D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC71FB4EF790058992D /* AboutViewController.swift */; };
 		B0E69CCA1FB61FAD0058992D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC91FB61FAD0058992D /* SignInViewController.swift */; };
 		EBE1D634E98A7DD75FF1DCBC /* Pods_MiniChallenge5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B6B2734D54564CF69B1EF2 /* Pods_MiniChallenge5.framework */; };
@@ -54,6 +56,8 @@
 		3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniChallenge5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		457789AB1FC9FE4700DDB63B /* Faction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faction.swift; sourceTree = "<group>"; };
 		457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactionDataManager.swift; sourceTree = "<group>"; };
+		493BE1701FCB295500709040 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		493BE1721FCB296900709040 /* PlayerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
 		4940F16D1FB924C100663456 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		4996C8CF1FB0BAE200A9C1FB /* MiniChallenge5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +86,7 @@
 		B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B0D3F7191FB3979F002CD1BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0E69CC31FB4B7050058992D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		B0E69CC51FB4D8F40058992D /* CreateCircuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCircuitViewController.swift; sourceTree = "<group>"; };
+		B0E69CC51FB4D8F40058992D /* ARCircuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCircuitViewController.swift; sourceTree = "<group>"; };
 		B0E69CC71FB4EF790058992D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B0E69CC91FB61FAD0058992D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		B3B8989FF731D2B7FB4A2D89 /* Pods-MiniChallenge5Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5Tests/Pods-MiniChallenge5Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		457789AA1FC9FE3600DDB63B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				493BE1701FCB295500709040 /* Player.swift */,
 				457789AB1FC9FE4700DDB63B /* Faction.swift */,
 			);
 			path = Model;
@@ -142,6 +147,7 @@
 		457789AD1FC9FE7C00DDB63B /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				493BE1721FCB296900709040 /* PlayerDataManager.swift */,
 				457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */,
 			);
 			path = DataManager;
@@ -234,7 +240,7 @@
 				B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */,
 				B0E69CC91FB61FAD0058992D /* SignInViewController.swift */,
 				4996C9051FB0D12200A9C1FB /* MapViewController.swift */,
-				B0E69CC51FB4D8F40058992D /* CreateCircuitViewController.swift */,
+				B0E69CC51FB4D8F40058992D /* ARCircuitViewController.swift */,
 				B0E69CC71FB4EF790058992D /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
@@ -539,12 +545,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493BE1731FCB296900709040 /* PlayerDataManager.swift in Sources */,
+				493BE1711FCB295500709040 /* Player.swift in Sources */,
 				4996C90A1FB20F0200A9C1FB /* Extensions.swift in Sources */,
 				B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */,
 				B0E69CC81FB4EF790058992D /* AboutViewController.swift in Sources */,
 				4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */,
 				4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */,
-				B0E69CC61FB4D8F40058992D /* CreateCircuitViewController.swift in Sources */,
+				B0E69CC61FB4D8F40058992D /* ARCircuitViewController.swift in Sources */,
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
 				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,

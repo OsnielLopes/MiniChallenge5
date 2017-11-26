@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class CreateCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDelegate{
+class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDelegate{
     
     //MARK: Outlets
     @IBOutlet weak var time: UILabel!
@@ -130,12 +130,12 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKView
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if !anchor.isKind(of: ARPlaneAnchor.self) {
             
-            let bowGeometry = SCNGeometry()
-            
-            let newBow = bow.clone()
-            newBow.eulerAngles.y = (self.sceneView.session.currentFrame?.camera.eulerAngles.y)!
-            node.addChildNode(newBow)
-            
+//            let bowGeometry = SCNGeometry()
+//
+//            let newBow = bow.clone()
+//            newBow.eulerAngles.y = (self.sceneView.session.currentFrame?.camera.eulerAngles.y)!
+//            node.addChildNode(newBow)
+//
             
             // Create a SceneKit circle
             //            let plane = SCNPlane(width: 1, height: 1)
@@ -176,6 +176,10 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKView
         }
     }
     
+    func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
+        return SKShapeNode(fileNamed: "Purple_Circle")
+    }
+    
     //MARK: Scene lifetime
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
@@ -214,32 +218,14 @@ class CreateCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKView
                     }
                 }
                 
-                for bowAnchor in bows {
-                    if bowAnchor != closerBow{
-                        
-//                        let greenMaterial = SCNMaterial()
-//                        greenMaterial.diffuse.contents = UIColor.green
-//                        self.sceneView.node(for: closerBow!)?.geometry?.firstMaterial = greenMaterial
-                        
-//                        let geometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
-//                        geometry.materials.first?.diffuse.contents = UIColor.green
-                        self.sceneView.node(for: bowAnchor)?.childNodes[0].geometry = greenGeometry
-                        //                        self.sceneView.node(for: closerBow!)?.geometry = geometry
-//                        self.sceneView.node(for: closerBow!)?.eulerAngles.x = Float.pi/2
-                    }
-                }
-                
-                
-                
-//                let greenMaterial = SCNMaterial()
-//                greenMaterial.diffuse.contents = UIColor.red
-//                self.sceneView.node(for: closerBow!)?.geometry?.firstMaterial = greenMaterial
-//                geometry.materials.first?.diffuse.contents = UIColor.red
-//                self.sceneView.node(for: closerBow!)?.geometry = nil
-                self.sceneView.node(for: closerBow!)?.childNodes[0].geometry = redGeometry
-//                self.sceneView.node(for: closerBow!)?.geometry = geometry
-//                self.sceneView.node(for: closerBow!)?.eulerAngles.x = Float.pi/2
-                
+//                for bowAnchor in bows {
+//                    if bowAnchor != closerBow{
+//                        self.sceneView.node(for: bowAnchor)?.childNodes[0].geometry = greenGeometry
+//                    }
+//                }
+//
+//                self.sceneView.node(for: closerBow!)?.childNodes[0].geometry = redGeometry
+
                 let distance = closerBow?.distance(from: currentFrame.camera)
                 
                 if distance! < 0.2 {
