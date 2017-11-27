@@ -3,20 +3,18 @@
 //  MiniChallenge5
 //
 //  Created by Vinícius Cano Santos on 09/11/17.
-//  Copyright © 2017 Osniel Lopes Teixeira. All rights reserved.
+//  Copyright ©️ 2017 Osniel Lopes Teixeira. All rights reserved.
 //
 
 import UIKit
 import SceneKit
 import ARKit
 
-class ARCircuitViewController: UIViewController, ARSKViewDelegate {
+class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDelegate{
     
     //MARK: Outlets
-
-    @IBOutlet var sceneView: ARSKView!
     @IBOutlet weak var time: UILabel!
-    
+    @IBOutlet var sceneView: ARSCNView!
     
     //MARK: Properties
     var bow: SCNNode!
@@ -27,6 +25,7 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
     var passage:Int = 0
     var startTime = TimeInterval()
     var isTimeCounting = false
+    var play: Aplay!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -35,14 +34,7 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
     //MARK: Life cicle functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        sceneView = sceneView as! ARSKView
-        self.sceneView.delegate = self
-        sceneView!.delegate = self
-        let scene = SKScene()
-        scene.scaleMode = .resizeFill
-        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.sceneView.presentScene(scene)
-
+        self.setUpScene()
         self.setUpBow()
         
         //set up geometries
@@ -52,6 +44,7 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+        restart()
         
         //Setting up constraints
         //        self.labelConstraints.constant = self.view.frame.size.height * 0.149
@@ -62,7 +55,6 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         self.sceneView.session.run(configuration)
-        
         let message: String = "Para adicionar um arco no circuito, apenas fique no local desejado e toque em qualquer lugar da tela."
         let alert = UIAlertController(title: "Novo Circuito", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Nenhum Circuito Disponível"), style: .default, handler: nil))
@@ -73,7 +65,7 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
         super.viewWillDisappear(animated)
         
         //Pausing the view's session
-        self.sceneView.session.pause()
+        //self.sceneView.session.pause()
     }
     
     override func didReceiveMemoryWarning() {
@@ -128,7 +120,7 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
         
     }
     
-    @IBAction func restart(_ sender: UIBarButtonItem) {
+    func restart() {
         for bow in bows{
             bow.didPass = false
         }
@@ -139,12 +131,12 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if !anchor.isKind(of: ARPlaneAnchor.self) {
             
-//            let bowGeometry = SCNGeometry()
-//
-//            let newBow = bow.clone()
-//            newBow.eulerAngles.y = (self.sceneView.session.currentFrame?.camera.eulerAngles.y)!
-//            node.addChildNode(newBow)
-//
+            //            let bowGeometry = SCNGeometry()
+            //
+            let newBow = bow.clone()
+            newBow.eulerAngles.y = (self.sceneView.session.currentFrame?.camera.eulerAngles.y)!
+            node.addChildNode(newBow)
+            //
             
             // Create a SceneKit circle
             //            let plane = SCNPlane(width: 1, height: 1)
@@ -192,14 +184,16 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
     //MARK: Scene lifetime
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
+        var seconds: UInt8!
+        var fraction: UInt8!
+        
         if isTimeCounting
         {
             var elapsedTime: TimeInterval = time - startTime
-            
-            let seconds = UInt8(elapsedTime)
+            seconds = UInt8(elapsedTime)
             elapsedTime -= TimeInterval(seconds)
             
-            let fraction = UInt8(elapsedTime * 100)
+            fraction = UInt8(elapsedTime * 100)
             
             //add the leading zero for minutes, seconds and millseconds and store them as string constants
             let strSeconds = String(format: "%03d", seconds)
@@ -227,14 +221,14 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
                     }
                 }
                 
-//                for bowAnchor in bows {
-//                    if bowAnchor != closerBow{
-//                        self.sceneView.node(for: bowAnchor)?.childNodes[0].geometry = greenGeometry
-//                    }
-//                }
-//
-//                self.sceneView.node(for: closerBow!)?.childNodes[0].geometry = redGeometry
-
+                for bowAnchor in bows {
+                    if bowAnchor != closerBow{
+                        self.sceneView.node(for: bowAnchor)?.childNodes[0].geometry = greenGeometry
+                    }
+                }
+                
+                self.sceneView.node(for: closerBow!)?.childNodes[0].geometry = redGeometry
+                
                 let distance = closerBow?.distance(from: currentFrame.camera)
                 
                 if distance! < 0.2 {
@@ -250,10 +244,22 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
                         if didEndCircuit(){
                             isTimeCounting = false
                             startTime = TimeInterval()
-                            let message: String = "Parabéns você acabou o circuito!"
+                            let message: String = "Digite seu nome:"
                             let alert = UIAlertController(title: "UHULLLLL", message: message, preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
+                            DispatchQueue.main.async {
+                                alert.addAction(
+                                    UIAlertAction(
+                                        title: NSLocalizedString("OK", comment: ""),
+                                        style: .default,
+                                        handler: { (action) in
+                                            Historic.add(Aplay(name: alert.textFields![0].text, seconds: seconds, fraction: fraction))
+                                            self.performSegue(withIdentifier: "toHistoric", sender: self)
+                                    }))
+                                alert.addTextField(configurationHandler: { (textField: UITextField! ) in
+                                    textField.isSecureTextEntry = false
+                                })
+                                self.present(alert, animated: true, completion: nil)
+                            }
                         }
                     } else {
                         passage += 1
@@ -268,6 +274,16 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
     
     
     //MARK: Setup functions
+    private func setUpScene(){
+        self.sceneView.delegate = self
+        self.sceneView.antialiasingMode = .multisampling4X
+        self.sceneView.autoenablesDefaultLighting = true
+        //self.sceneView.showsStatistics = true
+        
+        //Creating and adding a new scene
+        let scene = SCNScene()
+        self.sceneView.scene = scene
+    }
     
     private func setUpBow(){
         self.bow = SCNNode()
@@ -294,6 +310,7 @@ class ARCircuitViewController: UIViewController, ARSKViewDelegate {
         }
         return didEnd
     }
+    
     
     
     /*
