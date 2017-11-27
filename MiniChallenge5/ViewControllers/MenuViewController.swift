@@ -37,7 +37,6 @@ class MenuViewController: UIViewController {
         
         // Deixa a navigation bar sem sombra
             navigationController?.navigationBar.shadowImage = UIImage()
-        
 
     }
     

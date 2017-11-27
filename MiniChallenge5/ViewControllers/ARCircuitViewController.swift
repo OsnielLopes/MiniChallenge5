@@ -38,12 +38,13 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
         self.setUpBow()
         
         //set up geometries
-        greenGeometry.firstMaterial?.diffuse.contents = UIColor.green
-        redGeometry.firstMaterial?.diffuse.contents = UIColor.red
+        greenGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 89/255, green: 53/255, blue: 182/255, alpha: 1)
+        redGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 237/255, green: 85/255, blue: 123/255, alpha: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         restart()
         
         //Setting up constraints
@@ -130,25 +131,10 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
     //MARK: Anchor callback functions
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if !anchor.isKind(of: ARPlaneAnchor.self) {
-            
-            //            let bowGeometry = SCNGeometry()
-            //
+
             let newBow = bow.clone()
             newBow.eulerAngles.y = (self.sceneView.session.currentFrame?.camera.eulerAngles.y)!
             node.addChildNode(newBow)
-            //
-            
-            // Create a SceneKit circle
-            //            let plane = SCNPlane(width: 1, height: 1)
-            //            plane.cornerRadius = plane.width/2
-            //            let planeNode = SCNNode(geometry: plane)
-            /*
-             `SCNPlane` is vertically oriented in its local coordinate space, so
-             rotate the plane to match the horizontal orientation of `ARPlaneAnchor`.
-             */
-            //            planeNode.eulerAngles.x = -.pi / 2
-            // Make the plane visualization semitransparent to clearly show real-world placement.
-            //planeNode.opacity = 0.25
             
         } else {
             
@@ -157,6 +143,7 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
             
             // Create a SceneKit plane to visualize the plane anchor using its position and extent.
             let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+            plane.firstMaterial?.diffuse.contents = UIColor(red: 235/255, green: 223/255, blue: 49/255, alpha: 1)
             let planeNode = SCNNode(geometry: plane)
             planeNode.simdPosition = float3(planeAnchor.center.x, 0, planeAnchor.center.z)
             
@@ -167,7 +154,7 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
             planeNode.eulerAngles.x = -.pi / 2
             
             // Make the plane visualization semitransparent to clearly show real-world placement.
-            planeNode.opacity = 0.25
+            planeNode.opacity = 0.5
             
             /*
              Add the plane visualization to the ARKit-managed node so that it tracks

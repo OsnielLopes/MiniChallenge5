@@ -9,6 +9,10 @@
 import UIKit
 
 class HistoricTableViewController: UITableViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+       self.navigationController?.navigationBar.tintColor = UIColor.black
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,14 +45,13 @@ class HistoricTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "play", for: indexPath) as! AplayTableViewCell
         let play = Historic.getPlayAtIndex(indexPath.row)
-        cell.name.text = play.name
+        cell.name.text = "\(indexPath.row+1)º \(play.name!)"
         let seconds = play.seconds
         let fraction = play.fraction
         let strSeconds = String(format: "%03d", seconds!)
         let strFraction = String(format: "%02d", fraction)
-
         cell.time.text = "\(strSeconds):\(strFraction)"
-
+        cell.backgroundView?.alpha = 0.5
         
 
         return cell

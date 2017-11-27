@@ -15,17 +15,21 @@ class Historic {
     class func add(_ play: Aplay){
         if plays.count == 0{
             plays.append(play)
-        } else {
-            var lower = 0
-            for i in 0..<plays.count{
-                if plays[i].seconds < play.seconds && plays[i].fraction < play.fraction {
-                    lower = i
-                } else {
+        } else{
+            for i in stride(from: plays.count-1, to: -1, by: -1){
+                if plays[i].seconds <= play.seconds {
+                    if plays[i].fraction < play.fraction {
+                        plays.insert(play, at: i+1)
+                    } else {
+                        plays.insert(play, at: i)
+                    }
                     break
+                } else if i == 0 {
+                    plays.insert(play, at: 0)
                 }
             }
-            plays.insert(play, at: lower+1)
         }
+        
     }
     
     class func getPlays() -> [Aplay]{

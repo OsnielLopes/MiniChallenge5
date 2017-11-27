@@ -360,7 +360,7 @@
             </objects>
             <point key="canvasLocation" x="-479.19999999999999" y="-246.02698650674665"/>
         </scene>
-        <!--Histórico-->
+        <!--Ranking-->
         <scene sceneID="MP8-zV-u4f">
             <objects>
                 <tableViewController id="bi4-ZA-JbG" customClass="HistoricTableViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
@@ -377,7 +377,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lif-0M-vAk">
-                                            <rect key="frame" x="22" y="11" width="122" height="21"/>
+                                            <rect key="frame" x="22" y="11" width="215" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -403,7 +403,7 @@
                             <outlet property="delegate" destination="bi4-ZA-JbG" id="grw-3E-2w7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Histórico" id="mg5-An-XfO"/>
+                    <navigationItem key="navigationItem" title="Ranking" id="mg5-An-XfO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRd-yM-Kqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
