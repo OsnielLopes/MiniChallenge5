@@ -57,12 +57,22 @@ class SignInViewController: UIViewController {
         emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.350
         emailTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         emailTextField.setBottomBorder()
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: " E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        
+//        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
+//        let emailBorder = CALayer()
+//        let width = CGFloat(2.0)
+//        emailBorder.borderColor = UIColor.black.cgColor
+//        emailBorder.frame = CGRect(x: 0, y: emailTextField.frame.size.height, width: emailTextField.frame.size.width, height: emailTextField.frame.size.height)
+//        emailBorder.borderWidth = width
+//        emailTextField.layer.addSublayer(emailBorder)
+//        emailTextField.layer.masksToBounds = true
+        
         
         passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.428
         passwordTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         passwordTextField.setBottomBorder()
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: " Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         signInButtonTopConstraint.constant = self.view.frame.size.height * 0.523
         signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.650

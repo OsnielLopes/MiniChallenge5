@@ -56,22 +56,22 @@ class SignUpViewController: UIViewController {
         emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.350
         emailTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         emailTextField.setBottomBorder()
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: " E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.428
         passwordTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         passwordTextField.setBottomBorder()
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: " Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         confirmPasswordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.506
         confirmPasswordTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         confirmPasswordTextField.setBottomBorder()
-        confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string: "Confirm Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string: " Confirm Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         usernameTextFieldTopConstraint.constant = self.view.frame.size.height * 0.584
         usernameTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         usernameTextField.setBottomBorder()
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: " Username", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.650
     }
