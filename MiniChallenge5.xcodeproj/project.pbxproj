@@ -31,6 +31,9 @@
 		49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */; };
 		49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */; };
 		4E61A50783D6CB220B032375 /* Pods_MiniChallenge5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */; };
+		B022730C1FCDEB65002050FD /* CIND.otf in Resources */ = {isa = PBXBuildFile; fileRef = B02273091FCDEB65002050FD /* CIND.otf */; };
+		B022730D1FCDEB65002050FD /* CIND_promo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B022730A1FCDEB65002050FD /* CIND_promo.jpg */; };
+		B022730E1FCDEB65002050FD /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = B022730B1FCDEB65002050FD /* Readme.txt */; };
 		B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */; };
 		B0D3F71A1FB3979F002CD1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D3F7191FB3979F002CD1BB /* Main.storyboard */; };
 		B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC31FB4B7050058992D /* MenuViewController.swift */; };
@@ -95,6 +98,9 @@
 		8546D37CF4375CCE5024DFE2 /* Pods_MiniChallenge5Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniChallenge5Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862BD4D4EAD841E271117D65 /* Pods-MiniChallenge5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5/Pods-MiniChallenge5.release.xcconfig"; sourceTree = "<group>"; };
 		9F1999E63424E1C3D405115D /* Pods-MiniChallenge5Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5Tests/Pods-MiniChallenge5Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B02273091FCDEB65002050FD /* CIND.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIND.otf; sourceTree = "<group>"; };
+		B022730A1FCDEB65002050FD /* CIND_promo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CIND_promo.jpg; sourceTree = "<group>"; };
+		B022730B1FCDEB65002050FD /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
 		B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B0D3F7191FB3979F002CD1BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0E69CC31FB4B7050058992D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 		4996C8D11FB0BAE200A9C1FB /* MiniChallenge5 */ = {
 			isa = PBXGroup;
 			children = (
+				B02273081FCDEB65002050FD /* cyberpunk_is_not_dead */,
 				49C0AF8B1FCDD26500CEA93A /* Protocols */,
 				457789AD1FC9FE7C00DDB63B /* DataManager */,
 				457789AA1FC9FE3600DDB63B /* Model */,
@@ -265,6 +272,16 @@
 			);
 			path = Protocols;
 			sourceTree = "<group>";
+		};
+		B02273081FCDEB65002050FD /* cyberpunk_is_not_dead */ = {
+			isa = PBXGroup;
+			children = (
+				B02273091FCDEB65002050FD /* CIND.otf */,
+				B022730A1FCDEB65002050FD /* CIND_promo.jpg */,
+				B022730B1FCDEB65002050FD /* Readme.txt */,
+			);
+			path = cyberpunk_is_not_dead;
+			sourceTree = SOURCE_ROOT;
 		};
 		B0AD2D381FCA27960028CA39 /* ViewControllers */ = {
 			isa = PBXGroup;
@@ -403,9 +420,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4996C8D51FB0BAE200A9C1FB /* art.scnassets in Resources */,
+				B022730D1FCDEB65002050FD /* CIND_promo.jpg in Resources */,
+				B022730C1FCDEB65002050FD /* CIND.otf in Resources */,
 				4996C8DF1FB0BAE200A9C1FB /* LaunchScreen.storyboard in Resources */,
 				4996C8DC1FB0BAE200A9C1FB /* Assets.xcassets in Resources */,
 				B0D3F71A1FB3979F002CD1BB /* Main.storyboard in Resources */,
+				B022730E1FCDEB65002050FD /* Readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
