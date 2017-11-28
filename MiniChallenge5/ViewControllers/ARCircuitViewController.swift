@@ -220,12 +220,13 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
                 
                 if distance! < 0.2 {
                     
-                    if passage == 10 {
+                    if passage == 7 {
                         if !isTimeCounting {
                             isTimeCounting = true
                             startTime = time
                         }
                         print("-------------------PASSOU, oloco meu!!!----------------")
+                        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                         passage = 0
                         closerBow?.pass()
                         if didEndCircuit(){
@@ -239,7 +240,7 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
                                         title: NSLocalizedString("OK", comment: ""),
                                         style: .default,
                                         handler: { (action) in
-                                            Historic.add(Aplay(name: alert.textFields![0].text, seconds: seconds, fraction: fraction))
+                                            Ranking.add(Aplay(name: alert.textFields![0].text, seconds: seconds, fraction: fraction))
                                             self.performSegue(withIdentifier: "toHistoric", sender: self)
                                     }))
                                 alert.addTextField(configurationHandler: { (textField: UITextField! ) in

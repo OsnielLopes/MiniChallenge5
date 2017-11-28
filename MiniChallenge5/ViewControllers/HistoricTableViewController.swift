@@ -38,13 +38,13 @@ class HistoricTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Historic.getPlays().count
+        return Ranking.getPlays().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "play", for: indexPath) as! AplayTableViewCell
-        let play = Historic.getPlayAtIndex(indexPath.row)
+        let play = Ranking.getPlayAtIndex(indexPath.row)
         cell.name.text = "\(indexPath.row+1)º \(play.name!)"
         let seconds = play.seconds
         let fraction = play.fraction

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Historic {
+class Ranking {
     
     private static var plays = [Aplay]()
     

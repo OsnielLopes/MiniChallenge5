@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CircuitDataManager{
+class CircuitDataManager : CircuitDataManagerProtocol{
     //MARK: Create Circuit
     func create(circuit: Circuit, callback: @escaping (_ : Circuit) -> Void){
         
