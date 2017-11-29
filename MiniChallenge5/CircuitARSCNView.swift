@@ -1,90 +1,64 @@
 //
-//  createCircuit.swift
+//  CircuitARSCNView.swift
 //  MiniChallenge5
 //
-//  Created by Vinícius Cano Santos on 09/11/17.
-//  Copyright ©️ 2017 Osniel Lopes Teixeira. All rights reserved.
+//  Created by Osniel Lopes Teixeira on 29/11/2017.
+//  Copyright © 2017 Osniel Lopes Teixeira. All rights reserved.
 //
 
-import UIKit
-import SceneKit
+import Foundation
 import ARKit
 
-class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDelegate{
+class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     
-    //MARK: Outlets
-    @IBOutlet weak var time: UILabel!
-    @IBOutlet var sceneView: ARSCNView!
-    
-    //MARK: Properties
-    var bow: SCNNode!
-    let nodeName = "bow"
+    var time = UILabel()
+    var bow = SCNNode()
     var bows = [ARBowAnchor]()
-    var greenGeometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
-    var redGeometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
-    var passage:Int = 0
+    var purpleGeometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
+    var pinkGeometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
+    var passage: Int = 0
     var startTime = TimeInterval()
     var isTimeCounting = false
-    var play: Aplay!
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    //MARK: Life cicle functions
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setUpScene()
-        self.setUpBow()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        //set up geometries
-        greenGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 89/255, green: 53/255, blue: 182/255, alpha: 1)
-        redGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 237/255, green: 85/255, blue: 123/255, alpha: 1)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        restart()
+        self.delegate = self
+        self.antialiasingMode = .multisampling4X
+        self.autoenablesDefaultLighting = true
+        self.scene = SCNScene()
         
-        //Setting up constraints
-        //        self.labelConstraints.constant = self.view.frame.size.height * 0.149
-        //        self.labelLeadingConstraint.constant = self.view.frame.size.width * 0.106
-        //        self.labelTrailingConstraint.constant = self.view.frame.size.width * 0.106
-        
-        //Initializing ARKit session (here, the access to the camera will be necessary)
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
-        self.sceneView.session.run(configuration)
-        let message: String = "Para adicionar um arco no circuito, apenas fique no local desejado e toque em qualquer lugar da tela."
-        let alert = UIAlertController(title: "Novo Circuito", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Nenhum Circuito Disponível"), style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        self.session.run(configuration)
         
-        //Pausing the view's session
-        //self.sceneView.session.pause()
+        //add the label for the chronometer
+        self.addSubview(time)
+        
+        //configure the bow node
+        self.bow.eulerAngles.x = Float.pi/2
+        
+        //set up geometries
+        purpleGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 89/255, green: 53/255, blue: 182/255, alpha: 1)
+        pinkGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 237/255, green: 85/255, blue: 123/255, alpha: 1)
+        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: Touches handler
+    func circuitWillAppear() {
+        for bow in bows{
+            bow.didPass = false
+        }
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        //        let cubeNode = SCNNode(geometry: SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0))
-        //        cubeNode.position = SCNVector3(0, 0, -0.2) // SceneKit/AR coordinates are in meters
-        //        sceneView.scene.rootNode.addChildNode(cubeNode)
-        
-        //find planes in the 3D space
-        let location = touches.first!.location(in: sceneView)
-        let existingPlaneResult = self.sceneView.hitTest(location, types: .existingPlane)
-        let estimatedHotizontalResult = self.sceneView.hitTest(location, types: .estimatedHorizontalPlane)
+        let location = touches.first!.location(in: self)
+        let existingPlaneResult = self.hitTest(location, types: .existingPlane)
+        let estimatedHotizontalResult = self.hitTest(location, types: .estimatedHorizontalPlane)
         
         var results: [ARHitTestResult]!
         if existingPlaneResult.count == 0 {
@@ -104,40 +78,12 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
             let anchor = ARBowAnchor(transform: translate)
             bows.append(anchor)
             
-            self.sceneView.session.add(anchor: anchor)
-        }
-        
-        //        hitTestOptions[SCNHitTestOption.boundingBoxOnly] = true
-        //
-        //        //In case of a model be hited, removes it
-        //        if let hit = hitResults.first {
-        //            if let node = getParent(hit.node) {
-        //                node.removeFromParentNode()
-        //                return
-        //            }
-        //        }
-        //        //Else, add a new anchor to the scene
-        //        self.sceneView.session.add(anchor: ARAnchor(transform: (self.sceneView.session.currentFrame?.camera.transform)!))
-        
-    }
-    
-    func restart() {
-        for bow in bows{
-            bow.didPass = false
+            self.session.add(anchor: anchor)
         }
     }
-    
-    
-    //MARK: Anchor callback functions
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if !anchor.isKind(of: ARPlaneAnchor.self) {
 
-            let newBow = bow.clone()
-            newBow.eulerAngles.y = (self.sceneView.session.currentFrame?.camera.eulerAngles.y)!
-            node.addChildNode(newBow)
-            
-        } else {
-            
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if anchor.isKind(of: ARPlaneAnchor.self){
             // Place content only for anchors found by plane detection.
             guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
             
@@ -163,12 +109,7 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
             node.addChildNode(planeNode)
         }
     }
-    
-    func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-        return SKShapeNode(fileNamed: "Purple_Circle")
-    }
-    
-    //MARK: Scene lifetime
+
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
         var seconds: UInt8!
@@ -192,7 +133,7 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
             }
         }
         
-        if let currentFrame = self.sceneView.session.currentFrame{
+        if let currentFrame = self.session.currentFrame{
             if bows.count > 0 && !didEndCircuit() {
                 
                 var closerBow: ARBowAnchor?
@@ -210,11 +151,11 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
                 
                 for bowAnchor in bows {
                     if bowAnchor != closerBow{
-                        self.sceneView.node(for: bowAnchor)?.childNodes[0].geometry = greenGeometry
+                        self.node(for: bowAnchor)?.childNodes[0].geometry = purpleGeometry
                     }
                 }
                 
-                self.sceneView.node(for: closerBow!)?.childNodes[0].geometry = redGeometry
+                self.node(for: closerBow!)?.childNodes[0].geometry = pinkGeometry
                 
                 let distance = closerBow?.distance(from: currentFrame.camera)
                 
@@ -241,12 +182,13 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
                                         style: .default,
                                         handler: { (action) in
                                             Ranking.add(Aplay(name: alert.textFields![0].text, seconds: seconds, fraction: fraction))
-                                            self.performSegue(withIdentifier: "toHistoric", sender: self)
+                                            //TODO: implementar um listener ou notification
+                    
                                     }))
                                 alert.addTextField(configurationHandler: { (textField: UITextField! ) in
                                     textField.isSecureTextEntry = false
                                 })
-                                self.present(alert, animated: true, completion: nil)
+                                self.parentViewController?.present(alert, animated: true, completion: nil)
                             }
                         }
                     } else {
@@ -260,37 +202,6 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
         }
     }
     
-    
-    //MARK: Setup functions
-    private func setUpScene(){
-        self.sceneView.delegate = self
-        self.sceneView.antialiasingMode = .multisampling4X
-        self.sceneView.autoenablesDefaultLighting = true
-        //self.sceneView.showsStatistics = true
-        
-        //Creating and adding a new scene
-        let scene = SCNScene()
-        self.sceneView.scene = scene
-    }
-    
-    private func setUpBow(){
-        self.bow = SCNNode()
-        self.bow.eulerAngles.x = Float.pi/2
-        self.bow.name = nodeName
-    }
-    
-    //MARK: Aux functionsAux
-    private func getParent(_ nodeFound: SCNNode?) -> SCNNode? {
-        if let node = nodeFound {
-            if node.name == self.nodeName {
-                return node
-            } else if let parent = node.parent {
-                return getParent(parent)
-            }
-        }
-        return nil
-    }
-    
     private func didEndCircuit() -> Bool{
         var didEnd: Bool = true
         for bow in bows {
@@ -299,16 +210,14 @@ class ARCircuitViewController: UIViewController, ARSCNViewDelegate, ARSKViewDele
         return didEnd
     }
     
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
 }
