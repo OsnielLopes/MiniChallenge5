@@ -9,6 +9,14 @@
 import Foundation
 
 class CircuitDataManager : CircuitDataManagerProtocol{
+    func getCircuitLocations(callback: @escaping ([Bow]) -> ()) {
+        //TODO: implementar esse método
+    }
+    
+    func getCircuit(by id: Int, callback: @escaping (Circuit) -> ()) {
+        //TODO: implementar esse método
+    }
+    
     //MARK: Create Circuit
     func create(circuit: Circuit, callback: @escaping (_ : Circuit) -> Void){
         

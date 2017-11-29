@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MWu-Up-HUJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RO2-zD-AVY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -282,7 +282,7 @@
                                 <rect key="frame" x="87" y="350" width="200" height="45"/>
                                 <state key="normal" image="Play_Button"/>
                                 <connections>
-                                    <segue destination="i85-ZI-DMa" kind="show" id="0RO-Jw-02B"/>
+                                    <segue destination="i85-ZI-DMa" kind="show" id="dtQ-VE-umI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb9-hv-WeP">
@@ -324,16 +324,64 @@
                         <outlet property="circleImageTopConstraint" destination="iog-Fj-sjV" id="FGO-TN-Zem"/>
                         <outlet property="locationsMapButtonConstraint" destination="w1v-EA-2na" id="cby-3g-y7W"/>
                         <outlet property="playButtonConstraint" destination="etO-20-gsC" id="HQ7-aK-mA4"/>
+                        <segue destination="i85-ZI-DMa" kind="show" identifier="toAR" id="UoC-xW-7Lv"/>
+                        <segue destination="Rx9-yF-55j" kind="show" id="tzs-pb-Kmb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Pg-FN-FWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1309.5999999999999" y="407.0464767616192"/>
         </scene>
-        <!--Circuit View Controller-->
+        <!--View Controller-->
+        <scene sceneID="vaX-Ld-xMd">
+            <objects>
+                <viewController id="Rx9-yF-55j" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pNK-zz-kGx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Colocar dois botoes um para a interface de criar um circuito outra para jogar o circuito do local" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxF-6G-QgP">
+                                <rect key="frame" x="82" y="194" width="210" height="218"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7Qw-29-mq8"/>
+                    </view>
+                    <connections>
+                        <segue destination="i85-ZI-DMa" kind="show" id="1tk-HK-ff5"/>
+                        <segue destination="m1m-3y-t6c" kind="show" id="l2I-Mb-E6X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cld-Nf-JCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375.19999999999999" y="404.34782608695656"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xgg-oR-9Vk">
+            <objects>
+                <viewController id="m1m-3y-t6c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YK8-Ap-WFL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sGF-cV-23d"/>
+                    </view>
+                    <connections>
+                        <segue destination="bi4-ZA-JbG" kind="show" id="9Ur-6p-ioS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F99-M0-dKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="614" y="404"/>
+        </scene>
+        <!--CreatableAR Circuit View Controller-->
         <scene sceneID="yRx-js-qLV">
             <objects>
-                <viewController id="i85-ZI-DMa" customClass="ARCircuitViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i85-ZI-DMa" customClass="CreatableARCircuitViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -358,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDM-mA-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-479.19999999999999" y="-246.02698650674665"/>
+            <point key="canvasLocation" x="-375" y="-478"/>
         </scene>
         <!--Ranking-->
         <scene sceneID="MP8-zV-u4f">
@@ -407,7 +455,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRd-yM-Kqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="-246.02698650674665"/>
+            <point key="canvasLocation" x="1884" y="407"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jKe-vH-GWr">
@@ -480,11 +528,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="lHt-UJ-lEy" id="Qnf-1Z-cCf"/>
+                        <segue destination="bi4-ZA-JbG" kind="show" id="qUj-Uz-07m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Z7-MJ-aNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="1216"/>
+            <point key="canvasLocation" x="614" y="1216"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wP8-yk-JCy">
@@ -502,7 +551,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ega-bT-xad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410" y="1216"/>
+            <point key="canvasLocation" x="-375" y="1216"/>
         </scene>
     </scenes>
     <resources>
@@ -514,4 +563,8 @@
         <image name="SignUp_Button" width="200" height="45"/>
         <image name="perfil" width="500" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JLr-ee-Scu"/>
+        <segue reference="dtQ-VE-umI"/>
+    </inferredMetricsTieBreakers>
 </document>
