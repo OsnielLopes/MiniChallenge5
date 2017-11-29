@@ -20,6 +20,18 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TESTE
+        let circuitDataManager: CircuitDataManager = CircuitDataManager()
+        var circuit: Circuit = Circuit();
+        circuit.bows.append(Bow(latitude: 10, longitude: 20))
+        circuit.bows.append(Bow(latitude: 20, longitude: 30))
+        circuit.bows.append(Bow(latitude: 30, longitude: 40))
+        circuit.bows.append(Bow(latitude: 40, longitude: 50))
+        circuit.bows.append(Bow(latitude: 50, longitude: 60))
+        circuitDataManager.create(circuit: circuit, callback: {print("***CEATED CIRCUIT: \($0)***")})
+        //TESTE
+        
         //Coloca imagem e filtro no background da view
         let backgroundImage = UIImageView(frame: self.view.frame)
         let filterImage = UIImageView(frame: self.view.frame)
