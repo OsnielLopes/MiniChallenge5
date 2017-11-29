@@ -18,6 +18,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(circuit)
+            print("Encoded Data: \(String(data: jsonData, encoding: .utf8))")
             let url = URL(string: "https://cyber-runner.herokuapp.com/circuit")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -28,10 +29,19 @@ class CircuitDataManager : CircuitDataManagerProtocol{
                     print(error.localizedDescription)
                     return
                 }
+                
+                let httpResponse = response as! HTTPURLResponse
+                print("Request Status Code: \(httpResponse.statusCode)")
+                
                 if let data = data{
+                    var recievedData: String = String(data: data, encoding: .utf8)!
+                    recievedData = recievedData.replacingOccurrences(of: ":[{\"latitude\":\"", with: ":[{\"latitude\":")
+                                               .replacingOccurrences(of: "\"},{\"latitude\":\"", with: "},{\"latitude\":")
+                                               .replacingOccurrences(of: "\",\"longitude\":\"", with: ",\"longitude\":")
+                                               .replacingOccurrences(of: "\"}],\"id\":", with: "}],\"id\":")
                     let decoder = JSONDecoder()
                     do {
-                        let circuit: Circuit = try decoder.decode(Circuit.self, from: data)
+                        let circuit: Circuit = try decoder.decode(Circuit.self, from: recievedData.data(using: .utf8)!)
                         callback(circuit)
                     } catch {
                         print("Impossible to decode to circuit from data")
