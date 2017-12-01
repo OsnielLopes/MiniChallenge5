@@ -9,9 +9,9 @@
 import Foundation
 import ARKit
 
-class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
+class CircuitARSCNView: ARSCNView {
     
-    var time = UILabel()
+    var time = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
     var bow = SCNNode()
     var bows = [ARBowAnchor]()
     var purpleGeometry = SCNTorus(ringRadius: 0.3, pipeRadius: 0.07)
@@ -19,6 +19,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     var passage: Int = 0
     var startTime = TimeInterval()
     var isTimeCounting = false
+    weak var delegate: CircuitARSCNViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,7 +35,8 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
         
         //add the label for the chronometer
         self.addSubview(time)
-        
+        let centerXConstraint = NSLayoutConstraint(item: time, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 100)
+        let centerYConstraint = NSLayoutConstraint(item: time, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -150)
         //configure the bow node
         self.bow.eulerAngles.x = Float.pi/2
         
@@ -166,30 +168,13 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
                             isTimeCounting = true
                             startTime = time
                         }
-                        print("-------------------PASSOU, oloco meu!!!----------------")
                         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                         passage = 0
                         closerBow?.pass()
                         if didEndCircuit(){
                             isTimeCounting = false
                             startTime = TimeInterval()
-                            let message: String = "Digite seu nome:"
-                            let alert = UIAlertController(title: "UHULLLLL", message: message, preferredStyle: .alert)
-                            DispatchQueue.main.async {
-                                alert.addAction(
-                                    UIAlertAction(
-                                        title: NSLocalizedString("OK", comment: ""),
-                                        style: .default,
-                                        handler: { (action) in
-                                            Ranking.add(Aplay(name: alert.textFields![0].text, seconds: seconds, fraction: fraction))
-                                            //TODO: implementar um listener ou notification
-                    
-                                    }))
-                                alert.addTextField(configurationHandler: { (textField: UITextField! ) in
-                                    textField.isSecureTextEntry = false
-                                })
-                                self.parentViewController?.present(alert, animated: true, completion: nil)
-                            }
+                            delegate?.didEndCircuit(seconds: seconds, fraction: fraction)
                         }
                     } else {
                         passage += 1
@@ -208,16 +193,5 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
             didEnd = didEnd && bow.didPass
         }
         return didEnd
-    }
-    
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
     }
 }
