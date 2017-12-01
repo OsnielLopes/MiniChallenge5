@@ -11,7 +11,7 @@ import MapKit
 
 extension CLLocation {
     func toCoordinate() -> Bow {
-        return Bow(id: nil, latitude: self.coordinate.latitude, longitude: self.coordinate.longitude, circuit: nil)
+        return Bow(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
     }
 }
 

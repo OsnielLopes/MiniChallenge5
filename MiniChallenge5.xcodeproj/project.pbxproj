@@ -12,6 +12,8 @@
 		457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */; };
 		457789BD1FCB3B5600DDB63B /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789BC1FCB3B5600DDB63B /* Circuit.swift */; };
 		457789BF1FCB493600DDB63B /* CircuitDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789BE1FCB493600DDB63B /* CircuitDataManager.swift */; };
+		457789C51FCF387300DDB63B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C41FCF387300DDB63B /* Player.swift */; };
+		457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C61FCF388200DDB63B /* PlayerDataManager.swift */; };
 		4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4940F16D1FB924C100663456 /* LocationTableViewCell.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */; };
@@ -31,6 +33,7 @@
 		49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */; };
 		49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */; };
 		49C0AF911FCF157900CEA93A /* CircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */; };
+		49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewProtocol.swift */; };
 		4E61A50783D6CB220B032375 /* Pods_MiniChallenge5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */; };
 		B022730C1FCDEB65002050FD /* CIND.otf in Resources */ = {isa = PBXBuildFile; fileRef = B02273091FCDEB65002050FD /* CIND.otf */; };
 		B022730D1FCDEB65002050FD /* CIND_promo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B022730A1FCDEB65002050FD /* CIND_promo.jpg */; };
@@ -69,6 +72,8 @@
 		457789B81FCB32FC00DDB63B /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
 		457789BC1FCB3B5600DDB63B /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		457789BE1FCB493600DDB63B /* CircuitDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitDataManager.swift; sourceTree = "<group>"; };
+		457789C41FCF387300DDB63B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		457789C61FCF388200DDB63B /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
 		4940F16D1FB924C100663456 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		4996C8CF1FB0BAE200A9C1FB /* MiniChallenge5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +99,7 @@
 		49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitDataManagerProtocol.swift; sourceTree = "<group>"; };
 		49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManagerProtocol.swift; sourceTree = "<group>"; };
 		49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircuitARSCNView.swift; path = MiniChallenge5/CircuitARSCNView.swift; sourceTree = SOURCE_ROOT; };
+		49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitARSCNViewProtocol.swift; sourceTree = "<group>"; };
 		5885A99FD75184EE377452D0 /* Pods-MiniChallenge5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E4CD335496BCE8F7D32985C /* Pods-MiniChallenge5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5/Pods-MiniChallenge5.debug.xcconfig"; sourceTree = "<group>"; };
 		683DB0CD8C2DF432E8731A82 /* Pods-MiniChallenge5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 		457789AA1FC9FE3600DDB63B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				457789C41FCF387300DDB63B /* Player.swift */,
 				457789AB1FC9FE4700DDB63B /* Faction.swift */,
 				49C0AF811FCB699700CEA93A /* Bow.swift */,
 				457789BC1FCB3B5600DDB63B /* Circuit.swift */,
@@ -170,6 +177,7 @@
 		457789AD1FC9FE7C00DDB63B /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				457789C61FCF388200DDB63B /* PlayerDataManager.swift */,
 				457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */,
 				457789BE1FCB493600DDB63B /* CircuitDataManager.swift */,
 			);
@@ -272,6 +280,7 @@
 			children = (
 				49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */,
 				49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */,
+				49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -607,6 +616,8 @@
 				4996C90A1FB20F0200A9C1FB /* Extensions.swift in Sources */,
 				B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */,
 				B0E69CC81FB4EF790058992D /* AboutViewController.swift in Sources */,
+				457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */,
+				457789C51FCF387300DDB63B /* Player.swift in Sources */,
 				4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */,
 				4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */,
 				49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */,
@@ -617,6 +628,7 @@
 				49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */,
 				49C0AF8A1FCB9E3200CEA93A /* AplayTableViewCell.swift in Sources */,
 				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
+				49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewProtocol.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,
 				49C0AF861FCB963300CEA93A /* Ranking.swift in Sources */,
 				457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */,
@@ -784,7 +796,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
@@ -800,7 +812,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;

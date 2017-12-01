@@ -17,7 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var lastValidBow: Bow!
     let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     let regionRadius: CLLocationDistance = 1000
-    var circuit: Circuit = Circuit.init(id: nil)
+    var circuit: Circuit = Circuit.init()
     
     
     override func viewDidLoad() {
