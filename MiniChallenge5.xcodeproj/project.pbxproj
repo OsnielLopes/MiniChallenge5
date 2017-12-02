@@ -37,6 +37,8 @@
 		49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */; };
 		49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */; };
 		49C0AF911FCF157900CEA93A /* CircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */; };
+		49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift */; };
+		49C0AF961FD1BCE000CEA93A /* LocalARCircuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF951FD1BCE000CEA93A /* LocalARCircuitViewController.swift */; };
 		4E61A50783D6CB220B032375 /* Pods_MiniChallenge5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */; };
 		B022730C1FCDEB65002050FD /* CIND.otf in Resources */ = {isa = PBXBuildFile; fileRef = B02273091FCDEB65002050FD /* CIND.otf */; };
 		B022730D1FCDEB65002050FD /* CIND_promo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B022730A1FCDEB65002050FD /* CIND_promo.jpg */; };
@@ -105,7 +107,9 @@
 		49C0AF891FCB9E3200CEA93A /* AplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AplayTableViewCell.swift; sourceTree = "<group>"; };
 		49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitDataManagerProtocol.swift; sourceTree = "<group>"; };
 		49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManagerProtocol.swift; sourceTree = "<group>"; };
-		49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircuitARSCNView.swift; path = MiniChallenge5/CircuitARSCNView.swift; sourceTree = SOURCE_ROOT; };
+		49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircuitARSCNView.swift; path = MiniChallenge5/AR/CircuitARSCNView.swift; sourceTree = SOURCE_ROOT; };
+		49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitARSCNViewDelegate.swift; sourceTree = "<group>"; };
+		49C0AF951FD1BCE000CEA93A /* LocalARCircuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalARCircuitViewController.swift; sourceTree = "<group>"; };
 		5885A99FD75184EE377452D0 /* Pods-MiniChallenge5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E4CD335496BCE8F7D32985C /* Pods-MiniChallenge5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5/Pods-MiniChallenge5.debug.xcconfig"; sourceTree = "<group>"; };
 		683DB0CD8C2DF432E8731A82 /* Pods-MiniChallenge5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */,
+				49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -237,7 +242,6 @@
 				4996C8D41FB0BAE200A9C1FB /* art.scnassets */,
 				B0AD2D381FCA27960028CA39 /* ViewControllers */,
 				4996C9091FB20F0200A9C1FB /* Extensions.swift */,
-				49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */,
 				4996C8DB1FB0BAE200A9C1FB /* Assets.xcassets */,
 				4996C8DD1FB0BAE200A9C1FB /* LaunchScreen.storyboard */,
 				4996C8E01FB0BAE200A9C1FB /* Info.plist */,
@@ -290,6 +294,7 @@
 			children = (
 				49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */,
 				49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */,
+				49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				B0E69CC91FB61FAD0058992D /* SignInViewController.swift */,
 				4996C9051FB0D12200A9C1FB /* MapViewController.swift */,
 				B0E69CC51FB4D8F40058992D /* CreatableARCircuitViewController.swift */,
+				49C0AF951FD1BCE000CEA93A /* LocalARCircuitViewController.swift */,
 				B0E69CC71FB4EF790058992D /* AboutViewController.swift */,
 				49C0AF891FCB9E3200CEA93A /* AplayTableViewCell.swift */,
 				49C0AF831FCB961B00CEA93A /* HistoricTableViewController.swift */,
@@ -635,12 +641,14 @@
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
 				49C0AF841FCB961B00CEA93A /* HistoricTableViewController.swift in Sources */,
 				49C0AF881FCB96CB00CEA93A /* Aplay.swift in Sources */,
+				49C0AF961FD1BCE000CEA93A /* LocalARCircuitViewController.swift in Sources */,
 				49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */,
 				49C0AF8A1FCB9E3200CEA93A /* AplayTableViewCell.swift in Sources */,
 				45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */,
 				451582E31FD309FC004249D2 /* DataManagerTest.swift in Sources */,
 				451BA6CC1FD05FF800C783D9 /* Play.swift in Sources */,
 				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
+				49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,
 				49C0AF861FCB963300CEA93A /* Ranking.swift in Sources */,
 				457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */,
@@ -808,7 +816,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C45KF93FKW;
+				DEVELOPMENT_TEAM = 53BLZ9DZN8;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
@@ -824,7 +832,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C45KF93FKW;
+				DEVELOPMENT_TEAM = 53BLZ9DZN8;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
