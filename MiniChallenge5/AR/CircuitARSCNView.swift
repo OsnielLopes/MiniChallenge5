@@ -9,7 +9,7 @@
 import Foundation
 import ARKit
 
-class CircuitARSCNView: ARSCNView {
+class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     
     var time = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
     var bow = SCNNode()
@@ -19,18 +19,26 @@ class CircuitARSCNView: ARSCNView {
     var passage: Int = 0
     var startTime = TimeInterval()
     var isTimeCounting = false
-    weak var delegate: CircuitARSCNViewDelegate?
+    var circuitDelegate: CircuitARSCNViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.delegate = self
+        setUp()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setUp()
+    }
+    
+    func setUp(){
         self.antialiasingMode = .multisampling4X
         self.autoenablesDefaultLighting = true
         self.scene = SCNScene()
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
+        self.delegate = self
         self.session.run(configuration)
         
         //add the label for the chronometer
@@ -43,11 +51,6 @@ class CircuitARSCNView: ARSCNView {
         //set up geometries
         purpleGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 89/255, green: 53/255, blue: 182/255, alpha: 1)
         pinkGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 237/255, green: 85/255, blue: 123/255, alpha: 1)
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func circuitWillAppear() {
@@ -55,35 +58,7 @@ class CircuitARSCNView: ARSCNView {
             bow.didPass = false
         }
     }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        let location = touches.first!.location(in: self)
-        let existingPlaneResult = self.hitTest(location, types: .existingPlane)
-        let estimatedHotizontalResult = self.hitTest(location, types: .estimatedHorizontalPlane)
-        
-        var results: [ARHitTestResult]!
-        if existingPlaneResult.count == 0 {
-            results = estimatedHotizontalResult
-        } else {
-            results = existingPlaneResult
-        }
-        
-        //takes the farthest real word point finded
-        if let closestResult = results.last {
-            
-            let matrix = SCNMatrix4(closestResult.worldTransform)
-            
-            //creates a indentity matriz that translates the point 1.5 meter up
-            let translate = simd_float4x4(SCNMatrix4Translate(matrix, 0, 1.5, 0))
-            
-            let anchor = ARBowAnchor(transform: translate)
-            bows.append(anchor)
-            
-            self.session.add(anchor: anchor)
-        }
-    }
-
+    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if anchor.isKind(of: ARPlaneAnchor.self){
             // Place content only for anchors found by plane detection.
@@ -111,7 +86,7 @@ class CircuitARSCNView: ARSCNView {
             node.addChildNode(planeNode)
         }
     }
-
+    
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
         var seconds: UInt8!
@@ -154,6 +129,9 @@ class CircuitARSCNView: ARSCNView {
                 for bowAnchor in bows {
                     if bowAnchor != closerBow{
                         self.node(for: bowAnchor)?.childNodes[0].geometry = purpleGeometry
+                        if bowAnchor.didPass {
+                            self.node(for: bowAnchor)?.opacity = 0.5
+                        }
                     }
                 }
                 
@@ -174,7 +152,7 @@ class CircuitARSCNView: ARSCNView {
                         if didEndCircuit(){
                             isTimeCounting = false
                             startTime = TimeInterval()
-                            delegate?.didEndCircuit(seconds: seconds, fraction: fraction)
+                            circuitDelegate?.didEndCircuit(seconds: seconds, fraction: fraction)
                         }
                     } else {
                         passage += 1

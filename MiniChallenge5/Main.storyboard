@@ -381,19 +381,18 @@
         <!--LocalAR Circuit View Controller-->
         <scene sceneID="yRx-js-qLV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDM-mA-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="i85-ZI-DMa" customClass="LocalARCircuitViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="ARSCNView">
+                    <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="LocalCircuitARSCNView" customModule="MiniChallenge5" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Ul1-ZB-RuP"/>
                     </view>
                     <connections>
-                        <outlet property="sceneView" destination="iXd-mH-xkB" id="8dI-Bj-bo4"/>
                         <segue destination="bi4-ZA-JbG" kind="show" identifier="toHistoric" id="JLr-ee-Scu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDM-mA-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-375" y="-478"/>
         </scene>
