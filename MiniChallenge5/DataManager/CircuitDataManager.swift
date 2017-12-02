@@ -24,7 +24,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(circuit)
-            let url = URL(string: "https://cyber-runner.herokuapp.com/circuit")!
+            let url = URL(string: "https://cyber-runner-development.herokuapp.com/circuit")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -52,7 +52,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
     
     //MARK: Read all Circuits
     func read(callback: @escaping (_ : [Circuit]) -> Void){
-        let url = URL(string: "https://cyber-runner.herokuapp.com/circuit")!
+        let url = URL(string: "https://cyber-runner-development.herokuapp.com/circuit")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -74,7 +74,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
     
     //MARK: Read Circuit by id
     func readById(id: Int, callback: @escaping (_ : Circuit) -> Void){
-        let url = URL(string: "https://cyber-runner.herokuapp.com/circuit/\(id)")!
+        let url = URL(string: "https://cyber-runner-development.herokuapp.com/circuit/\(id)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -95,15 +95,15 @@ class CircuitDataManager : CircuitDataManagerProtocol{
     }
     
     //MARK: Update Circuit
-//    func update(circuit: Circuit, callback: @escaping (_ : Circuit) -> Void){
-//        
-//    }
+    //    func update(circuit: Circuit, callback: @escaping (_ : Circuit) -> Void){
+    //
+    //    }
     
     //MARK: Delete Circuit
     func delete (id: Int, callback: @escaping (_ : Circuit) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner.herokuapp.com/circuit/\(id)")!
+            let url = URL(string: "https://cyber-runner-development.herokuapp.com/circuit/\(id)")!
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             
@@ -131,11 +131,17 @@ class CircuitDataManager : CircuitDataManagerProtocol{
     //MAKR: Aux funcs
     private func clean(data: Data) -> Data{
         var recievedData: String = String(data: data, encoding: .utf8)!
-        recievedData = recievedData.replacingOccurrences(of: ":[{\"latitude\":\"", with: ":[{\"latitude\":")
-            .replacingOccurrences(of: "\"},{\"latitude\":\"", with: "},{\"latitude\":")
-            .replacingOccurrences(of: "\",\"longitude\":\"", with: ",\"longitude\":")
-            .replacingOccurrences(of: "\"}],\"id\":", with: "}],\"id\":")
-            .replacingOccurrences(of: "\"}]}", with: "}]}")
+        if recievedData.contains("circuit_id"){
+            recievedData = recievedData.replacingOccurrences(of: "\"latitude\":\"", with: "\"latitude\":")
+                .replacingOccurrences(of: "\",\"longitude\":\"", with: ",\"longitude\":")
+                .replacingOccurrences(of: "\",\"circuit_id\"", with: ",\"circuit_id\"")
+        }else{
+            recievedData = recievedData.replacingOccurrences(of: ":[{\"latitude\":\"", with: ":[{\"latitude\":")
+                .replacingOccurrences(of: "\"},{\"latitude\":\"", with: "},{\"latitude\":")
+                .replacingOccurrences(of: "\",\"longitude\":\"", with: ",\"longitude\":")
+                .replacingOccurrences(of: "\"}],\"id\":", with: "}],\"id\":")
+                .replacingOccurrences(of: "\"}]}", with: "}]}")
+        }
         return recievedData.data(using: .utf8)!
     }
 }
