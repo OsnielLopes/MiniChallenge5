@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class RankingDataManager: RankingDataManagerProtocol{
+    func getRanking(by circuitId: Int, callback: @escaping (Ranking) -> ()) {
+        
+    }
+    
+    
+}
