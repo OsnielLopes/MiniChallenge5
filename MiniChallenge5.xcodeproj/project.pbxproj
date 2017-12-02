@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		38B0B6A3E59379536E30D0A9 /* Pods_MiniChallenge5Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8546D37CF4375CCE5024DFE2 /* Pods_MiniChallenge5Tests.framework */; };
+		451582E31FD309FC004249D2 /* DataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451582E21FD309FC004249D2 /* DataManagerTest.swift */; };
+		451BA6CC1FD05FF800C783D9 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451BA6CB1FD05FF800C783D9 /* Play.swift */; };
 		457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789AB1FC9FE4700DDB63B /* Faction.swift */; };
 		457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */; };
 		457789BD1FCB3B5600DDB63B /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789BC1FCB3B5600DDB63B /* Circuit.swift */; };
 		457789BF1FCB493600DDB63B /* CircuitDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789BE1FCB493600DDB63B /* CircuitDataManager.swift */; };
 		457789C51FCF387300DDB63B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C41FCF387300DDB63B /* Player.swift */; };
 		457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C61FCF388200DDB63B /* PlayerDataManager.swift */; };
+		45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */; };
+		45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */; };
 		4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4940F16D1FB924C100663456 /* LocationTableViewCell.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		495FE4071FD3185F00398537 /* LocalCircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */; };
@@ -68,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniChallenge5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		451582E21FD309FC004249D2 /* DataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTest.swift; sourceTree = "<group>"; };
+		451BA6CB1FD05FF800C783D9 /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
 		457789AB1FC9FE4700DDB63B /* Faction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faction.swift; sourceTree = "<group>"; };
 		457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactionDataManager.swift; sourceTree = "<group>"; };
 		457789B61FCB32F100DDB63B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -76,6 +82,8 @@
 		457789BE1FCB493600DDB63B /* CircuitDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitDataManager.swift; sourceTree = "<group>"; };
 		457789C41FCF387300DDB63B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		457789C61FCF388200DDB63B /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
+		45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManager.swift; sourceTree = "<group>"; };
+		45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDataManager.swift; sourceTree = "<group>"; };
 		4940F16D1FB924C100663456 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCircuitARSCNView.swift; sourceTree = "<group>"; };
@@ -174,6 +182,7 @@
 				457789BC1FCB3B5600DDB63B /* Circuit.swift */,
 				49C0AF851FCB963300CEA93A /* Ranking.swift */,
 				49C0AF871FCB96CB00CEA93A /* Aplay.swift */,
+				451BA6CB1FD05FF800C783D9 /* Play.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +193,9 @@
 				457789C61FCF388200DDB63B /* PlayerDataManager.swift */,
 				457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */,
 				457789BE1FCB493600DDB63B /* CircuitDataManager.swift */,
+				45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */,
+				45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */,
+				451582E21FD309FC004249D2 /* DataManagerTest.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -627,6 +639,7 @@
 				457789C51FCF387300DDB63B /* Player.swift in Sources */,
 				4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */,
 				4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */,
+				45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */,
 				49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */,
 				B0E69CC61FB4D8F40058992D /* CreatableARCircuitViewController.swift in Sources */,
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
@@ -635,6 +648,9 @@
 				49C0AF961FD1BCE000CEA93A /* LocalARCircuitViewController.swift in Sources */,
 				49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */,
 				49C0AF8A1FCB9E3200CEA93A /* AplayTableViewCell.swift in Sources */,
+				45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */,
+				451582E31FD309FC004249D2 /* DataManagerTest.swift in Sources */,
+				451BA6CC1FD05FF800C783D9 /* Play.swift in Sources */,
 				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
 				49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,

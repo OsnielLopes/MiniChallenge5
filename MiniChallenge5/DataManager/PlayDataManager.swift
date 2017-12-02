@@ -1,21 +1,20 @@
 //
-//  PlayerDataManager.swift
+//  PlayDataManager.swift
 //  MiniChallenge5
 //
-//  Created by Renan Soares Germano on 25/11/17.
+//  Created by Renan Soares Germano on 30/11/17.
 //  Copyright © 2017 Osniel Lopes Teixeira. All rights reserved.
 //
 
 import Foundation
 
-class PlayerDataManager{
-    
-    //MARK: Create Player
-    func create(player: Player, callback: @escaping (_ : Player) -> Void){
+class PlayDataManager{
+    //MARK: Create Play
+    func create(play: Play, callback: @escaping (_ : Play) ->Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let jsonData = try jsonEncoder.encode(player)
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/player")!
+            let jsonData = try jsonEncoder.encode(play)
+            let url = URL(string: "https://cyber-runner-development.herokuapp.com/play")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -26,24 +25,26 @@ class PlayerDataManager{
                     return
                 }
                 if let data = data{
+//                    var recievedData: String = String(data: data, encoding: .utf8)!
+//                    print("***Recieved Data: \(recievedData)***")
                     let decoder = JSONDecoder()
                     do {
-                        let player: Player = try decoder.decode(Player.self, from: data)
-                        callback(player)
+                        let play: Play = try decoder.decode(Play.self, from: data)
+                        callback(play)
                     } catch {
-                        print("Impossible to decode to player from data")
+                        print("Impossible to decode to play from data")
                     }
                 }
             }
             task.resume()
         } catch {
-            print("Impossible to generate JSON from circuit")
+            print("Impossible to generate JSON from play")
         }
     }
     
-    //MARK: Read all Players
-    func read(callback: @escaping (_ : [Player]) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player")!
+    //MARK: Read all Plays
+    func read(callback: @escaping (_ : [Play]) -> Void){
+        let url = URL(string: "https://cyber-runner-development.herokuapp.com/play")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -53,8 +54,8 @@ class PlayerDataManager{
             if let data = data{
                 let decoder = JSONDecoder()
                 do {
-                    let players: [Player] = try decoder.decode([Player].self, from: data)
-                    callback(players)
+                    let plays: [Play] = try decoder.decode([Play].self, from: data)
+                    callback(plays)
                 } catch {
                     print("Impossible to decode to Faction from data")
                 }
@@ -63,9 +64,9 @@ class PlayerDataManager{
         task.resume()
     }
     
-    //MARK: Read Player by id
-    func readById(id: Int, callback: @escaping (_ : Player) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/\(id)")!
+    //MARK: Read Play by id
+    func readById(id: Int, callback: @escaping (_ : Play) -> Void){
+        let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/\(id)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -75,8 +76,8 @@ class PlayerDataManager{
             if let data = data{
                 let decoder = JSONDecoder()
                 do {
-                    let player: Player = try decoder.decode(Player.self, from: data)
-                    callback(player)
+                    let play: Play = try decoder.decode(Play.self, from: data)
+                    callback(play)
                 } catch {
                     print("Impossible to decode to Faction from data")
                 }
@@ -85,9 +86,9 @@ class PlayerDataManager{
         task.resume()
     }
     
-    //MARK: Read Player by e-mail
-    func readByEmail(email: String, callback: @escaping (_ : Player) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/email/\(email)")!
+    //MARK: Read Play by Player
+    func readByPlayer(playerID: Int, callback: @escaping (_ : [Play]) -> Void){
+        let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/player/\(playerID)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -97,8 +98,8 @@ class PlayerDataManager{
             if let data = data{
                 let decoder = JSONDecoder()
                 do {
-                    let player: Player = try decoder.decode(Player.self, from: data)
-                    callback(player)
+                    let plays: [Play] = try decoder.decode([Play].self, from: data)
+                    callback(plays)
                 } catch {
                     print("Impossible to decode to Faction from data")
                 }
@@ -107,9 +108,9 @@ class PlayerDataManager{
         task.resume()
     }
     
-    //MARK: Read Player by Faction
-    func readByFaction(factionID: Int, callback: @escaping (_ : [Player]) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/faction/\(factionID)")!
+    //MARK: Read Play by Circuit
+    func readByCircuit(circuitID: Int, callback: @escaping (_ : [Play]) -> Void){
+        let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/circuit/\(circuitID)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -119,8 +120,8 @@ class PlayerDataManager{
             if let data = data{
                 let decoder = JSONDecoder()
                 do {
-                    let players: [Player] = try decoder.decode([Player].self, from: data)
-                    callback(players)
+                    let plays: [Play] = try decoder.decode([Play].self, from: data)
+                    callback(plays)
                 } catch {
                     print("Impossible to decode to Faction from data")
                 }
@@ -129,12 +130,12 @@ class PlayerDataManager{
         task.resume()
     }
     
-    //MARK: Update Player
-    func update(player: Player, callback: @escaping (_ : Player) -> Void){
+    //MARK: Update Play
+    func update(play: Play, callback: @escaping (_ : Play) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/\(player.id!)")!
-            var p = player
+            let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/\(play.id!)")!
+            var p = play
             p.id = nil
             let jsonData = try jsonEncoder.encode(p)
             var request = URLRequest(url: url)
@@ -149,8 +150,8 @@ class PlayerDataManager{
                 if let data = data{
                     let decoder = JSONDecoder()
                     do {
-                        let player: Player = try decoder.decode(Player.self, from: data)
-                        callback(player)
+                        let play: Play = try decoder.decode(Play.self, from: data)
+                        callback(play)
                     } catch {
                         print("Impossible to decode to Faction from data")
                     }
@@ -162,11 +163,11 @@ class PlayerDataManager{
         }
     }
     
-    //MARK: Delete Player
-    func delete (id: Int, callback: @escaping (_ : Player) -> Void){
+    //MARK: Delete Play
+    func delete(id: Int, callback: @escaping (_ : Play) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/\(id)")!
+            let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/\(id)")!
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             
@@ -178,8 +179,8 @@ class PlayerDataManager{
                 if let data = data{
                     let decoder = JSONDecoder()
                     do {
-                        let player: Player = try decoder.decode(Player.self, from: data)
-                        callback(player)
+                        let play: Play = try decoder.decode(Play.self, from: data)
+                        callback(play)
                     } catch {
                         print("Impossible to decode to Faction from data")
                     }

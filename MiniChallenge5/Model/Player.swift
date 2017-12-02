@@ -22,7 +22,8 @@ struct Player: Codable{
         case name
         case email
         case password
-        case faction = "faction_id"
+        case factionID = "faction_id"
+        case faction
     }
     
     //MARK: Initializers
@@ -41,8 +42,7 @@ struct Player: Codable{
         self.name = try values.decode(String.self, forKey: .name)
         self.email = try values.decode(String.self, forKey: .email)
         self.password = try values.decode(String.self, forKey: .password)
-        let factionId: Int = try values.decode(Int.self, forKey: .faction)
-        self.faction = Faction(id: factionId, name: "Facção de id\(factionId)")
+        self.faction = try values.decode(Faction.self, forKey: .faction)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -50,7 +50,7 @@ struct Player: Codable{
         try container.encode(self.name, forKey: .name)
         try container.encode(self.email, forKey: .email)
         try container.encode(self.password, forKey: .password)
-        try container.encode(self.faction.id, forKey: .faction)
+        try container.encode(self.faction.id, forKey: .factionID)
     }
     
     
