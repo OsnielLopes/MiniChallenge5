@@ -9,6 +9,7 @@
 import Foundation
 
 class CircuitDataManager : CircuitDataManagerProtocol{
+    
     func getCircuitLocations(callback: @escaping ([Bow]) -> ()) {
         var firstBows: [Bow] = [Bow]()
         self.read {
