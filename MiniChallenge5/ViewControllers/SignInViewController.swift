@@ -8,48 +8,36 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     
-    // Declaração de constraints
+    //MARK: Constraints
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var emailTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTextFieldLeadingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var passwordTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordTextFieldLeadingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var signInButtonTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var signUpButtonTopConstraint: NSLayoutConstraint!
     
+    //MARK: Outlets
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     
+    //MARK: Properties
+    private var playerDataManager: PlayerDataManager = PlayerDataManager()
     
-
+    //MARK: Life cicle functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Coloca imagem e filtro no background da view
-        let backgroundImage = UIImageView(frame: self.view.frame)
-        let filterImage = UIImageView(frame: self.view.frame)
-        
-        backgroundImage.image = UIImage(named: "background_image")
-        filterImage.image = UIImage(named: "filter")
-        
-        self.view.insertSubview(filterImage, at: 0)
-        self.view.insertSubview(backgroundImage, at: 0)
-        
-        // Deixa a navigation bar transparente
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
-        // Deixa a navigation bar sem sombra
-        navigationController?.navigationBar.shadowImage = UIImage()
-
+        self.setUpBackGround()
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.updateButtonsState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         //Implementação de constraints
         titleLabelTopConstraint.constant = self.view.frame.size.height * 0.149
@@ -78,16 +66,89 @@ class SignInViewController: UIViewController {
         signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.650
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //MARK: UITextFieldDelegate functions
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.signInButton.isEnabled = false
     }
     
-
-    /*
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.updateButtonsState()
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.emailTextField{
+            self.emailTextField.resignFirstResponder()
+            self.passwordTextField.becomeFirstResponder()
+        }else{
+            self.passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    //MARK: Set up functions
+    private func setUpBackGround(){
+        //Put the image and the filter in the view background
+        let backgroundImage = UIImageView(frame: self.view.frame)
+        let filterImage = UIImageView(frame: self.view.frame)
+        
+        backgroundImage.image = UIImage(named: "background_image")
+        filterImage.image = UIImage(named: "filter")
+        
+        self.view.insertSubview(filterImage, at: 0)
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        //Hiding the navigation bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    //MARK: Actions
+    @IBAction func signInButtonTapped(_ sender: UIButton) {
+        sender.isEnabled = false;
+        let email = self.emailTextField.text!
+        let password = self.passwordTextField.text!
+        
+        self.playerDataManager.readByEmail(email: email, callback: {
+            if let player = $0{
+                if player.password == password {
+                    print("***Deu certo!***")
+                    self.sendToMainMenu()
+                }else{
+                    self.showErrorMessage(errorMessage: "Wrong password!", handler: {_ in self.passwordTextField.becomeFirstResponder()
+                    })
+                }
+            }else{
+                self.showErrorMessage(errorMessage: "Wrong e-mail!", handler: {_ in self.emailTextField.becomeFirstResponder()
+                    
+                })
+            }
+        })
+    }
+    
+    //MARK: Aux functions
+    private func showErrorMessage(errorMessage: String, handler: @escaping (_ : UIAlertAction) -> Void){
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(
+                title: NSLocalizedString("OK", comment: "Dados errados"),
+                style: .default,
+                handler: handler))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func updateButtonsState(){
+        self.signInButton.isEnabled = !(self.emailTextField.text ?? "").isEmpty && !(self.passwordTextField.text ?? "").isEmpty
+    }
+    
     // MARK: - Navigation
-
+    private func sendToMainMenu(){
+        self.performSegue(withIdentifier: "MainMenu", sender: self)
+    }
+    
+    /*
+     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
