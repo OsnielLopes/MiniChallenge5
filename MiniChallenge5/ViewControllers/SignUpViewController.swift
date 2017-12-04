@@ -8,48 +8,42 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
-    //Declaração de constraints
+    //MARK: Constraints
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var emailTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTextFieldLeadingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var passwordTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordTextFieldLeadingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var confirmPasswordTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var confirmPasswordTextFieldLeadingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var usernameTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var usernameTextFieldLeadingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var signUpButtonTopConstraint: NSLayoutConstraint!
     
-    // Declaração de text field
+    //MARK: Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    //MARK: Properties
+    private var playerDataManager: PlayerDataManager = PlayerDataManager()
+    
+    //MARK: Life cicle functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpBackGround()
         
-        //Coloca imagem e filtro no background da view
-        let backgroundImage = UIImageView(frame: self.view.frame)
-        let filterImage = UIImageView(frame: self.view.frame)
-        
-        backgroundImage.image = UIImage(named: "background_image")
-        filterImage.image = UIImage(named: "filter")
-        
-        self.view.insertSubview(filterImage, at: 0)
-        self.view.insertSubview(backgroundImage, at: 0)
-
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.confirmPasswordTextField.delegate = self
+        self.usernameTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         //Implementação de constraints
         titleLabelTopConstraint.constant = self.view.frame.size.height * 0.149
         
@@ -75,15 +69,108 @@ class SignUpViewController: UIViewController {
         
         signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.650
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //MARK: UITextFieldDelegate functions
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.signUpButton.isEnabled = false
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.updateButtonsState()
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case self.emailTextField:
+            self.emailTextField.resignFirstResponder()
+            self.passwordTextField.becomeFirstResponder()
+        case self.passwordTextField:
+            self.passwordTextField.resignFirstResponder()
+            self.confirmPasswordTextField.becomeFirstResponder()
+        case self.confirmPasswordTextField:
+            self.confirmPasswordTextField.resignFirstResponder()
+            self.usernameTextField.becomeFirstResponder()
+        default:
+            self.usernameTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    //MARK: actions
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+        let email = self.emailTextField.text!
+        let password = self.passwordTextField.text!
+        let confirmPassword = self.confirmPasswordTextField.text!
+        let username = self.usernameTextField.text!
+        
+        if username.count < 5{
+            self.showErrorMessage(errorMessage: "Your user name must have 5 characters minimum!", handler: {_ in
+                self.usernameTextField.becomeFirstResponder()
+            })
+            return
+        }
+        
+        if !email.contains("@") {
+            self.showErrorMessage(errorMessage: "Insert a valid e-mail address!", handler: {_ in self.emailTextField.becomeFirstResponder()
+            })
+            return
+        }
+        
+        if password.count < 8{
+            self.showErrorMessage(errorMessage: "Your password must have 8 characters minimum!", handler: {_ in
+                self.passwordTextField.becomeFirstResponder()
+            })
+            return
+        }
+        
+        if password != confirmPassword{
+            self.showErrorMessage(errorMessage: "The fields \"Passwords\" and \"Confirm Password\" have different values!", handler: {_ in
+                self.confirmPasswordTextField.becomeFirstResponder()
+            })
+            return
+        }
+        
+//        playerDataManager.create(player: <#T##Player#>, callback: <#T##(Player) -> Void#>)
+    }
+    
+    //MARK: Aux functions
+    private func showErrorMessage(errorMessage: String, handler: @escaping (_ : UIAlertAction) -> Void){
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(
+                title: NSLocalizedString("OK", comment: "Dados errados"),
+                style: .default,
+                handler: handler))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func updateButtonsState(){
+        self.signUpButton.isEnabled = !(self.emailTextField.text ?? "").isEmpty
+                                    && !(self.passwordTextField.text ?? "").isEmpty
+                                    && !(self.confirmPasswordTextField.text ?? "").isEmpty
+                                    && !(self.usernameTextField.text ?? "").isEmpty
+    }
+    
+    //MARK: Set up functions
+    private func setUpBackGround(){
+        //Put the image and the filter in the view background
+        let backgroundImage = UIImageView(frame: self.view.frame)
+        let filterImage = UIImageView(frame: self.view.frame)
+        
+        backgroundImage.image = UIImage(named: "background_image")
+        filterImage.image = UIImage(named: "filter")
+        
+        self.view.insertSubview(filterImage, at: 0)
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
+    
+    // MARK: - Navigation
+    private func sendToMainMenu(){
+        self.performSegue(withIdentifier: "MainMenu", sender: self)
+    }
 
     /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
