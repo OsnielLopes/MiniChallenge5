@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i85-ZI-DMa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MWu-Up-HUJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -115,7 +115,7 @@
                                 <rect key="frame" x="87" y="349" width="200" height="45"/>
                                 <state key="normal" image="SignIn_Button"/>
                                 <connections>
-                                    <segue destination="Lvc-x0-wo5" kind="show" id="nbL-Nt-met"/>
+                                    <action selector="signInButtonTapped:" destination="Cdb-bB-1fg" eventType="touchUpInside" id="Ha9-SV-On3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kl-Nb-aOu">
@@ -169,9 +169,11 @@
                         <outlet property="passwordTextField" destination="EEM-f5-18Q" id="mhd-Dw-zCQ"/>
                         <outlet property="passwordTextFieldLeadingConstraint" destination="Gws-nK-SUx" id="AG2-HI-pmV"/>
                         <outlet property="passwordTextFieldTopConstraint" destination="uWf-hJ-bju" id="j55-Au-iTQ"/>
+                        <outlet property="signInButton" destination="YkE-rZ-WFT" id="YSj-sA-YiQ"/>
                         <outlet property="signInButtonTopConstraint" destination="t33-mm-vVj" id="ePm-ur-xhH"/>
                         <outlet property="signUpButtonTopConstraint" destination="VCz-uS-GId" id="twe-3h-ZY1"/>
                         <outlet property="titleLabelTopConstraint" destination="qDU-cu-61j" id="NX6-rc-igs"/>
+                        <segue destination="Lvc-x0-wo5" kind="show" identifier="MainMenu" id="yHJ-TG-ad9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuG-Me-xkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,7 +268,7 @@
         <!--Menu View Controller-->
         <scene sceneID="C0j-Qq-Wqq">
             <objects>
-                <viewController id="RO2-zD-AVY" customClass="MenuViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenu" id="RO2-zD-AVY" customClass="MenuViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VJN-Sa-W9W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
