@@ -42,42 +42,43 @@ class DataManagerTest{
         let playerDataManager: PlayerDataManager = PlayerDataManager()
         let factionDatamanager: FactionDataManager = FactionDataManager()
         
-        factionDatamanager.readById(id: 3, callback: {
-            let player: Player = Player(id: nil, name: "Renan Soares Germano", email: "renan.rsg@hotmail.com", password: "abcdef", faction: $0)
-            playerDataManager.create(player: player, callback: {
-                print("***Created Player: \($0)***")
-                var createdPlayer = $0
-
-                playerDataManager.read(callback: {
-                    print("\n***All Players***")
-                    $0.forEach({
-                        print($0)
-                    })
-
-                    playerDataManager.readById(id: createdPlayer.id!, callback: {
-                        print("\n***Player: \($0)***")
-                        
-                        createdPlayer.name = "NOME ALTERADO!"
-                        playerDataManager.update(player: createdPlayer, callback: {
-                            print("\n***Updated Player: \($0)***")
-                            
-                            playerDataManager.delete(id: $0.id!, callback: {
-                                print("\n***Deleted Player: \($0)***")
-                                
-                                playerDataManager.readByEmail(email: "renan@email.com", callback: {
-                                    print("\n***Player By E-mail: \($0)")
-                                    
-                                    playerDataManager.readByFaction(factionID: 2, callback: {
-                                        print("\n***Players By Faction***")
-                                        $0.forEach({print($0)})
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
+//        factionDatamanager.readById(id: 3, callback: {
+//            let player: Player = Player(id: nil, name: "Renan Soares Germano", email: "renan.rsg@hotmail.com", password: "abcdef", faction: $0)
+//            playerDataManager.create(player: player, callback: {
+//                print("***Created Session: \($0!)***")
+//                var createdSession = $0!
+//                Session.shared = createdSession
+//
+//                playerDataManager.read(callback: {
+//                    print("\n***All Players***")
+//                    $0.forEach({
+//                        print($0)
+//                    })
+//
+//                    playerDataManager.readById(id: (Session.shared?.player.id!)!, callback: {
+//                        print("\n***Player: \($0)***")
+//                        
+//                        createdPlayer.name = "NOME ALTERADO!"
+//                        playerDataManager.update(player: Session.shared?.player, callback: {
+//                            print("\n***Updated Player: \($0)***")
+//                            
+//                            playerDataManager.delete(id: $0.id!, callback: {
+//                                print("\n***Deleted Player: \($0)***")
+//                                
+//                                playerDataManager.readByEmail(email: "renan@email.com", callback: {
+//                                    print("\n***Player By E-mail: \($0)")
+//                                    
+//                                    playerDataManager.readByFaction(factionID: 2, callback: {
+//                                        print("\n***Players By Faction***")
+//                                        $0.forEach({print($0)})
+//                                    })
+//                                })
+//                            })
+//                        })
+//                    })
+//                })
+//            })
+//        })
     }
     
     func testCircuitDataManager(){

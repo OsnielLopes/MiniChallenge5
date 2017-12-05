@@ -11,7 +11,7 @@ import Foundation
 class PlayerDataManager{
     
     //MARK: Create Player
-    func create(player: Player, callback: @escaping (_ : Player) -> Void){
+    func create(player: Player, callback: @escaping (_ : Session?) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(player)
@@ -23,15 +23,17 @@ class PlayerDataManager{
             let task = URLSession.shared.uploadTask(with: request, from: jsonData) { data, response, error in
                 if let error = error {
                     print(error.localizedDescription)
+                    callback(nil)
                     return
                 }
                 if let data = data{
                     let decoder = JSONDecoder()
                     do {
-                        let player: Player = try decoder.decode(Player.self, from: data)
-                        callback(player)
+                        let session: Session = try decoder.decode(Session.self, from: data)
+                        callback(session)
                     } catch {
                         print("Impossible to decode to player from data")
+                        callback(nil)
                     }
                 }
             }
@@ -197,7 +199,7 @@ class PlayerDataManager{
     func login(email: String, password: String, callback: @escaping (_ : Session?) -> Void){
         do {
             let json: [String:Any] = ["email": email, "password":password]
-            let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .sortedKeys)
             
             print("***Coded data: \(String.init(data: jsonData!, encoding: .utf8))***")
             
