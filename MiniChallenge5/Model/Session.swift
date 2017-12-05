@@ -20,8 +20,8 @@ struct Session: Codable{
     }
     
     //MARK: Properties
-    private var player: Player
-    private var token: String
+    var player: Player
+    var token: String
     
     //MARK: Types
     enum CodingKeys: String, CodingKey {
