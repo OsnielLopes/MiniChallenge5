@@ -204,25 +204,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1y-Im-Uqi">
-                                <rect key="frame" x="40" y="227" width="295" height="45"/>
+                                <rect key="frame" x="40" y="177" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-vL-oHk">
-                                <rect key="frame" x="40" y="297" width="295" height="45"/>
+                                <rect key="frame" x="40" y="247" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPq-hm-ZNm">
-                                <rect key="frame" x="40" y="367" width="295" height="45"/>
+                                <rect key="frame" x="40" y="317" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgI-4S-wnE">
-                                <rect key="frame" x="40" y="437" width="295" height="45"/>
+                                <rect key="frame" x="40" y="387" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -234,28 +234,37 @@
                                     <action selector="signUpButtonTapped:" destination="hek-EA-wvm" eventType="touchUpInside" id="LrI-59-ykc"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uMS-UZ-wpR">
+                                <rect key="frame" x="40" y="468" width="295" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Designer"/>
+                                    <segment title="Hacker"/>
+                                    <segment title="Engineer"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.16860446333885193" green="0.16864064335823059" blue="0.16860216856002808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BPq-hm-ZNm" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="367" id="1l0-DL-K3S"/>
+                            <constraint firstItem="BPq-hm-ZNm" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="317" id="1l0-DL-K3S"/>
                             <constraint firstItem="S1y-Im-Uqi" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="4Tf-b1-6vK"/>
                             <constraint firstItem="JXK-vL-oHk" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="4Uo-B0-jcT"/>
-                            <constraint firstAttribute="bottom" secondItem="S1y-Im-Uqi" secondAttribute="bottom" constant="395" id="4jR-bR-XZR"/>
+                            <constraint firstAttribute="bottom" secondItem="S1y-Im-Uqi" secondAttribute="bottom" constant="445" id="4jR-bR-XZR"/>
                             <constraint firstItem="XgI-4S-wnE" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="7z2-0l-WAM"/>
-                            <constraint firstAttribute="bottom" secondItem="XgI-4S-wnE" secondAttribute="bottom" constant="185" id="8lj-r8-xSz"/>
+                            <constraint firstAttribute="bottom" secondItem="XgI-4S-wnE" secondAttribute="bottom" constant="235" id="8lj-r8-xSz"/>
                             <constraint firstItem="wQL-yr-7Pk" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="CLM-Jb-3j8"/>
                             <constraint firstItem="BPq-hm-ZNm" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="ElP-94-jIx"/>
-                            <constraint firstItem="XgI-4S-wnE" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="437" id="LDn-Ih-UmX"/>
+                            <constraint firstItem="XgI-4S-wnE" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="387" id="LDn-Ih-UmX"/>
                             <constraint firstItem="BPq-hm-ZNm" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="PDz-Wq-cXO"/>
                             <constraint firstItem="Hv1-2D-6uf" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="PmC-Sx-Te2"/>
                             <constraint firstItem="Hv1-2D-6uf" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="100" id="S3R-QV-ZhV"/>
                             <constraint firstItem="XgI-4S-wnE" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="dZr-X6-bNc"/>
-                            <constraint firstItem="S1y-Im-Uqi" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="227" id="iWs-dL-vX4"/>
+                            <constraint firstItem="S1y-Im-Uqi" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="177" id="iWs-dL-vX4"/>
                             <constraint firstItem="wQL-yr-7Pk" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="507" id="kAa-hl-2J3"/>
                             <constraint firstItem="S1y-Im-Uqi" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="l4S-uc-SdT"/>
-                            <constraint firstAttribute="bottom" secondItem="BPq-hm-ZNm" secondAttribute="bottom" constant="255" id="l6A-EO-xbQ"/>
-                            <constraint firstAttribute="bottom" secondItem="JXK-vL-oHk" secondAttribute="bottom" constant="325" id="pLC-lG-CJj"/>
-                            <constraint firstItem="JXK-vL-oHk" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="297" id="ujy-Nv-H0l"/>
+                            <constraint firstAttribute="bottom" secondItem="BPq-hm-ZNm" secondAttribute="bottom" constant="305" id="l6A-EO-xbQ"/>
+                            <constraint firstAttribute="bottom" secondItem="JXK-vL-oHk" secondAttribute="bottom" constant="375" id="pLC-lG-CJj"/>
+                            <constraint firstItem="JXK-vL-oHk" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="247" id="ujy-Nv-H0l"/>
                             <constraint firstItem="JXK-vL-oHk" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="wJG-B0-tkU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nnQ-PN-3Ep"/>
@@ -284,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKY-pg-TRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3100" y="1194"/>
+            <point key="canvasLocation" x="-3100" y="1193.2533733133434"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="C0j-Qq-Wqq">

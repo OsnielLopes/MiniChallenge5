@@ -58,28 +58,28 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         //Implementação de constraints
         titleLabelTopConstraint.constant = self.view.frame.size.height * 0.149
         
-        emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.340
+        emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.265
         emailTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         emailTextField.setBottomBorder()
         emailTextField.attributedPlaceholder = NSAttributedString(string: " E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
-        nameTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.592
-        emailTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.487
-        passwordTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.382
-        confirmPasswordTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.277
+        nameTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.667
+        emailTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.562
+        passwordTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.457
+        confirmPasswordTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.352
         
         
-        passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.445
+        passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.370
         passwordTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         passwordTextField.setBottomBorder()
         passwordTextField.attributedPlaceholder = NSAttributedString(string: " Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
-        confirmPasswordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.550
+        confirmPasswordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.475
         confirmPasswordTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         confirmPasswordTextField.setBottomBorder()
         confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string: " Confirm Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
-        usernameTextFieldTopConstraint.constant = self.view.frame.size.height * 0.655
+        usernameTextFieldTopConstraint.constant = self.view.frame.size.height * 0.580
         usernameTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         nameTextField.setBottomBorder()
         nameTextField.attributedPlaceholder = NSAttributedString(string: " Name", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
