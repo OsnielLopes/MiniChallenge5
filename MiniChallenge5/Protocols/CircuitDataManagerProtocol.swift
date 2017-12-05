@@ -10,5 +10,5 @@ import Foundation
 
 protocol CircuitDataManagerProtocol {
     //MARK: Get the first location of all Circuits
-    func getCircuitLocations(callback: @escaping (_ : [Bow]) -> ())
+    func getCircuitLocations(callback: @escaping (_ : [String: [Bow]]) -> ())
 }
