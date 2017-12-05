@@ -10,14 +10,14 @@ import Foundation
 
 class CircuitDataManager : CircuitDataManagerProtocol{
     
-    func getCircuitLocations(callback: @escaping ([Bow]) -> ()) {
-        var firstBows: [Bow] = [Bow]()
-        self.read {
-            $0.forEach{
-                firstBows.append($0.bows.first!)
-            }
-            callback(firstBows)
-        }
+    func getCircuitLocations(callback: @escaping ([Int : Bow]) -> ()) {
+//        var firstBows: [Bow] = [Bow]()
+//        self.read {
+//            $0.forEach{
+//                firstBows.append($0.bows.first!)
+//            }
+//            callback(firstBows)
+//        }
     }
     
     //MARK: Create Circuit

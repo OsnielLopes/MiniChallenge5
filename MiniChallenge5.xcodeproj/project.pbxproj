@@ -21,6 +21,7 @@
 		45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */; };
 		4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4940F16D1FB924C100663456 /* LocationTableViewCell.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
+		495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */; };
 		495FE4071FD3185F00398537 /* LocalCircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */; };
 		4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */; };
 		4996C8D51FB0BAE200A9C1FB /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4996C8D41FB0BAE200A9C1FB /* art.scnassets */; };
@@ -88,6 +89,7 @@
 		45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDataManager.swift; sourceTree = "<group>"; };
 		4940F16D1FB924C100663456 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
+		495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameModeViewController.swift; sourceTree = "<group>"; };
 		495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCircuitARSCNView.swift; sourceTree = "<group>"; };
 		4996C8CF1FB0BAE200A9C1FB /* MiniChallenge5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4996C8D21FB0BAE200A9C1FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		B0AD2D381FCA27960028CA39 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */,
 				B0E69CC31FB4B7050058992D /* MenuViewController.swift */,
 				B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */,
 				B0E69CC91FB61FAD0058992D /* SignInViewController.swift */,
@@ -645,7 +648,11 @@
 				45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */,
 				49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */,
 				B0E69CC61FB4D8F40058992D /* CreatableARCircuitViewController.swift in Sources */,
+<<<<<<< HEAD
 				452BC6421FD7037C0075CBED /* Session.swift in Sources */,
+=======
+				495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */,
+>>>>>>> 4ace915d9d9cbb289a1f0e66ec442108114b849d
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
 				49C0AF841FCB961B00CEA93A /* HistoricTableViewController.swift in Sources */,
 				49C0AF881FCB96CB00CEA93A /* Aplay.swift in Sources */,

@@ -29,6 +29,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUp()
+        print(self.frame.width)
     }
     
     func setUp(){
@@ -43,9 +44,14 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
         
         //add the label for the chronometer
         self.addSubview(time)
-        let centerXConstraint = NSLayoutConstraint(item: time, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 100)
-        let centerYConstraint = NSLayoutConstraint(item: time, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -150)
-        //configure the bow node
+
+        time.text = "00:00"
+        time.textColor = UIColor.white
+        time.translatesAutoresizingMaskIntoConstraints = false
+        time.centerXAnchor.constraint(equalTo: self.layoutMarginsGuide.rightAnchor, constant: -10).isActive = true
+        time.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        
+        
         self.bow.eulerAngles.x = Float.pi/2
         
         //set up geometries
@@ -101,7 +107,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
             fraction = UInt8(elapsedTime * 100)
             
             //add the leading zero for minutes, seconds and millseconds and store them as string constants
-            let strSeconds = String(format: "%03d", seconds)
+            let strSeconds = String(format: "%02d", seconds)
             let strFraction = String(format: "%02d", fraction)
             
             //concatenate minuets, seconds and milliseconds as assign it to the UILabel
