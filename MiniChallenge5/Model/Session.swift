@@ -7,3 +7,39 @@
 //
 
 import Foundation
+
+struct Session: Codable{
+    
+    //MARK: Shared instance
+    static var shared: Session? {
+        willSet(session){
+            if shared == nil {
+                shared = session
+            }
+        }
+    }
+    
+    //MARK: Properties
+    private var player: Player
+    private var token: String
+    
+    //MARK: Types
+    enum CodingKeys: String, CodingKey {
+        case player
+        case token
+    }
+    
+    //MARK: Encode and Decode functions
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.player = try values.decode(Player.self, forKey: .player)
+        self.token = try values.decode(String.self, forKey: .token)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.player, forKey: .player)
+        try container.encode(self.token, forKey: .token)
+    }
+    
+}
