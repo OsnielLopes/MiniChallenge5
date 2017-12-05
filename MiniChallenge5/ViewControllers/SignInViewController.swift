@@ -14,8 +14,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTextFieldLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emailTextFieldBottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var passwordTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordTextFieldLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordTextFieldBottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var signInButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var signUpButtonTopConstraint: NSLayoutConstraint!
     
@@ -42,28 +46,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         //Implementação de constraints
         titleLabelTopConstraint.constant = self.view.frame.size.height * 0.149
         
-        emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.350
+        emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.337
         emailTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
+        emailTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.616
         emailTextField.setBottomBorder()
         emailTextField.attributedPlaceholder = NSAttributedString(string: " E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
-//        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
-//        let emailBorder = CALayer()
-//        let width = CGFloat(2.0)
-//        emailBorder.borderColor = UIColor.black.cgColor
-//        emailBorder.frame = CGRect(x: 0, y: emailTextField.frame.size.height, width: emailTextField.frame.size.width, height: emailTextField.frame.size.height)
-//        emailBorder.borderWidth = width
-//        emailTextField.layer.addSublayer(emailBorder)
-//        emailTextField.layer.masksToBounds = true
         
-        
-        passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.428
+        passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.418
         passwordTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
+        passwordTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.536
         passwordTextField.setBottomBorder()
         passwordTextField.attributedPlaceholder = NSAttributedString(string: " Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
-        signInButtonTopConstraint.constant = self.view.frame.size.height * 0.523
-        signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.650
+        signInButtonTopConstraint.constant = self.view.frame.size.height * 0.547
+        signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.674
         
     }
     
