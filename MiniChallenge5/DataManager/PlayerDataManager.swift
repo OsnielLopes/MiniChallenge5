@@ -86,12 +86,13 @@ class PlayerDataManager{
     }
     
     //MARK: Read Player by e-mail
-    func readByEmail(email: String, callback: @escaping (_ : Player) -> Void){
+    func readByEmail(email: String, callback: @escaping (_ : Player?) -> Void){
         let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/email/\(email)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
+                callback(nil)
                 return
             }
             if let data = data{
@@ -101,6 +102,7 @@ class PlayerDataManager{
                     callback(player)
                 } catch {
                     print("Impossible to decode to Faction from data")
+                    callback(nil)
                 }
             }
         }
