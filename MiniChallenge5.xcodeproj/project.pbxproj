@@ -648,11 +648,8 @@
 				45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */,
 				49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */,
 				B0E69CC61FB4D8F40058992D /* CreatableARCircuitViewController.swift in Sources */,
-<<<<<<< HEAD
 				452BC6421FD7037C0075CBED /* Session.swift in Sources */,
-=======
 				495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */,
->>>>>>> 4ace915d9d9cbb289a1f0e66ec442108114b849d
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
 				49C0AF841FCB961B00CEA93A /* HistoricTableViewController.swift in Sources */,
 				49C0AF881FCB96CB00CEA93A /* Aplay.swift in Sources */,
