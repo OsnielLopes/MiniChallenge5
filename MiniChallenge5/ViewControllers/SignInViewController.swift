@@ -107,21 +107,32 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let email = self.emailTextField.text!
         let password = self.passwordTextField.text!
         
-        self.playerDataManager.readByEmail(email: email, callback: {
-            if let player = $0{
-                if player.password == password {
-                    print("***Deu certo!***")
-                    self.sendToMainMenu()
-                }else{
-                    self.showErrorMessage(errorMessage: "Wrong password!", handler: {_ in self.passwordTextField.becomeFirstResponder()
-                    })
-                }
+        self.playerDataManager.login(email: email, password: password, callback: {
+            if let session = $0 {
+                Session.shared = session
+                self.sendToMainMenu()
             }else{
-                self.showErrorMessage(errorMessage: "Wrong e-mail!", handler: {_ in self.emailTextField.becomeFirstResponder()
-                    
+                self.showErrorMessage(errorMessage: "E-mail or Password Wrong!", handler: {_ in
+                    self.emailTextField.becomeFirstResponder()
                 })
             }
         })
+        
+//        self.playerDataManager.readByEmail(email: email, callback: {
+//            if let player = $0{
+//                if player.password == password {
+//                    print("***Deu certo!***")
+//                    self.sendToMainMenu()
+//                }else{
+//                    self.showErrorMessage(errorMessage: "Wrong password!", handler: {_ in self.passwordTextField.becomeFirstResponder()
+//                    })
+//                }
+//            }else{
+//                self.showErrorMessage(errorMessage: "Wrong e-mail!", handler: {_ in self.emailTextField.becomeFirstResponder()
+//                    
+//                })
+//            }
+//        })
     }
     
     //MARK: Aux functions
