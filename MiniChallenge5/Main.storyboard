@@ -204,31 +204,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1y-Im-Uqi">
-                                <rect key="frame" x="40" y="234" width="295" height="30"/>
+                                <rect key="frame" x="40" y="227" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-vL-oHk">
-                                <rect key="frame" x="40" y="286" width="295" height="30"/>
+                                <rect key="frame" x="40" y="297" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPq-hm-ZNm">
-                                <rect key="frame" x="40" y="338" width="295" height="30"/>
+                                <rect key="frame" x="40" y="367" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgI-4S-wnE">
-                                <rect key="frame" x="40" y="390" width="295" height="30"/>
+                                <rect key="frame" x="40" y="437" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQL-yr-7Pk">
-                                <rect key="frame" x="87" y="434" width="200" height="45"/>
+                                <rect key="frame" x="87" y="507" width="200" height="45"/>
                                 <state key="normal" image="SignUp_Button"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="hek-EA-wvm" eventType="touchUpInside" id="LrI-59-ykc"/>
@@ -237,34 +237,42 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16860446333885193" green="0.16864064335823059" blue="0.16860216856002808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BPq-hm-ZNm" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="338" id="1l0-DL-K3S"/>
+                            <constraint firstItem="BPq-hm-ZNm" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="367" id="1l0-DL-K3S"/>
                             <constraint firstItem="S1y-Im-Uqi" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="4Tf-b1-6vK"/>
                             <constraint firstItem="JXK-vL-oHk" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="4Uo-B0-jcT"/>
+                            <constraint firstAttribute="bottom" secondItem="S1y-Im-Uqi" secondAttribute="bottom" constant="395" id="4jR-bR-XZR"/>
                             <constraint firstItem="XgI-4S-wnE" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="7z2-0l-WAM"/>
+                            <constraint firstAttribute="bottom" secondItem="XgI-4S-wnE" secondAttribute="bottom" constant="185" id="8lj-r8-xSz"/>
                             <constraint firstItem="wQL-yr-7Pk" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="CLM-Jb-3j8"/>
                             <constraint firstItem="BPq-hm-ZNm" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="ElP-94-jIx"/>
-                            <constraint firstItem="XgI-4S-wnE" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="390" id="LDn-Ih-UmX"/>
+                            <constraint firstItem="XgI-4S-wnE" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="437" id="LDn-Ih-UmX"/>
                             <constraint firstItem="BPq-hm-ZNm" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="PDz-Wq-cXO"/>
                             <constraint firstItem="Hv1-2D-6uf" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="PmC-Sx-Te2"/>
                             <constraint firstItem="Hv1-2D-6uf" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="100" id="S3R-QV-ZhV"/>
                             <constraint firstItem="XgI-4S-wnE" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="dZr-X6-bNc"/>
-                            <constraint firstItem="S1y-Im-Uqi" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="234" id="iWs-dL-vX4"/>
-                            <constraint firstItem="wQL-yr-7Pk" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="434" id="kAa-hl-2J3"/>
+                            <constraint firstItem="S1y-Im-Uqi" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="227" id="iWs-dL-vX4"/>
+                            <constraint firstItem="wQL-yr-7Pk" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="507" id="kAa-hl-2J3"/>
                             <constraint firstItem="S1y-Im-Uqi" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="l4S-uc-SdT"/>
-                            <constraint firstItem="JXK-vL-oHk" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="286" id="ujy-Nv-H0l"/>
+                            <constraint firstAttribute="bottom" secondItem="BPq-hm-ZNm" secondAttribute="bottom" constant="255" id="l6A-EO-xbQ"/>
+                            <constraint firstAttribute="bottom" secondItem="JXK-vL-oHk" secondAttribute="bottom" constant="325" id="pLC-lG-CJj"/>
+                            <constraint firstItem="JXK-vL-oHk" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="297" id="ujy-Nv-H0l"/>
                             <constraint firstItem="JXK-vL-oHk" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="wJG-B0-tkU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nnQ-PN-3Ep"/>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="XgI-4S-wnE" id="P8a-5S-pcZ"/>
+                        <outlet property="confirmPasswordTextFieldBottomConstraint" destination="8lj-r8-xSz" id="Odi-1H-J1q"/>
                         <outlet property="confirmPasswordTextFieldLeadingConstraint" destination="ElP-94-jIx" id="oLy-ty-LUl"/>
                         <outlet property="confirmPasswordTextFieldTopConstraint" destination="1l0-DL-K3S" id="Whx-ZM-MUM"/>
                         <outlet property="emailTextField" destination="JXK-vL-oHk" id="Qj4-ig-bc1"/>
+                        <outlet property="emailTextFieldBottomConstraint" destination="pLC-lG-CJj" id="H0C-2Z-eMv"/>
                         <outlet property="emailTextFieldLeadingConstraint" destination="4Tf-b1-6vK" id="SQp-gG-asJ"/>
                         <outlet property="emailTextFieldTopConstraint" destination="iWs-dL-vX4" id="3Om-mg-fRP"/>
                         <outlet property="nameTextField" destination="S1y-Im-Uqi" id="2cF-Oc-4N7"/>
+                        <outlet property="nameTextFieldBottomConstraint" destination="4jR-bR-XZR" id="lrI-9V-hTc"/>
                         <outlet property="passwordTextField" destination="BPq-hm-ZNm" id="WBg-gi-f1x"/>
+                        <outlet property="passwordTextFieldBottomConstraint" destination="l6A-EO-xbQ" id="AL9-3e-0HR"/>
                         <outlet property="passwordTextFieldLeadingConstraint" destination="4Uo-B0-jcT" id="JBI-45-5fh"/>
                         <outlet property="passwordTextFieldTopConstraint" destination="ujy-Nv-H0l" id="faJ-Rp-78U"/>
                         <outlet property="signUpButton" destination="wQL-yr-7Pk" id="OYN-Sh-rXW"/>
