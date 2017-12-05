@@ -203,28 +203,28 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1y-Im-Uqi">
-                                <rect key="frame" x="40" y="234" width="295" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1y-Im-Uqi">
+                                <rect key="frame" x="40" y="234" width="295" height="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-vL-oHk">
-                                <rect key="frame" x="40" y="286" width="295" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-vL-oHk">
+                                <rect key="frame" x="40" y="286" width="295" height="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPq-hm-ZNm">
-                                <rect key="frame" x="40" y="338" width="295" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPq-hm-ZNm">
+                                <rect key="frame" x="40" y="338" width="295" height="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgI-4S-wnE">
-                                <rect key="frame" x="40" y="390" width="295" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgI-4S-wnE">
+                                <rect key="frame" x="40" y="390" width="295" height="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQL-yr-7Pk">
@@ -257,19 +257,19 @@
                         <viewLayoutGuide key="safeArea" id="nnQ-PN-3Ep"/>
                     </view>
                     <connections>
-                        <outlet property="confirmPasswordTextField" destination="BPq-hm-ZNm" id="OiM-oy-3cv"/>
+                        <outlet property="confirmPasswordTextField" destination="XgI-4S-wnE" id="P8a-5S-pcZ"/>
                         <outlet property="confirmPasswordTextFieldLeadingConstraint" destination="ElP-94-jIx" id="oLy-ty-LUl"/>
                         <outlet property="confirmPasswordTextFieldTopConstraint" destination="1l0-DL-K3S" id="Whx-ZM-MUM"/>
-                        <outlet property="emailTextField" destination="S1y-Im-Uqi" id="L8h-Dp-QED"/>
+                        <outlet property="emailTextField" destination="JXK-vL-oHk" id="Qj4-ig-bc1"/>
                         <outlet property="emailTextFieldLeadingConstraint" destination="4Tf-b1-6vK" id="SQp-gG-asJ"/>
                         <outlet property="emailTextFieldTopConstraint" destination="iWs-dL-vX4" id="3Om-mg-fRP"/>
-                        <outlet property="passwordTextField" destination="JXK-vL-oHk" id="rwG-fF-ncE"/>
+                        <outlet property="nameTextField" destination="S1y-Im-Uqi" id="2cF-Oc-4N7"/>
+                        <outlet property="passwordTextField" destination="BPq-hm-ZNm" id="WBg-gi-f1x"/>
                         <outlet property="passwordTextFieldLeadingConstraint" destination="4Uo-B0-jcT" id="JBI-45-5fh"/>
                         <outlet property="passwordTextFieldTopConstraint" destination="ujy-Nv-H0l" id="faJ-Rp-78U"/>
                         <outlet property="signUpButton" destination="wQL-yr-7Pk" id="OYN-Sh-rXW"/>
                         <outlet property="signUpButtonTopConstraint" destination="kAa-hl-2J3" id="qgu-Je-5lF"/>
                         <outlet property="titleLabelTopConstraint" destination="S3R-QV-ZhV" id="6f6-zL-GLL"/>
-                        <outlet property="usernameTextField" destination="XgI-4S-wnE" id="ZzP-bm-tGy"/>
                         <outlet property="usernameTextFieldLeadingConstraint" destination="7z2-0l-WAM" id="DuQ-kO-v82"/>
                         <outlet property="usernameTextFieldTopConstraint" destination="LDn-Ih-UmX" id="gpz-if-6wm"/>
                     </connections>

@@ -23,10 +23,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButtonTopConstraint: NSLayoutConstraint!
     
     //MARK: Outlets
+    
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
     //MARK: Properties
@@ -40,7 +41,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.confirmPasswordTextField.delegate = self
-        self.usernameTextField.delegate = self
+        self.nameTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,8 +65,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         usernameTextFieldTopConstraint.constant = self.view.frame.size.height * 0.584
         usernameTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
-        usernameTextField.setBottomBorder()
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: " Username", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        nameTextField.setBottomBorder()
+        nameTextField.attributedPlaceholder = NSAttributedString(string: " Username", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.650
     }
@@ -90,9 +91,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.confirmPasswordTextField.becomeFirstResponder()
         case self.confirmPasswordTextField:
             self.confirmPasswordTextField.resignFirstResponder()
-            self.usernameTextField.becomeFirstResponder()
+            self.nameTextField.becomeFirstResponder()
         default:
-            self.usernameTextField.resignFirstResponder()
+            self.nameTextField.resignFirstResponder()
         }
         return true
     }
@@ -102,11 +103,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let email = self.emailTextField.text!
         let password = self.passwordTextField.text!
         let confirmPassword = self.confirmPasswordTextField.text!
-        let username = self.usernameTextField.text!
+        let username = self.nameTextField.text!
         
         if username.count < 5{
             self.showErrorMessage(errorMessage: "Your user name must have 5 characters minimum!", handler: {_ in
-                self.usernameTextField.becomeFirstResponder()
+                self.nameTextField.becomeFirstResponder()
             })
             return
         }
@@ -149,7 +150,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.signUpButton.isEnabled = !(self.emailTextField.text ?? "").isEmpty
                                     && !(self.passwordTextField.text ?? "").isEmpty
                                     && !(self.confirmPasswordTextField.text ?? "").isEmpty
-                                    && !(self.usernameTextField.text ?? "").isEmpty
+                                    && !(self.nameTextField.text ?? "").isEmpty
     }
     
     //MARK: Set up functions
