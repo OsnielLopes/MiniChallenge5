@@ -11,36 +11,33 @@ import Foundation
 class PlayerDataManager{
     
     //MARK: Create Player
-    func create(player: Player, callback: @escaping (_ : Session?) -> Void){
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(player)
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/player")!
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            let task = URLSession.shared.uploadTask(with: request, from: jsonData) { data, response, error in
-                if let error = error {
-                    print(error.localizedDescription)
+    func create(name: String, email: String, password: String, factionID: Int, callback: @escaping (_ : Session?) -> Void){
+        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player")!
+        
+        let json: [String:Any] = ["name": name, "email": email, "password":password, "faction_id": factionID]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .sortedKeys)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.uploadTask(with: request, from: jsonData) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                callback(nil)
+                return
+            }
+            if let data = data{
+                let decoder = JSONDecoder()
+                do {
+                    let session: Session = try decoder.decode(Session.self, from: data)
+                    callback(session)
+                } catch {
+                    print("Impossible to decode to Session from data")
                     callback(nil)
-                    return
-                }
-                if let data = data{
-                    let decoder = JSONDecoder()
-                    do {
-                        let session: Session = try decoder.decode(Session.self, from: data)
-                        callback(session)
-                    } catch {
-                        print("Impossible to decode to player from data")
-                        callback(nil)
-                    }
                 }
             }
-            task.resume()
-        } catch {
-            print("Impossible to generate JSON from circuit")
         }
+        task.resume()
     }
     
     //MARK: Read all Players
@@ -58,7 +55,7 @@ class PlayerDataManager{
                     let players: [Player] = try decoder.decode([Player].self, from: data)
                     callback(players)
                 } catch {
-                    print("Impossible to decode to Faction from data")
+                    print("Impossible to decode to Player from data")
                 }
             }
         }
@@ -80,7 +77,7 @@ class PlayerDataManager{
                     let player: Player = try decoder.decode(Player.self, from: data)
                     callback(player)
                 } catch {
-                    print("Impossible to decode to Faction from data")
+                    print("Impossible to decode to Player from data")
                 }
             }
         }
@@ -103,7 +100,7 @@ class PlayerDataManager{
                     let player: Player = try decoder.decode(Player.self, from: data)
                     callback(player)
                 } catch {
-                    print("Impossible to decode to Faction from data")
+                    print("Impossible to decode to Player from data")
                     callback(nil)
                 }
             }
@@ -111,8 +108,8 @@ class PlayerDataManager{
         task.resume()
     }
     
-    //MARK: Read Player by Faction
-    func readByFaction(factionID: Int, callback: @escaping (_ : [Player]) -> Void){
+    //MARK: Read Player by Player
+    func readByPlayer(factionID: Int, callback: @escaping (_ : [Player]) -> Void){
         let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/faction/\(factionID)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -126,7 +123,7 @@ class PlayerDataManager{
                     let players: [Player] = try decoder.decode([Player].self, from: data)
                     callback(players)
                 } catch {
-                    print("Impossible to decode to Faction from data")
+                    print("Impossible to decode to Player from data")
                 }
             }
         }
@@ -156,7 +153,7 @@ class PlayerDataManager{
                         let player: Player = try decoder.decode(Player.self, from: data)
                         callback(player)
                     } catch {
-                        print("Impossible to decode to Faction from data")
+                        print("Impossible to decode to Player from data")
                     }
                 }
             }
@@ -185,7 +182,7 @@ class PlayerDataManager{
                         let player: Player = try decoder.decode(Player.self, from: data)
                         callback(player)
                     } catch {
-                        print("Impossible to decode to Faction from data")
+                        print("Impossible to decode to Player from data")
                     }
                 }
             }
@@ -201,8 +198,6 @@ class PlayerDataManager{
             let json: [String:Any] = ["email": email, "password":password]
             let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .sortedKeys)
             
-            print("***Coded data: \(String.init(data: jsonData!, encoding: .utf8))***")
-            
             let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/login")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -215,8 +210,8 @@ class PlayerDataManager{
                     return
                 }
                 if let data = data{
-                                        var recievedData: String = String(data: data, encoding: .utf8)!
-                                        print("***Recieved Data: \(recievedData)***")
+                    var recievedData: String = String(data: data, encoding: .utf8)!
+                    print("***Recieved Data: \(recievedData)***")
                     let decoder = JSONDecoder()
                     do {
                         let session: Session = try decoder.decode(Session.self, from: data)
