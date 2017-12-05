@@ -13,7 +13,6 @@ struct Player: Codable{
     var id: Int?
     var name: String
     var email: String
-    var password: String
     var faction: Faction
     
     //MARK: Types
@@ -21,7 +20,6 @@ struct Player: Codable{
         case id
         case name
         case email
-        case password
         case factionID = "faction_id"
         case faction
     }
@@ -31,7 +29,6 @@ struct Player: Codable{
         self.id = id
         self.name = name
         self.email = email
-        self.password = password
         self.faction = faction
     }
     
@@ -41,7 +38,6 @@ struct Player: Codable{
         self.id = try values.decode(Int.self, forKey: .id)
         self.name = try values.decode(String.self, forKey: .name)
         self.email = try values.decode(String.self, forKey: .email)
-        self.password = try values.decode(String.self, forKey: .password)
         self.faction = try values.decode(Faction.self, forKey: .faction)
     }
     
@@ -49,7 +45,6 @@ struct Player: Codable{
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.name, forKey: .name)
         try container.encode(self.email, forKey: .email)
-        try container.encode(self.password, forKey: .password)
         try container.encode(self.faction.id, forKey: .factionID)
     }
     

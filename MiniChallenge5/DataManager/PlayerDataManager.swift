@@ -192,4 +192,39 @@ class PlayerDataManager{
             print("Impossible to generate JSON from circuit")
         }
     }
+    
+    //MARK: Login
+    func login(email: String, password: String, callback: @escaping (_ : Session?) -> Void){
+        do {
+            let json: [String:Any] = ["email": email, "password":password]
+            let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            print("***Coded data: \(String.init(data: jsonData!, encoding: .utf8))***")
+            let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/login")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            let task = URLSession.shared.uploadTask(with: request, from: jsonData) { data, response, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    callback(nil)
+                    return
+                }
+                if let data = data{
+                                        var recievedData: String = String(data: data, encoding: .utf8)!
+                                        print("***Recieved Data: \(recievedData)***")
+                    let decoder = JSONDecoder()
+                    do {
+                        let session: Session = try decoder.decode(Session.self, from: data)
+                        callback(session)
+                    } catch {
+                        callback(nil)
+                        print("Impossible to decode to play from data")
+                    }
+                }
+            }
+            task.resume()
+        } catch {
+            print("Impossible to generate JSON from play")
+        }    }
 }
