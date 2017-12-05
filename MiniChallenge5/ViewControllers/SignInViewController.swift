@@ -112,9 +112,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 Session.shared = session
                 self.sendToMainMenu()
             }else{
-                self.showErrorMessage(errorMessage: "E-mail or Password Wrong!", handler: {_ in
-                    self.emailTextField.becomeFirstResponder()
-                })
+                self.showErrorMessage(errorMessage: "E-mail or Password Wrong!")
+                self.emailTextField.becomeFirstResponder()
             }
         })
         
@@ -136,13 +135,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Aux functions
-    private func showErrorMessage(errorMessage: String, handler: @escaping (_ : UIAlertAction) -> Void){
+    private func showErrorMessage(errorMessage: String){
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
         alert.addAction(
             UIAlertAction(
                 title: NSLocalizedString("OK", comment: "Dados errados"),
                 style: .default,
-                handler: handler))
+                handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

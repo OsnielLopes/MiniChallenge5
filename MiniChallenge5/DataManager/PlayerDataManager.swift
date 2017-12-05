@@ -198,7 +198,9 @@ class PlayerDataManager{
         do {
             let json: [String:Any] = ["email": email, "password":password]
             let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            
             print("***Coded data: \(String.init(data: jsonData!, encoding: .utf8))***")
+            
             let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/login")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"

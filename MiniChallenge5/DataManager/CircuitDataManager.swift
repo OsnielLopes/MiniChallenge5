@@ -14,7 +14,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
         var locations: [Int : Bow] = [Int : Bow]()
         self.read(callback: {circuits in
             circuits.forEach({circuit in
-                locations[circuit] = circuit.bows.first!
+                locations[circuit.id!] = circuit.bows.first!
             })
             callback(locations)
         })
