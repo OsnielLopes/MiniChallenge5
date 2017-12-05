@@ -12,10 +12,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Constraints
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var emailTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTextFieldLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTextFieldBottomConstraint: NSLayoutConstraint!
-    
+
     @IBOutlet weak var passwordTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordTextFieldLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordTextFieldBottomConstraint: NSLayoutConstraint!
@@ -73,7 +74,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.updateButtonsState()
     }
     
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.emailTextField{
             self.emailTextField.resignFirstResponder()
@@ -110,28 +110,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.playerDataManager.login(email: email, password: password, callback: {
             if let session = $0 {
                 Session.shared = session
+                print("***Created Session: \(Session.shared)***")
                 self.sendToMainMenu()
             }else{
                 self.showErrorMessage(errorMessage: "E-mail or Password Wrong!")
                 self.emailTextField.becomeFirstResponder()
             }
         })
-        
-//        self.playerDataManager.readByEmail(email: email, callback: {
-//            if let player = $0{
-//                if player.password == password {
-//                    print("***Deu certo!***")
-//                    self.sendToMainMenu()
-//                }else{
-//                    self.showErrorMessage(errorMessage: "Wrong password!", handler: {_ in self.passwordTextField.becomeFirstResponder()
-//                    })
-//                }
-//            }else{
-//                self.showErrorMessage(errorMessage: "Wrong e-mail!", handler: {_ in self.emailTextField.becomeFirstResponder()
-//                    
-//                })
-//            }
-//        })
     }
     
     //MARK: Aux functions
