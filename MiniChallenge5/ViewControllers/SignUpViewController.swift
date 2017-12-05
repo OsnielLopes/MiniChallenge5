@@ -38,6 +38,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var factionsSegmentedControl: UISegmentedControl!
     @IBOutlet weak var signUpButton: UIButton!
     
     //MARK: Properties
@@ -120,6 +121,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let email = self.emailTextField.text!
         let password = self.passwordTextField.text!
         let confirmPassword = self.confirmPasswordTextField.text!
+        let factionID = self.factionsSegmentedControl.selectedSegmentIndex+1
         
         if name.count < 2{
             self.showErrorMessage(errorMessage: "The field \"Name\" must have 2 characters minimum!")
@@ -145,9 +147,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-//        self.playerDataManager.create(player: Player.init(id: nil, name: name, email: email, password: password, faction: ), callback: <#T##(Session?) -> Void#>)
+        self.playerDataManager.create(name: name, email: email, password: password, factionID: factionID, callback: {
+            if let session = $0{
+                print("***Created Session: \(session)***")
+                Session.shared = session
+                self.sendToMainMenu()
+            }else{
+                self.showErrorMessage(errorMessage: "There's already a user with this email")
+            }
+        })
     }
-    
     //MARK: Aux functions
     private func showErrorMessage(errorMessage: String){
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
@@ -161,9 +170,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     private func updateButtonsState(){
         self.signUpButton.isEnabled = !(self.emailTextField.text ?? "").isEmpty
-                                    && !(self.passwordTextField.text ?? "").isEmpty
-                                    && !(self.confirmPasswordTextField.text ?? "").isEmpty
-                                    && !(self.nameTextField.text ?? "").isEmpty
+            && !(self.passwordTextField.text ?? "").isEmpty
+            && !(self.confirmPasswordTextField.text ?? "").isEmpty
+            && !(self.nameTextField.text ?? "").isEmpty
     }
     
     //MARK: Set up functions
@@ -183,14 +192,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     private func sendToMainMenu(){
         self.performSegue(withIdentifier: "MainMenu", sender: self)
     }
-
+    
     /*
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
