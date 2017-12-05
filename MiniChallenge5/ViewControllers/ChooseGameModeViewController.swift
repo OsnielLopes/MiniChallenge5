@@ -31,7 +31,10 @@ class ChooseGameModeViewController: UIViewController {
         //distanceFilter for the locationManager is not defined, keeping the default value
         locationManager.startUpdatingLocation()
         circuitManager.getCircuitLocations { (circuits) in
-            circuits.first.
+            for (id, location) in circuits{
+                let newLocation = CLLocation(latitude: CLLocationDegrees(location.latitude), longitude: CLLocationDegrees(location.longitude))
+
+            }
         }
     }
     
