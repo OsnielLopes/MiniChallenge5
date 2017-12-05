@@ -140,13 +140,13 @@
                                 <rect key="frame" x="40" y="225" width="295" height="31"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EEM-f5-18Q">
                                 <rect key="frame" x="40" y="279" width="295.5" height="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.16860446330000001" green="0.16864064340000001" blue="0.16860216859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuG-Me-xkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3100" y="405.24737631184411"/>
+            <point key="canvasLocation" x="-3100" y="403"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="lKy-AW-43b">
@@ -207,25 +207,25 @@
                                 <rect key="frame" x="40" y="177" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="continue" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-vL-oHk">
                                 <rect key="frame" x="40" y="247" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPq-hm-ZNm">
                                 <rect key="frame" x="40" y="317" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgI-4S-wnE">
                                 <rect key="frame" x="40" y="387" width="295" height="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQL-yr-7Pk">
                                 <rect key="frame" x="87" y="507" width="200" height="45"/>
@@ -239,8 +239,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Designer"/>
-                                    <segment title="Hacker"/>
                                     <segment title="Engineer"/>
+                                    <segment title="Hacker"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
@@ -278,6 +278,7 @@
                         <outlet property="emailTextFieldBottomConstraint" destination="pLC-lG-CJj" id="H0C-2Z-eMv"/>
                         <outlet property="emailTextFieldLeadingConstraint" destination="4Tf-b1-6vK" id="SQp-gG-asJ"/>
                         <outlet property="emailTextFieldTopConstraint" destination="iWs-dL-vX4" id="3Om-mg-fRP"/>
+                        <outlet property="factionsSegmentedControl" destination="uMS-UZ-wpR" id="W0P-bB-hj4"/>
                         <outlet property="nameTextField" destination="S1y-Im-Uqi" id="2cF-Oc-4N7"/>
                         <outlet property="nameTextFieldBottomConstraint" destination="4jR-bR-XZR" id="lrI-9V-hTc"/>
                         <outlet property="passwordTextField" destination="BPq-hm-ZNm" id="WBg-gi-f1x"/>
@@ -289,6 +290,7 @@
                         <outlet property="titleLabelTopConstraint" destination="S3R-QV-ZhV" id="6f6-zL-GLL"/>
                         <outlet property="usernameTextFieldLeadingConstraint" destination="7z2-0l-WAM" id="DuQ-kO-v82"/>
                         <outlet property="usernameTextFieldTopConstraint" destination="LDn-Ih-UmX" id="gpz-if-6wm"/>
+                        <segue destination="Lvc-x0-wo5" kind="show" identifier="MainMenu" id="oJy-zL-amU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKY-pg-TRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -502,7 +504,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0h-cL-Ek1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2143.1999999999998" y="406.14692653673166"/>
+            <point key="canvasLocation" x="-2143" y="426"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IoL-H1-Hef">
@@ -592,7 +594,8 @@
         <image name="perfil" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="oJy-zL-amU"/>
         <segue reference="JLr-ee-Scu"/>
-        <segue reference="zB4-tK-xkl"/>
+        <segue reference="UoC-xW-7Lv"/>
     </inferredMetricsTieBreakers>
 </document>
