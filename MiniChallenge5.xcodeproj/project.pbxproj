@@ -18,9 +18,9 @@
 		457789C51FCF387300DDB63B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C41FCF387300DDB63B /* Player.swift */; };
 		457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C61FCF388200DDB63B /* PlayerDataManager.swift */; };
 		459E73181FD8124700149531 /* PreferencesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E73171FD8124700149531 /* PreferencesDataManager.swift */; };
-		459E731A1FD82B4E00149531 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E73191FD82B4E00149531 /* Bow.swift */; };
 		45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */; };
 		45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */; };
+		45D0D6EB1FD854F2007FD811 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0D6EA1FD854F2007FD811 /* Reachability.swift */; };
 		49400F2E1FD84B8100BCFB46 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF811FCB699700CEA93A /* Bow.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */; };
@@ -86,9 +86,9 @@
 		457789C41FCF387300DDB63B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		457789C61FCF388200DDB63B /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
 		459E73171FD8124700149531 /* PreferencesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesDataManager.swift; sourceTree = "<group>"; };
-		459E73191FD82B4E00149531 /* Bow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bow.swift; sourceTree = "<group>"; };
 		45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManager.swift; sourceTree = "<group>"; };
 		45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDataManager.swift; sourceTree = "<group>"; };
+		45D0D6EA1FD854F2007FD811 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameModeViewController.swift; sourceTree = "<group>"; };
 		495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCircuitARSCNView.swift; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 		457789AA1FC9FE3600DDB63B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				459E73191FD82B4E00149531 /* Bow.swift */,
 				457789C41FCF387300DDB63B /* Player.swift */,
 				457789AB1FC9FE4700DDB63B /* Faction.swift */,
 				49C0AF811FCB699700CEA93A /* Bow.swift */,
@@ -201,9 +200,17 @@
 				45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */,
 				45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */,
 				451582E21FD309FC004249D2 /* DataManagerTest.swift */,
-				459E73171FD8124700149531 /* PreferencesDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		45D0D6E91FD854CA007FD811 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				459E73171FD8124700149531 /* PreferencesDataManager.swift */,
+				45D0D6EA1FD854F2007FD811 /* Reachability.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		49516B5B1FC48563006FC4F4 /* AR */ = {
@@ -242,6 +249,7 @@
 		4996C8D11FB0BAE200A9C1FB /* MiniChallenge5 */ = {
 			isa = PBXGroup;
 			children = (
+				45D0D6E91FD854CA007FD811 /* Util */,
 				B02273081FCDEB65002050FD /* cyberpunk_is_not_dead */,
 				49C0AF8B1FCDD26500CEA93A /* Protocols */,
 				457789AD1FC9FE7C00DDB63B /* DataManager */,
@@ -642,6 +650,7 @@
 				B0E69CC81FB4EF790058992D /* AboutViewController.swift in Sources */,
 				457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */,
 				457789C51FCF387300DDB63B /* Player.swift in Sources */,
+				45D0D6EB1FD854F2007FD811 /* Reachability.swift in Sources */,
 				4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */,
 				4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */,
 				45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */,
@@ -654,7 +663,6 @@
 				49C0AF841FCB961B00CEA93A /* RankingTableViewController.swift in Sources */,
 				49C0AF961FD1BCE000CEA93A /* LocalARCircuitViewController.swift in Sources */,
 				49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */,
-				459E731A1FD82B4E00149531 /* Bow.swift in Sources */,
 				49C0AF8A1FCB9E3200CEA93A /* PlayTableViewCell.swift in Sources */,
 				45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */,
 				451582E31FD309FC004249D2 /* DataManagerTest.swift in Sources */,
@@ -828,7 +836,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
@@ -844,7 +852,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;

@@ -14,11 +14,11 @@ class ChooseGameModeViewController: UIViewController {
     @IBOutlet weak var playTheLocalCircuitButton: UIButton!
     let locationManager:CLLocationManager = CLLocationManager()
     let circuitManager:CircuitDataManager = CircuitDataManager()
-    var closerCircuitId:Int?
+    var closestCircuitId:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playTheLocalCircuitButton.isEnabled = closerCircuitId != nil
+        playTheLocalCircuitButton.isEnabled = closestCircuitId != nil
         
         // Do any additional setup after loading the view.
     }
@@ -36,7 +36,7 @@ class ChooseGameModeViewController: UIViewController {
             for (id, location) in circuits{
                 let newLocation = CLLocation(latitude: CLLocationDegrees(location.latitude), longitude: CLLocationDegrees(location.longitude))
                 if newLocation.distance(from: self.locationManager.location!) < 200 {
-                    self.closerCircuitId = id
+                    self.closestCircuitId = id
                     break
                 }
             }
