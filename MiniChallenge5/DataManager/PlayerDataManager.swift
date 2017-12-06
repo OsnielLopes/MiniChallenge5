@@ -130,6 +130,34 @@ class PlayerDataManager{
         task.resume()
     }
     
+    //MARK: Read Player by token
+    func readByToken(token: String, callback: @escaping (_ : Player?) -> Void){
+        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/token")!
+        
+        var request = URLRequest(url: url)
+        request.addValue(token, forHTTPHeaderField: "x-access-token")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.uploadTask(with: request, fromFile: url) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                callback(nil)
+                return
+            }
+            if let data = data{
+                let decoder = JSONDecoder()
+                do {
+                    let player: Player = try decoder.decode(Player.self, from: data)
+                    callback(player)
+                } catch {
+                    print("Impossible to decode to Player from data")
+                    callback(nil)
+                }
+            }
+        }
+        task.resume()
+    }
+    
     //MARK: Update Player
     func update(player: Player, callback: @escaping (_ : Player) -> Void){
         let jsonEncoder = JSONEncoder()

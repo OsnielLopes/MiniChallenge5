@@ -37,13 +37,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let session = preferencesDataManager.token{
-            self.sendToMainMenu()
-            return;
-        }
-        
         self.setUpBackGround()
-        
+    
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.updateButtonsState()

@@ -12,7 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var player: Player? 
+    var player: Player?
+    private var preferencesDataManager: PreferencesDataManager = PreferencesDataManager()
+    private var playerDataManager: PlayerDataManager = PlayerDataManager()
     
     var preferesStatusBarHidden: Bool {
         return true
@@ -39,7 +41,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainMenuViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu")
+        
+        DispatchQueue.main.async {
+            if let token = self.preferencesDataManager.token{
+                
+                self.playerDataManager.readByToken(token: token) {
+                    if let player = $0{
+                        let session: Session = Session(player: player, token: token)
+                        Session.shared = session
+                    }
+                }
+                
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = mainMenuViewController
+                self.window?.makeKeyAndVisible()
+            }
+        }
+    }
 }
 
