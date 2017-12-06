@@ -241,7 +241,7 @@ class CreatableARCircuitViewController: UIViewController, ARSCNViewDelegate, ARS
                                         title: NSLocalizedString("OK", comment: ""),
                                         style: .default,
                                         handler: { (action) in
-//                                            Ranking.add(Play(name: alert.textFields![0].text, seconds: seconds, milliseconds: milliseconds))
+//                                            LocalRanking.add(Play(name: alert.textFields![0].text, seconds: seconds, milliseconds: milliseconds))
                                             self.performSegue(withIdentifier: "toHistoric", sender: self)
                                     }))
                                 alert.addTextField(configurationHandler: { (textField: UITextField! ) in

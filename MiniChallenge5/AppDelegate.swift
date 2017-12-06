@@ -12,7 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var player: Player?
     private var preferencesDataManager: PreferencesDataManager = PreferencesDataManager()
     private var playerDataManager: PlayerDataManager = PlayerDataManager()
     

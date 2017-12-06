@@ -12,8 +12,8 @@ struct Player: Codable{
     //MARK: Properties
     var id: Int?
     var name: String
-    var email: String
-    var faction: Faction
+    var email: String?
+    var faction: Faction?
     
     //MARK: Types
     enum CodingKeys: String, CodingKey {
@@ -32,6 +32,13 @@ struct Player: Codable{
         self.faction = faction
     }
     
+    init(name: String){
+        self.id = nil
+        self.name = name
+        self.email = nil
+        self.faction = nil
+    }
+    
     //MARK: Encode and Decode functions
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -45,7 +52,7 @@ struct Player: Codable{
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.name, forKey: .name)
         try container.encode(self.email, forKey: .email)
-        try container.encode(self.faction.id, forKey: .factionID)
+        try container.encode(self.faction?.id, forKey: .factionID)
     }
     
     

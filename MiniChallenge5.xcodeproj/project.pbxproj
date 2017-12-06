@@ -18,10 +18,10 @@
 		457789C51FCF387300DDB63B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C41FCF387300DDB63B /* Player.swift */; };
 		457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C61FCF388200DDB63B /* PlayerDataManager.swift */; };
 		459E73181FD8124700149531 /* PreferencesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E73171FD8124700149531 /* PreferencesDataManager.swift */; };
-		459E731A1FD82B4E00149531 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E73191FD82B4E00149531 /* Bow.swift */; };
-		45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */; };
 		45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */; };
 		49400F2E1FD84B8100BCFB46 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF811FCB699700CEA93A /* Bow.swift */; };
+		49400F301FD8584B00BCFB46 /* RankingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49400F2F1FD8584B00BCFB46 /* RankingProtocol.swift */; };
+		49400F321FD85A9E00BCFB46 /* CloudRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49400F311FD85A9E00BCFB46 /* CloudRanking.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */; };
 		495FE4071FD3185F00398537 /* LocalCircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */; };
@@ -35,10 +35,9 @@
 		4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9051FB0D12200A9C1FB /* MapViewController.swift */; };
 		4996C90A1FB20F0200A9C1FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9091FB20F0200A9C1FB /* Extensions.swift */; };
 		49C0AF841FCB961B00CEA93A /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF831FCB961B00CEA93A /* RankingTableViewController.swift */; };
-		49C0AF861FCB963300CEA93A /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF851FCB963300CEA93A /* Ranking.swift */; };
+		49C0AF861FCB963300CEA93A /* LocalRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF851FCB963300CEA93A /* LocalRanking.swift */; };
 		49C0AF8A1FCB9E3200CEA93A /* PlayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF891FCB9E3200CEA93A /* PlayTableViewCell.swift */; };
 		49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */; };
-		49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */; };
 		49C0AF911FCF157900CEA93A /* CircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */; };
 		49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift */; };
 		49C0AF961FD1BCE000CEA93A /* LocalARCircuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF951FD1BCE000CEA93A /* LocalARCircuitViewController.swift */; };
@@ -86,9 +85,9 @@
 		457789C41FCF387300DDB63B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		457789C61FCF388200DDB63B /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
 		459E73171FD8124700149531 /* PreferencesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesDataManager.swift; sourceTree = "<group>"; };
-		459E73191FD82B4E00149531 /* Bow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bow.swift; sourceTree = "<group>"; };
-		45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManager.swift; sourceTree = "<group>"; };
 		45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDataManager.swift; sourceTree = "<group>"; };
+		49400F2F1FD8584B00BCFB46 /* RankingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingProtocol.swift; sourceTree = "<group>"; };
+		49400F311FD85A9E00BCFB46 /* CloudRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudRanking.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameModeViewController.swift; sourceTree = "<group>"; };
 		495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCircuitARSCNView.swift; sourceTree = "<group>"; };
@@ -109,10 +108,9 @@
 		4996C9091FB20F0200A9C1FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		49C0AF811FCB699700CEA93A /* Bow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bow.swift; sourceTree = "<group>"; };
 		49C0AF831FCB961B00CEA93A /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
-		49C0AF851FCB963300CEA93A /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
+		49C0AF851FCB963300CEA93A /* LocalRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRanking.swift; sourceTree = "<group>"; };
 		49C0AF891FCB9E3200CEA93A /* PlayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTableViewCell.swift; sourceTree = "<group>"; };
 		49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitDataManagerProtocol.swift; sourceTree = "<group>"; };
-		49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManagerProtocol.swift; sourceTree = "<group>"; };
 		49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircuitARSCNView.swift; path = MiniChallenge5/AR/CircuitARSCNView.swift; sourceTree = SOURCE_ROOT; };
 		49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitARSCNViewDelegate.swift; sourceTree = "<group>"; };
 		49C0AF951FD1BCE000CEA93A /* LocalARCircuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalARCircuitViewController.swift; sourceTree = "<group>"; };
@@ -180,12 +178,12 @@
 		457789AA1FC9FE3600DDB63B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				459E73191FD82B4E00149531 /* Bow.swift */,
 				457789C41FCF387300DDB63B /* Player.swift */,
 				457789AB1FC9FE4700DDB63B /* Faction.swift */,
 				49C0AF811FCB699700CEA93A /* Bow.swift */,
 				457789BC1FCB3B5600DDB63B /* Circuit.swift */,
-				49C0AF851FCB963300CEA93A /* Ranking.swift */,
+				49C0AF851FCB963300CEA93A /* LocalRanking.swift */,
+				49400F311FD85A9E00BCFB46 /* CloudRanking.swift */,
 				451BA6CB1FD05FF800C783D9 /* Play.swift */,
 				452BC6411FD7037C0075CBED /* Session.swift */,
 			);
@@ -198,7 +196,6 @@
 				457789C61FCF388200DDB63B /* PlayerDataManager.swift */,
 				457789AE1FC9FE9500DDB63B /* FactionDataManager.swift */,
 				457789BE1FCB493600DDB63B /* CircuitDataManager.swift */,
-				45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */,
 				45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */,
 				451582E21FD309FC004249D2 /* DataManagerTest.swift */,
 				459E73171FD8124700149531 /* PreferencesDataManager.swift */,
@@ -301,8 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */,
-				49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */,
 				49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift */,
+				49400F2F1FD8584B00BCFB46 /* RankingProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -644,17 +641,15 @@
 				457789C51FCF387300DDB63B /* Player.swift in Sources */,
 				4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */,
 				4996C8D31FB0BAE200A9C1FB /* AppDelegate.swift in Sources */,
-				45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */,
-				49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */,
 				B0E69CC61FB4D8F40058992D /* CreatableARCircuitViewController.swift in Sources */,
 				452BC6421FD7037C0075CBED /* Session.swift in Sources */,
 				495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */,
 				459E73181FD8124700149531 /* PreferencesDataManager.swift in Sources */,
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
 				49C0AF841FCB961B00CEA93A /* RankingTableViewController.swift in Sources */,
+				49400F321FD85A9E00BCFB46 /* CloudRanking.swift in Sources */,
 				49C0AF961FD1BCE000CEA93A /* LocalARCircuitViewController.swift in Sources */,
 				49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */,
-				459E731A1FD82B4E00149531 /* Bow.swift in Sources */,
 				49C0AF8A1FCB9E3200CEA93A /* PlayTableViewCell.swift in Sources */,
 				45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */,
 				451582E31FD309FC004249D2 /* DataManagerTest.swift in Sources */,
@@ -662,7 +657,8 @@
 				49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift in Sources */,
 				49400F2E1FD84B8100BCFB46 /* Bow.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,
-				49C0AF861FCB963300CEA93A /* Ranking.swift in Sources */,
+				49C0AF861FCB963300CEA93A /* LocalRanking.swift in Sources */,
+				49400F301FD8584B00BCFB46 /* RankingProtocol.swift in Sources */,
 				457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */,
 				457789BF1FCB493600DDB63B /* CircuitDataManager.swift in Sources */,
 				49C0AF911FCF157900CEA93A /* CircuitARSCNView.swift in Sources */,
