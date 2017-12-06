@@ -11,7 +11,7 @@ import Foundation
 struct Play: Codable{
     //MARK: Properties
     var id: Int?
-    var circuitID: Int
+    var circuitID: Int?
     var player: Player
     var seconds: Int
     var milliseconds: Int
@@ -33,6 +33,14 @@ struct Play: Codable{
         self.player = player
         self.seconds = seconds
         self.milliseconds = milliseconds
+    }
+    
+    init(player: Player, seconds: Int, milliseconds: Int) {
+        self.player = player
+        self.seconds = seconds
+        self.milliseconds = milliseconds
+        self.id = nil
+        self.circuitID = nil
     }
     
     //MARK: Encode and Decode functions

@@ -173,7 +173,7 @@ class CreatableARCircuitViewController: UIViewController, ARSCNViewDelegate, ARS
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
     
         var seconds: UInt8!
-        var fraction: UInt8!
+        var milliseconds: UInt8!
         
         if isTimeCounting
         {
@@ -181,15 +181,15 @@ class CreatableARCircuitViewController: UIViewController, ARSCNViewDelegate, ARS
             seconds = UInt8(elapsedTime)
             elapsedTime -= TimeInterval(seconds)
             
-            fraction = UInt8(elapsedTime * 100)
+            milliseconds = UInt8(elapsedTime * 100)
             
             //add the leading zero for minutes, seconds and millseconds and store them as string constants
             let strSeconds = String(format: "%03d", seconds)
-            let strFraction = String(format: "%02d", fraction)
+            let strmilliseconds = String(format: "%02d", milliseconds)
             
             //concatenate minuets, seconds and milliseconds as assign it to the UILabel
             DispatchQueue.main.async {
-                self.time.text = "\(strSeconds):\(strFraction)"
+                self.time.text = "\(strSeconds):\(strmilliseconds)"
             }
         }
         
@@ -241,7 +241,7 @@ class CreatableARCircuitViewController: UIViewController, ARSCNViewDelegate, ARS
                                         title: NSLocalizedString("OK", comment: ""),
                                         style: .default,
                                         handler: { (action) in
-                                            Ranking.add(Aplay(name: alert.textFields![0].text, seconds: seconds, fraction: fraction))
+//                                            Ranking.add(Play(name: alert.textFields![0].text, seconds: seconds, milliseconds: milliseconds))
                                             self.performSegue(withIdentifier: "toHistoric", sender: self)
                                     }))
                                 alert.addTextField(configurationHandler: { (textField: UITextField! ) in

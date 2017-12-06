@@ -1,5 +1,5 @@
 //
-//  AplayTableViewCell.swift
+//  PlayTableViewCell.swift
 //  MiniChallenge5
 //
 //  Created by Osniel Lopes Teixeira on 26/11/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AplayTableViewCell: UITableViewCell {
+class PlayTableViewCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var time: UILabel!
