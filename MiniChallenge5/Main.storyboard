@@ -439,7 +439,7 @@
         <!--Ranking-->
         <scene sceneID="MP8-zV-u4f">
             <objects>
-                <tableViewController id="bi4-ZA-JbG" customClass="HistoricTableViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bi4-ZA-JbG" customClass="RankingTableViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="K7t-aH-XZm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

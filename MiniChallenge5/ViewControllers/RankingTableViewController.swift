@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoricTableViewController: UITableViewController {
+class RankingTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
        self.navigationController?.navigationBar.tintColor = UIColor.black
