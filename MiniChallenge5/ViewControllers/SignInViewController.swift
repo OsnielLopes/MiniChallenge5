@@ -50,21 +50,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         //Implementação de constraints
         titleLabelTopConstraint.constant = self.view.frame.size.height * 0.149
         
-        emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.337
+        emailTextFieldTopConstraint.constant = self.view.frame.size.height * 0.340
         emailTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
-        emailTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.616
+        emailTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.592
         emailTextField.setBottomBorder()
         emailTextField.attributedPlaceholder = NSAttributedString(string: " E-mail", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
         
-        passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.418
+        passwordTextFieldTopConstraint.constant = self.view.frame.size.height * 0.445
         passwordTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
-        passwordTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.536
+        passwordTextFieldBottomConstraint.constant = self.view.frame.size.height * 0.487
         passwordTextField.setBottomBorder()
         passwordTextField.attributedPlaceholder = NSAttributedString(string: " Password", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
         
-        signInButtonTopConstraint.constant = self.view.frame.size.height * 0.547
-        signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.674
+        signInButtonTopConstraint.constant = self.view.frame.size.height * 0.632
+        signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.760
         
     }
     
