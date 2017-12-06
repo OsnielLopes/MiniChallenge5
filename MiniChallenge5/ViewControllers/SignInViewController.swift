@@ -31,11 +31,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     private var playerDataManager: PlayerDataManager = PlayerDataManager()
-    
+    private var preferencesDataManager: PreferencesDataManager = PreferencesDataManager()
+
     //MARK: Life cicle functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let session = preferencesDataManager.token{
+            self.sendToMainMenu()
+            return;
+        }
+        
         self.setUpBackGround()
+        
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.updateButtonsState()
@@ -109,12 +117,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         self.playerDataManager.login(email: email, password: password, callback: {
             if let session = $0 {
+                self.preferencesDataManager.saveToken(session.token)
                 Session.shared = session
-                print("***Created Session: \(Session.shared)***")
                 self.sendToMainMenu()
             }else{
                 self.showErrorMessage(errorMessage: "E-mail or Password Wrong!")
-                self.emailTextField.becomeFirstResponder()
             }
         })
     }
