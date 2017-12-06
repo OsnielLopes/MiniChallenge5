@@ -23,6 +23,12 @@ struct Session: Codable{
     var player: Player
     var token: String
     
+    //MARK: Initializers
+    init(player: Player, token: String) {
+        self.player = player
+        self.token = token
+    }
+    
     //MARK: Types
     enum CodingKeys: String, CodingKey {
         case player
