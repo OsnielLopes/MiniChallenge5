@@ -120,21 +120,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkE-rZ-WFT">
-                                <rect key="frame" x="87" y="349" width="200" height="45"/>
+                                <rect key="frame" x="87.5" y="349" width="200" height="45"/>
                                 <state key="normal" image="SignIn_Button"/>
                                 <connections>
                                     <action selector="signInButtonTapped:" destination="Cdb-bB-1fg" eventType="touchUpInside" id="Ha9-SV-On3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kl-Nb-aOu">
-                                <rect key="frame" x="87" y="434" width="200" height="45"/>
+                                <rect key="frame" x="87.5" y="434" width="200" height="45"/>
                                 <state key="normal" image="SignUp_Button"/>
                                 <connections>
                                     <segue destination="hek-EA-wvm" kind="show" id="Zvx-5w-thO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-Rg-SB4">
-                                <rect key="frame" x="141.5" y="100" width="93" height="35"/>
+                                <rect key="frame" x="123" y="100" width="129" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EEM-f5-18Q">
-                                <rect key="frame" x="40" y="279" width="295.5" height="30"/>
+                                <rect key="frame" x="40" y="279" width="295" height="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv1-2D-6uf">
-                                <rect key="frame" x="134" y="100" width="108" height="35"/>
+                                <rect key="frame" x="116" y="100" width="143" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -231,7 +231,7 @@
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQL-yr-7Pk">
-                                <rect key="frame" x="87" y="507" width="200" height="45"/>
+                                <rect key="frame" x="87.5" y="507" width="200" height="45"/>
                                 <state key="normal" image="SignUp_Button"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="hek-EA-wvm" eventType="touchUpInside" id="LrI-59-ykc"/>
@@ -323,20 +323,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb9-hv-WeP">
-                                <rect key="frame" x="87" y="435" width="200" height="45"/>
+                                <rect key="frame" x="87.5" y="435" width="200" height="45"/>
                                 <state key="normal" image="Circuits_Button"/>
                                 <connections>
                                     <segue destination="k0x-mT-Zm4" kind="show" id="yO8-Ac-DSI"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F3S-2Y-AcB">
-                                <rect key="frame" x="87" y="115" width="200" height="200"/>
+                                <rect key="frame" x="82.5" y="115" width="210" height="213"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="HFJ-8i-vkK">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="HFJ-8i-vkK">
+                                        <rect key="frame" x="0.0" y="0.0" width="210" height="213"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="Dfl-BB-nTm"/>
-                                            <constraint firstAttribute="width" constant="200" id="hr0-01-gqI"/>
+                                            <constraint firstAttribute="height" constant="213" id="Dfl-BB-nTm"/>
+                                            <constraint firstAttribute="width" constant="210" id="hr0-01-gqI"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
