@@ -59,6 +59,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.backgroundColor = nil
+        
         //Implementação de constraints
         titleLabelTopConstraint.constant = self.view.frame.size.height * 0.149
         

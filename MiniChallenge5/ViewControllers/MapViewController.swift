@@ -46,6 +46,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = UIColor.init(red: 89.0/255.00, green: 46.0/255.0, blue: 185.0/255.0, alpha: 0.57)
         getCircuitFromServer()
     }
     
