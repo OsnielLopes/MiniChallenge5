@@ -22,6 +22,7 @@
 		49400F2E1FD84B8100BCFB46 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF811FCB699700CEA93A /* Bow.swift */; };
 		49400F301FD8584B00BCFB46 /* RankingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49400F2F1FD8584B00BCFB46 /* RankingProtocol.swift */; };
 		49400F321FD85A9E00BCFB46 /* CloudRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49400F311FD85A9E00BCFB46 /* CloudRanking.swift */; };
+		49400F341FD873A100BCFB46 /* SaveARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49400F331FD873A100BCFB46 /* SaveARViewController.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */; };
 		495FE4071FD3185F00398537 /* LocalCircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */; };
@@ -88,6 +89,7 @@
 		45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDataManager.swift; sourceTree = "<group>"; };
 		49400F2F1FD8584B00BCFB46 /* RankingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingProtocol.swift; sourceTree = "<group>"; };
 		49400F311FD85A9E00BCFB46 /* CloudRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudRanking.swift; sourceTree = "<group>"; };
+		49400F331FD873A100BCFB46 /* SaveARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveARViewController.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameModeViewController.swift; sourceTree = "<group>"; };
 		495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCircuitARSCNView.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				B0E69CC71FB4EF790058992D /* AboutViewController.swift */,
 				49C0AF891FCB9E3200CEA93A /* PlayTableViewCell.swift */,
 				49C0AF831FCB961B00CEA93A /* RankingTableViewController.swift */,
+				49400F331FD873A100BCFB46 /* SaveARViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				457789BF1FCB493600DDB63B /* CircuitDataManager.swift in Sources */,
 				49C0AF911FCF157900CEA93A /* CircuitARSCNView.swift in Sources */,
 				B0E69CCA1FB61FAD0058992D /* SignInViewController.swift in Sources */,
+				49400F341FD873A100BCFB46 /* SaveARViewController.swift in Sources */,
 				457789BD1FCB3B5600DDB63B /* Circuit.swift in Sources */,
 				49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */,
 			);

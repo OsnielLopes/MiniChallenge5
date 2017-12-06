@@ -10,6 +10,8 @@ import UIKit
 
 class RankingTableViewController: UITableViewController {
     
+    var isLocalRanking: Bool!
+    
     override func viewWillAppear(_ animated: Bool) {
        self.navigationController?.navigationBar.tintColor = UIColor.black
     }
@@ -37,14 +39,24 @@ class RankingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return Ranking.getPlays().count
+        var numberOfRows: Int!
+        if isLocalRanking {
+            numberOfRows = LocalRanking.getPlays().count
+        } else {
+            numberOfRows = CloudRanking.getPlays().count
+        }
+        return numberOfRows
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "play", for: indexPath) as! PlayTableViewCell
-        let play = Ranking.getPlayAtIndex(indexPath.row)
+        let play: Play!
+        if isLocalRanking {
+            play = LocalRanking.getPlayAtIndex(indexPath.row)
+        } else {
+            play = CloudRanking.getPlayAtIndex(indexPath.row)
+        }
         cell.name.text = "\(indexPath.row+1)º \(play.player.name)"
         let seconds = play.seconds
         let milliseconds = play.milliseconds
@@ -74,7 +86,7 @@ class RankingTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -93,14 +105,7 @@ class RankingTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+

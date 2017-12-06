@@ -62,6 +62,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     func circuitWillAppear() {
         for bow in bows{
             bow.didPass = false
+            node(for: bow)?.opacity = 1
         }
     }
     

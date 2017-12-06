@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocalARCircuitViewController: UIViewController, CircuitARSCNViewDelegate{
+class SaveARViewController: UIViewController, CircuitARSCNViewDelegate{
     
     var arSceneView: LocalCircuitARSCNView!
     
