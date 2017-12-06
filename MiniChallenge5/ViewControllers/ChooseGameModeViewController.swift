@@ -10,17 +10,22 @@ import UIKit
 import MapKit
 
 class ChooseGameModeViewController: UIViewController {
-    
+    //MARK: Outlest
     @IBOutlet weak var playTheLocalCircuitButton: UIButton!
+    
+    //MARK: Properties
     let locationManager:CLLocationManager = CLLocationManager()
     let circuitManager:CircuitDataManager = CircuitDataManager()
     var closestCircuitId:Int?
     
+    //MARK: Life cicle functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        playTheLocalCircuitButton.isEnabled = closestCircuitId != nil
-        
-        // Do any additional setup after loading the view.
+        if !Reachability.isConnectedToNetwork(){
+            playTheLocalCircuitButton.isEnabled = false
+        }else if closestCircuitId == nil{
+            playTheLocalCircuitButton.isEnabled = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,12 +48,33 @@ class ChooseGameModeViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !Reachability.isConnectedToNetwork(){
+            self.showDialog(errorMessage: "You can't play online because you don't have internet connection.")
+        }else if closestCircuitId == nil{
+            self.showDialog(errorMessage: "You can't play online because there's no circuit nearby.")
+        }
+    }
+    
     
     func checkLocationAuthorizationStatus() {
         if !(CLLocationManager.authorizationStatus() == .authorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization()
         }
     }
+    
+    //MARK: Aux functions
+    private func showDialog(errorMessage: String){
+        let alert = UIAlertController(title: "Warning", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(
+                title: NSLocalizedString("OK", comment: "Warning"),
+                style: .default,
+                handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     /*
      // MARK: - Navigation
      

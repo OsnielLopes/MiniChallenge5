@@ -160,6 +160,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
         })
     }
+    
     //MARK: Aux functions
     private func showErrorMessage(errorMessage: String){
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
