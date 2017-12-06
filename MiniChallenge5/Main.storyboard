@@ -53,7 +53,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinícius Cano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxC-dv-jPX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinicius Cano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxC-dv-jPX">
                                 <rect key="frame" x="145" y="410" width="109.5" height="21"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,10 +92,13 @@
                         <viewLayoutGuide key="safeArea" id="31S-aR-gqq"/>
                     </view>
                     <connections>
+                        <outlet property="image1" destination="7pA-km-KgG" id="WHm-kE-skw"/>
                         <outlet property="image1LeadingConstraint" destination="gKP-yb-Cuo" id="jIY-7k-86F"/>
                         <outlet property="image1TopConstraint" destination="0fl-CM-aqU" id="Abx-Ub-4Ra"/>
+                        <outlet property="image2" destination="XFd-av-vip" id="k1q-gy-CSe"/>
                         <outlet property="image2LeadingConstraint" destination="Mxu-sa-5bL" id="0Ka-Wn-ata"/>
                         <outlet property="image2TopConstraint" destination="Nh3-D2-Y1z" id="NRL-Y9-16W"/>
+                        <outlet property="image3" destination="UlQ-HD-2kT" id="o1e-La-zT4"/>
                         <outlet property="image3LeadingConstraint" destination="TOH-ER-ULK" id="njP-PS-Npe"/>
                         <outlet property="image3TopConstraint" destination="0ES-HT-NMt" id="XMt-Kv-wRR"/>
                         <outlet property="nameLabel1LeadingConstraint" destination="HzB-g5-8Zh" id="7Ck-MJ-cYi"/>
@@ -565,7 +568,7 @@
         <image name="perfil" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yHJ-TG-ad9"/>
+        <segue reference="oJy-zL-amU"/>
         <segue reference="qUj-Uz-07m"/>
     </inferredMetricsTieBreakers>
 </document>
