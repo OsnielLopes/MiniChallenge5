@@ -45,6 +45,9 @@ class ChooseGameModeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.navigationBar.backgroundColor = nil
+        
         checkLocationAuthorizationStatus()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
