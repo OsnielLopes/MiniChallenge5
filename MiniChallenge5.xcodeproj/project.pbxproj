@@ -19,7 +19,7 @@
 		457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C61FCF388200DDB63B /* PlayerDataManager.swift */; };
 		45C4BA8B1FD09C1A00D49027 /* RankingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */; };
 		45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */; };
-		4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4940F16D1FB924C100663456 /* LocationTableViewCell.swift */; };
+		49400F2E1FD84B8100BCFB46 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF811FCB699700CEA93A /* Bow.swift */; };
 		49516B5A1FC484D5006FC4F4 /* ARBowAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */; };
 		495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */; };
 		495FE4071FD3185F00398537 /* LocalCircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */; };
@@ -32,9 +32,9 @@
 		4996C9041FB0BEA600A9C1FB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4996C9031FB0BEA600A9C1FB /* MapKit.framework */; };
 		4996C9061FB0D12200A9C1FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9051FB0D12200A9C1FB /* MapViewController.swift */; };
 		4996C90A1FB20F0200A9C1FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C9091FB20F0200A9C1FB /* Extensions.swift */; };
-		49C0AF841FCB961B00CEA93A /* HistoricTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF831FCB961B00CEA93A /* HistoricTableViewController.swift */; };
+		49C0AF841FCB961B00CEA93A /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF831FCB961B00CEA93A /* RankingTableViewController.swift */; };
 		49C0AF861FCB963300CEA93A /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF851FCB963300CEA93A /* Ranking.swift */; };
-		49C0AF8A1FCB9E3200CEA93A /* AplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF891FCB9E3200CEA93A /* AplayTableViewCell.swift */; };
+		49C0AF8A1FCB9E3200CEA93A /* PlayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF891FCB9E3200CEA93A /* PlayTableViewCell.swift */; };
 		49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */; };
 		49C0AF8F1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */; };
 		49C0AF911FCF157900CEA93A /* CircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */; };
@@ -85,7 +85,6 @@
 		457789C61FCF388200DDB63B /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
 		45C4BA8A1FD09C1A00D49027 /* RankingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManager.swift; sourceTree = "<group>"; };
 		45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDataManager.swift; sourceTree = "<group>"; };
-		4940F16D1FB924C100663456 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		49516B591FC484D5006FC4F4 /* ARBowAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBowAnchor.swift; sourceTree = "<group>"; };
 		495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameModeViewController.swift; sourceTree = "<group>"; };
 		495FE4061FD3185F00398537 /* LocalCircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCircuitARSCNView.swift; sourceTree = "<group>"; };
@@ -105,9 +104,9 @@
 		4996C9051FB0D12200A9C1FB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4996C9091FB20F0200A9C1FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		49C0AF811FCB699700CEA93A /* Bow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bow.swift; sourceTree = "<group>"; };
-		49C0AF831FCB961B00CEA93A /* HistoricTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricTableViewController.swift; sourceTree = "<group>"; };
+		49C0AF831FCB961B00CEA93A /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
 		49C0AF851FCB963300CEA93A /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
-		49C0AF891FCB9E3200CEA93A /* AplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AplayTableViewCell.swift; sourceTree = "<group>"; };
+		49C0AF891FCB9E3200CEA93A /* PlayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTableViewCell.swift; sourceTree = "<group>"; };
 		49C0AF8C1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitDataManagerProtocol.swift; sourceTree = "<group>"; };
 		49C0AF8E1FCDE4D000CEA93A /* RankingDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManagerProtocol.swift; sourceTree = "<group>"; };
 		49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircuitARSCNView.swift; path = MiniChallenge5/AR/CircuitARSCNView.swift; sourceTree = SOURCE_ROOT; };
@@ -250,7 +249,6 @@
 				4996C8DD1FB0BAE200A9C1FB /* LaunchScreen.storyboard */,
 				4996C8E01FB0BAE200A9C1FB /* Info.plist */,
 				B0D3F7191FB3979F002CD1BB /* Main.storyboard */,
-				4940F16D1FB924C100663456 /* LocationTableViewCell.swift */,
 			);
 			path = MiniChallenge5;
 			sourceTree = "<group>";
@@ -324,8 +322,8 @@
 				B0E69CC51FB4D8F40058992D /* CreatableARCircuitViewController.swift */,
 				49C0AF951FD1BCE000CEA93A /* LocalARCircuitViewController.swift */,
 				B0E69CC71FB4EF790058992D /* AboutViewController.swift */,
-				49C0AF891FCB9E3200CEA93A /* AplayTableViewCell.swift */,
-				49C0AF831FCB961B00CEA93A /* HistoricTableViewController.swift */,
+				49C0AF891FCB9E3200CEA93A /* PlayTableViewCell.swift */,
+				49C0AF831FCB961B00CEA93A /* RankingTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -646,15 +644,15 @@
 				452BC6421FD7037C0075CBED /* Session.swift in Sources */,
 				495B49B01FD7166D00A0F500 /* ChooseGameModeViewController.swift in Sources */,
 				B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */,
-				49C0AF841FCB961B00CEA93A /* HistoricTableViewController.swift in Sources */,
+				49C0AF841FCB961B00CEA93A /* RankingTableViewController.swift in Sources */,
 				49C0AF961FD1BCE000CEA93A /* LocalARCircuitViewController.swift in Sources */,
 				49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */,
-				49C0AF8A1FCB9E3200CEA93A /* AplayTableViewCell.swift in Sources */,
+				49C0AF8A1FCB9E3200CEA93A /* PlayTableViewCell.swift in Sources */,
 				45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */,
 				451582E31FD309FC004249D2 /* DataManagerTest.swift in Sources */,
 				451BA6CC1FD05FF800C783D9 /* Play.swift in Sources */,
-				4940F16E1FB924C100663456 /* LocationTableViewCell.swift in Sources */,
 				49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift in Sources */,
+				49400F2E1FD84B8100BCFB46 /* Bow.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,
 				49C0AF861FCB963300CEA93A /* Ranking.swift in Sources */,
 				457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */,
@@ -822,7 +820,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C45KF93FKW;
+				DEVELOPMENT_TEAM = 53BLZ9DZN8;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
@@ -838,7 +836,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C45KF93FKW;
+				DEVELOPMENT_TEAM = 53BLZ9DZN8;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.MiniChallenge5;
