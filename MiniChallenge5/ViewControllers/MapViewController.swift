@@ -46,36 +46,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = UIColor.init(red: 89.0/255.00, green: 46.0/255.0, blue: 185.0/255.0, alpha: 0.57)
         getCircuitFromServer()
-    }
-    
-    @IBAction func didTouchSave(_ sender: Any) {
-        
-        if lastValidBow != nil{
-            let jsonEncoder = JSONEncoder()
-            do {
-                let jsonData = try jsonEncoder.encode(circuit)
-                
-                let url = URL(string: "https://exemplo1nodejs.herokuapp.com/circuito")!
-                var request = URLRequest(url: url)
-                request.httpMethod = "POST"
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                
-                let task = URLSession.shared.uploadTask(with: request, from: jsonData) { data, response, error in
-                    if let error = error {
-                        // handle the transport error
-                        print(error.localizedDescription)
-                        return
-                    }
-                }
-                task.resume()
-                circuit.bows.append(lastValidBow)
-                updatePins()
-            } catch {
-                print("Impossible to generate JSON from circuit")
-            }
-        }
-        
     }
     
     // MARK: - Map
