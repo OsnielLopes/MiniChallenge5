@@ -10,15 +10,15 @@ import Foundation
 
 class Ranking {
     
-    private static var plays = [Aplay]()
+    private static var plays = [Play]()
     
-    class func add(_ play: Aplay){
+    class func add(_ play: Play){
         if plays.count == 0{
             plays.append(play)
         } else{
             for i in stride(from: plays.count-1, to: -1, by: -1){
                 if plays[i].seconds <= play.seconds {
-                    if plays[i].fraction < play.fraction {
+                    if plays[i].milliseconds < play.milliseconds {
                         plays.insert(play, at: i+1)
                     } else {
                         plays.insert(play, at: i)
@@ -32,11 +32,11 @@ class Ranking {
         
     }
     
-    class func getPlays() -> [Aplay]{
+    class func getPlays() -> [Play]{
         return plays
     }
     
-    class func getPlayAtIndex(_ i: Int) -> Aplay {
+    class func getPlayAtIndex(_ i: Int) -> Play {
         return plays[i]
     }
     

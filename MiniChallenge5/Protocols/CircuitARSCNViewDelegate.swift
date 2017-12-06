@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CircuitARSCNViewDelegate {
-    func didEndCircuit(seconds: UInt8, fraction: UInt8)
+    func didEndCircuit(seconds: UInt8, milliseconds: UInt8)
 }

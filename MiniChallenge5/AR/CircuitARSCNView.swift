@@ -96,7 +96,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
         var seconds: UInt8!
-        var fraction: UInt8!
+        var milliseconds: UInt8!
         
         if isTimeCounting
         {
@@ -104,15 +104,15 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
             seconds = UInt8(elapsedTime)
             elapsedTime -= TimeInterval(seconds)
             
-            fraction = UInt8(elapsedTime * 100)
+            milliseconds = UInt8(elapsedTime * 100)
             
             //add the leading zero for minutes, seconds and millseconds and store them as string constants
             let strSeconds = String(format: "%02d", seconds)
-            let strFraction = String(format: "%02d", fraction)
+            let strmilliseconds = String(format: "%02d", milliseconds)
             
             //concatenate minuets, seconds and milliseconds as assign it to the UILabel
             DispatchQueue.main.async {
-                self.time.text = "\(strSeconds):\(strFraction)"
+                self.time.text = "\(strSeconds):\(strmilliseconds)"
             }
         }
         
@@ -158,7 +158,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
                         if didEndCircuit(){
                             isTimeCounting = false
                             startTime = TimeInterval()
-                            circuitDelegate?.didEndCircuit(seconds: seconds, fraction: fraction)
+                            circuitDelegate?.didEndCircuit(seconds: seconds, milliseconds: milliseconds)
                         }
                     } else {
                         passage += 1

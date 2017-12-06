@@ -43,14 +43,14 @@ class HistoricTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "play", for: indexPath) as! AplayTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "play", for: indexPath) as! PlayTableViewCell
         let play = Ranking.getPlayAtIndex(indexPath.row)
-        cell.name.text = "\(indexPath.row+1)º \(play.name!)"
+        cell.name.text = "\(indexPath.row+1)º \(play.player.name)"
         let seconds = play.seconds
-        let fraction = play.fraction
-        let strSeconds = String(format: "%03d", seconds!)
-        let strFraction = String(format: "%02d", fraction)
-        cell.time.text = "\(strSeconds):\(strFraction)"
+        let milliseconds = play.milliseconds
+        let strSeconds = String(format: "%03d", seconds)
+        let strmilliseconds = String(format: "%02d", milliseconds)
+        cell.time.text = "\(strSeconds):\(strmilliseconds)"
         cell.backgroundView?.alpha = 0.5
         
 

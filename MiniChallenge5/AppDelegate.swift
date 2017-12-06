@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var player: Player? 
     
     var preferesStatusBarHidden: Bool {
         return true
