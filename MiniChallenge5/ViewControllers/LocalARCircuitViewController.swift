@@ -33,10 +33,8 @@ class LocalARCircuitViewController: UIViewController, CircuitARSCNViewDelegate{
                     title: NSLocalizedString("OK", comment: ""),
                     style: .default,
                     handler: { (action) in
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        let player = appDelegate.player
-                        Ranking.add(Play(player: player!, seconds: Int(seconds), milliseconds: Int(milliseconds)))
-                        self.performSegue(withIdentifier: "toRankingFromLocalCircuit", sender: self)
+                        LocalRanking.add(Play(player: Player(name: alert.textFields![0].text!), seconds: Int(seconds), milliseconds: Int(milliseconds)))
+                        self.performSegue(withIdentifier: "toRankingFromLocalCircuit", sender: LocalRanking.self)
                 }))
             alert.addTextField(configurationHandler: { (textField: UITextField! ) in
                 textField.isSecureTextEntry = false

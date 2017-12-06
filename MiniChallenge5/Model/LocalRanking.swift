@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Ranking {
+class LocalRanking: Ranking {
     
     private static var plays = [Play]()
     
-    class func add(_ play: Play){
+    static func add(_ play: Play){
         if plays.count == 0{
             plays.append(play)
         } else{
@@ -32,11 +32,11 @@ class Ranking {
         
     }
     
-    class func getPlays() -> [Play]{
+    static func getPlays() -> [Play]{
         return plays
     }
     
-    class func getPlayAtIndex(_ i: Int) -> Play {
+    static func getPlayAtIndex(_ i: Int) -> Play {
         return plays[i]
     }
     
