@@ -108,7 +108,7 @@ class PlayerDataManager{
         task.resume()
     }
     
-    //MARK: Read Player by Player
+    //MARK: Read Players by Faction
     func readByPlayer(factionID: Int, callback: @escaping (_ : [Player]) -> Void){
         let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/faction/\(factionID)")!
         
@@ -225,5 +225,6 @@ class PlayerDataManager{
             task.resume()
         } catch {
             print("Impossible to generate JSON from play")
-        }    }
+        }
+    }
 }

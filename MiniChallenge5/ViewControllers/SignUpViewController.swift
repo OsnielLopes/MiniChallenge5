@@ -43,6 +43,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     private var playerDataManager: PlayerDataManager = PlayerDataManager()
+    private var preferencesDataManager: PreferencesDataManager = PreferencesDataManager()
     
     //MARK: Life cicle functions
     override func viewDidLoad() {
@@ -53,6 +54,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
         self.confirmPasswordTextField.delegate = self
         self.nameTextField.delegate = self
+        
+        self.updateButtonsState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,7 +118,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    //MARK: actions
+    //MARK: Actions
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         let name = self.nameTextField.text!
         let email = self.emailTextField.text!
@@ -149,7 +152,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         self.playerDataManager.create(name: name, email: email, password: password, factionID: factionID, callback: {
             if let session = $0{
-                print("***Created Session: \(session)***")
+                self.preferencesDataManager.saveToken(session.token)
                 Session.shared = session
                 self.sendToMainMenu()
             }else{
