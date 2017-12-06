@@ -86,7 +86,7 @@ class PlayDataManager{
         task.resume()
     }
     
-    //MARK: Read Play by Player
+    //MARK: Read Plays by Player
     func readByPlayer(playerID: Int, callback: @escaping (_ : [Play]) -> Void){
         let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/player/\(playerID)")!
         
@@ -108,7 +108,7 @@ class PlayDataManager{
         task.resume()
     }
     
-    //MARK: Read Play by Circuit
+    //MARK: Read Plays by Circuit
     func readByCircuit(circuitID: Int, callback: @escaping (_ : [Play]) -> Void){
         let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/circuit/\(circuitID)")!
         
