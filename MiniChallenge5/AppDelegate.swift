@@ -49,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         let session: Session = Session(player: player, token: token)
                         Session.shared = session
                     }
+                }else{
+                    print("Ther isn't internet connection!")
                 }
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
