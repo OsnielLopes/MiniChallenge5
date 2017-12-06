@@ -12,14 +12,17 @@ import UIKit
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
+    //MARK: Outlets
     @IBOutlet weak var mapView: MKMapView!
+    
+    //MARK: Properties
     let locationManager:CLLocationManager = CLLocationManager()
     var lastValidBow: Bow!
     let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     let regionRadius: CLLocationDistance = 1000
     var circuit: Circuit = Circuit.init()
     
-    
+    //MARK: Life cicle functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
