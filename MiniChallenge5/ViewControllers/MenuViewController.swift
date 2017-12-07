@@ -48,6 +48,10 @@ class MenuViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.backgroundColor = nil
+        
         // Constraints
         circleImageTopConstraint.constant = self.view.frame.size.height * 0.149
         

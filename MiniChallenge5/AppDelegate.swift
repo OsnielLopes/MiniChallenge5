@@ -43,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         DispatchQueue.main.async {
+
+
             if let token = self.preferencesDataManager.token{
                 if Reachability.isConnectedToNetwork(){
                     self.playerDataManager.readByToken(token: token) {
@@ -53,19 +55,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             Session.shared = session
                         }
                     }
-                }else{
-                    print("Ther isn't internet connection!")
                 }
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let mainMenuViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu")
-                let navigationController = UINavigationController(rootViewController: mainMenuViewController)
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                self.window?.rootViewController = navigationController
-                self.window?.makeKeyAndVisible()
+
+            }else{
+                    print("Ther isn't internet connection!")
             }
+
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+            let mainMenuViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu")
+            let navigationController = UINavigationController(rootViewController: mainMenuViewController)
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
+
+
         }
+    
+
     }
+
+    
 }
 

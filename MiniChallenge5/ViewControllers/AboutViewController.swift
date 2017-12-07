@@ -31,6 +31,13 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var nameLabel3TopConstraint: NSLayoutConstraint!
     @IBOutlet weak var nameLabel3LeadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var image1: UIImageView!
+    
+    @IBOutlet weak var image2: UIImageView!
+    
+    @IBOutlet weak var image3: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,13 +67,14 @@ class AboutViewController: UIViewController {
         image3TopConstraint.constant = self.view.frame.size.height * 0.514
         image3LeadingConstraint.constant = self.view.frame.size.width * 0.106
         
-        nameLabel1TopConstraint.constant = self.view.frame.size.height * 0.243
+        
+        nameLabel1TopConstraint.constant = image1TopConstraint.constant + image1.frame.size.height/2
         nameLabel1LeadingConstraint.constant = self.view.frame.size.width * 0.050
         
-        nameLabel2TopConstraint.constant = self.view.frame.size.height * 0.403
+        nameLabel2TopConstraint.constant = image2TopConstraint.constant + image2.frame.size.height/2
         nameLabel2LeadingConstraint.constant = self.view.frame.size.width * 0.050
         
-        nameLabel3TopConstraint.constant = self.view.frame.size.height * 0.563
+        nameLabel3TopConstraint.constant = image3TopConstraint.constant + image3.frame.size.height/2
         nameLabel3LeadingConstraint.constant = self.view.frame.size.width * 0.050
     }
     

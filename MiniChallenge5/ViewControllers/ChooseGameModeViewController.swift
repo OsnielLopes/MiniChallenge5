@@ -20,6 +20,17 @@ class ChooseGameModeViewController: UIViewController {
     
     //MARK: Life cicle functions
     override func viewDidLoad() {
+        
+        //Coloca imagem e filtro no background da view
+        let backgroundImage = UIImageView(frame: self.view.frame)
+        let filterImage = UIImageView(frame: self.view.frame)
+        
+        backgroundImage.image = UIImage(named: "background_image")
+        filterImage.image = UIImage(named: "filter")
+        
+        self.view.insertSubview(filterImage, at: 0)
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         super.viewDidLoad()
         if !Reachability.isConnectedToNetwork(){
             playTheLocalCircuitButton.isEnabled = false
@@ -34,6 +45,9 @@ class ChooseGameModeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.navigationBar.backgroundColor = nil
+        
         checkLocationAuthorizationStatus()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
