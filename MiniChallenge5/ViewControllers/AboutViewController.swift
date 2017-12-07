@@ -68,13 +68,13 @@ class AboutViewController: UIViewController {
         image3LeadingConstraint.constant = self.view.frame.size.width * 0.106
         
         
-        nameLabel1TopConstraint.constant = image1TopConstraint.constant + image1.frame.size.height/2
+        nameLabel1TopConstraint.constant = image1TopConstraint.constant + image1.frame.size.height/2.4
         nameLabel1LeadingConstraint.constant = self.view.frame.size.width * 0.050
         
-        nameLabel2TopConstraint.constant = image2TopConstraint.constant + image2.frame.size.height/2
+        nameLabel2TopConstraint.constant = image2TopConstraint.constant + image2.frame.size.height/2.4
         nameLabel2LeadingConstraint.constant = self.view.frame.size.width * 0.050
         
-        nameLabel3TopConstraint.constant = image3TopConstraint.constant + image3.frame.size.height/2
+        nameLabel3TopConstraint.constant = image3TopConstraint.constant + image3.frame.size.height/2.4
         nameLabel3LeadingConstraint.constant = self.view.frame.size.width * 0.050
     }
     
