@@ -26,21 +26,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-km-KgG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Osniel" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-km-KgG">
                                 <rect key="frame" x="40" y="120" width="95" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="1zo-DC-wZm"/>
                                     <constraint firstAttribute="width" constant="95" id="p6o-7N-DaN"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-HD-2kT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vinicius" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-HD-2kT">
                                 <rect key="frame" x="40" y="333" width="95" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="2zl-fl-IPZ"/>
                                     <constraint firstAttribute="height" constant="95" id="HIh-fR-hKb"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="XFd-av-vip">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Renan" translatesAutoresizingMaskIntoConstraints="NO" id="XFd-av-vip">
                                 <rect key="frame" x="40" y="219" width="95" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="B3A-OR-N2Q"/>
@@ -48,25 +48,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Osniel Teixeira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnF-0o-iBj">
-                                <rect key="frame" x="145" y="170" width="116" height="21"/>
+                                <rect key="frame" x="145" y="170" width="179.5" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinicius Cano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxC-dv-jPX">
-                                <rect key="frame" x="145" y="410" width="109.5" height="21"/>
+                                <rect key="frame" x="145" y="410" width="157" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renan Germano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-yH-KcU">
-                                <rect key="frame" x="145" y="290" width="131.5" height="21"/>
+                                <rect key="frame" x="145" y="290" width="186" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rz-7D-wyA">
-                                <rect key="frame" x="112" y="80" width="151.5" height="35"/>
+                                <rect key="frame" x="66.5" y="80" width="242.5" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-Rg-SB4">
-                                <rect key="frame" x="141" y="100" width="93" height="35"/>
+                                <rect key="frame" x="123" y="100" width="129" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -204,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv1-2D-6uf">
-                                <rect key="frame" x="133.5" y="100" width="108" height="35"/>
+                                <rect key="frame" x="116" y="100" width="143" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -560,12 +560,14 @@
     </scenes>
     <resources>
         <image name="About_Button" width="200" height="45"/>
-        <image name="Circle" width="341" height="318"/>
+        <image name="Circle" width="1034" height="967"/>
         <image name="Circuits_Button" width="200" height="45"/>
+        <image name="Osniel" width="400" height="400"/>
         <image name="Play_Button" width="200" height="45"/>
+        <image name="Renan" width="397" height="400"/>
         <image name="SignIn_Button" width="200" height="45"/>
         <image name="SignUp_Button" width="200" height="45"/>
-        <image name="perfil" width="500" height="500"/>
+        <image name="Vinicius" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oJy-zL-amU"/>
