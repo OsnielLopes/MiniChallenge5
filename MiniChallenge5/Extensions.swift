@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import SceneKit
 
 extension CLLocation {
     func toCoordinate() -> Bow {

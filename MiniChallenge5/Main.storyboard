@@ -421,11 +421,11 @@
             </objects>
             <point key="canvasLocation" x="614" y="404"/>
         </scene>
-        <!--LocalAR Circuit View Controller-->
+        <!--SaveAR View Controller-->
         <scene sceneID="yRx-js-qLV">
             <objects>
-                <viewController id="i85-ZI-DMa" customClass="LocalARCircuitViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="LocalCircuitARSCNView" customModule="MiniChallenge5" customModuleProvider="target">
+                <viewController id="i85-ZI-DMa" customClass="SaveARViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="SavableCircuitARSCNView" customModule="MiniChallenge5" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -587,7 +587,7 @@
     </scenes>
     <resources>
         <image name="About_Button" width="200" height="45"/>
-        <image name="Circle" width="206" height="206"/>
+        <image name="Circle" width="341" height="318"/>
         <image name="Circuits_Button" width="200" height="45"/>
         <image name="Play_Button" width="200" height="45"/>
         <image name="SignIn_Button" width="200" height="45"/>

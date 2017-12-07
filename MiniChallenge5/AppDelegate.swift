@@ -44,10 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         DispatchQueue.main.async {
             if let token = self.preferencesDataManager.token{
-                self.playerDataManager.readByToken(token: token) {
-                    if let player = $0{
-                        let session: Session = Session(player: player, token: token)
-                        Session.shared = session
+                if Reachability.isConnectedToNetwork(){
+                    self.playerDataManager.readByToken(token: token) {
+                        if let player = $0{
+                            let session: Session = Session(player: player, token: token)
+                            print("***Created Session***")
+                            print(session)
+                            Session.shared = session
+                        }
                     }
                 }else{
                     print("Ther isn't internet connection!")

@@ -21,29 +21,32 @@ class LocalCircuitARSCNView: CircuitARSCNView{
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        let location = touches.first!.location(in: self)
-        let existingPlaneResult = self.hitTest(location, types: .existingPlane)
-        let estimatedHotizontalResult = self.hitTest(location, types: .estimatedHorizontalPlane)
-        
-        var results: [ARHitTestResult]!
-        if existingPlaneResult.count == 0 {
-            results = estimatedHotizontalResult
-        } else {
-            results = existingPlaneResult
-        }
-        
-        //takes the farthest real word point finded
-        if let closestResult = results.last {
+        if !isTimeCounting {
             
-            let matrix = SCNMatrix4(closestResult.worldTransform)
+            let location = touches.first!.location(in: self)
+            let existingPlaneResult = self.hitTest(location, types: .existingPlane)
+            let estimatedHotizontalResult = self.hitTest(location, types: .estimatedHorizontalPlane)
             
-            //creates a indentity matriz that translates the point 1.5 meter up
-            let translate = simd_float4x4(SCNMatrix4Translate(matrix, 0, 1.5, 0))
+            var results: [ARHitTestResult]!
+            if existingPlaneResult.count == 0 {
+                results = estimatedHotizontalResult
+            } else {
+                results = existingPlaneResult
+            }
             
-            let anchor = ARBowAnchor(transform: translate)
-            bows.append(anchor)
-            
-            self.session.add(anchor: anchor)
+            //takes the farthest real word point finded
+            if let closestResult = results.last {
+                
+                let matrix = SCNMatrix4(closestResult.worldTransform)
+                
+                //creates a indentity matriz that translates the point 1.5 meter up
+                let translate = simd_float4x4(SCNMatrix4Translate(matrix, 0, 1.5, 0))
+                
+                let anchor = ARBowAnchor(transform: translate)
+                bows.append(anchor)
+                
+                self.session.add(anchor: anchor)
+            }
         }
     }
     

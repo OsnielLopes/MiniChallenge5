@@ -38,6 +38,8 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
         self.scene = SCNScene()
         
         let configuration = ARWorldTrackingConfiguration()
+        configuration.isLightEstimationEnabled = true
+        configuration.worldAlignment = .gravityAndHeading
         configuration.planeDetection = .horizontal
         self.delegate = self
         self.session.run(configuration)

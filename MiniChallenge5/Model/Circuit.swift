@@ -7,9 +7,18 @@
 //
 
 import Foundation
+import MapKit
 
-struct Circuit: Codable{
+class Circuit: Codable{
     //MARK: Properties
     var id: Int?
-    var bows: [Bow] = [Bow]()
+    var location: Location?
+    
+    init() {
+        id = nil
+    }
+    
+    init(location: Location) {
+        self.location = location
+    }
 }

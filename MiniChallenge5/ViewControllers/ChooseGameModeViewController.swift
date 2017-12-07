@@ -37,6 +37,7 @@ class ChooseGameModeViewController: UIViewController {
         checkLocationAuthorizationStatus()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        print(self.locationManager.location?.coordinate.latitude  )
         circuitManager.getCircuitLocations { (circuits) in
             for (id, location) in circuits{
                 let newLocation = CLLocation(latitude: CLLocationDegrees(location.latitude), longitude: CLLocationDegrees(location.longitude))
@@ -46,6 +47,7 @@ class ChooseGameModeViewController: UIViewController {
                 }
             }
         }
+        self.navigationController?.navigationBar.tintColor = UIColor.black
     }
     
     override func viewDidAppear(_ animated: Bool) {
