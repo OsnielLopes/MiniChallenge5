@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private var preferencesDataManager: PreferencesDataManager = PreferencesDataManager()
     private var playerDataManager: PlayerDataManager = PlayerDataManager()
+    var circuit: Circuit!
     
     var preferesStatusBarHidden: Bool {
         return true
@@ -42,18 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        self.circuit = nil
         DispatchQueue.main.async {
-
-
             if let token = self.preferencesDataManager.token{
-                if Reachability.isConnectedToNetwork(){
-                    self.playerDataManager.readByToken(token: token) {
-                        if let player = $0{
-                            let session: Session = Session(player: player, token: token)
-                            print("***Created Session***")
-                            print(session)
-                            Session.shared = session
-                        }
+                self.playerDataManager.readByToken(token: token) {
+                    if let player = $0{
+                        let session: Session = Session(player: player, token: token)
+                        Session.shared = session
                     }
                 }
 
@@ -68,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             self.window?.rootViewController = navigationController
             self.window?.makeKeyAndVisible()
-
 
         }
     

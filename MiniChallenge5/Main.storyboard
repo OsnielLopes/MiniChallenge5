@@ -406,10 +406,10 @@
             </objects>
             <point key="canvasLocation" x="-375.19999999999999" y="404.34782608695656"/>
         </scene>
-        <!--View Controller-->
+        <!--CloudAR Circuit View Controller-->
         <scene sceneID="Xgg-oR-9Vk">
             <objects>
-                <viewController id="m1m-3y-t6c" sceneMemberID="viewController">
+                <viewController id="m1m-3y-t6c" customClass="CloudARCircuitViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YK8-Ap-WFL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -428,7 +428,7 @@
         <scene sceneID="yRx-js-qLV">
             <objects>
                 <viewController id="i85-ZI-DMa" customClass="SaveARViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="SavableCircuitARSCNView" customModule="MiniChallenge5" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="iXd-mH-xkB" customClass="SCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -569,6 +569,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oJy-zL-amU"/>
-        <segue reference="qUj-Uz-07m"/>
+        <segue reference="JLr-ee-Scu"/>
     </inferredMetricsTieBreakers>
 </document>

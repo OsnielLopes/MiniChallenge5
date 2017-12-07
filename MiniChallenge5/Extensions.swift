@@ -7,14 +7,8 @@
 //
 
 import Foundation
-import MapKit
-import SceneKit
-
-extension CLLocation {
-    func toCoordinate() -> Bow {
-        return Bow(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
-    }
-}
+import UIKit
+import ARKit
 
 // Configura o design do text field
 extension UITextField {
@@ -28,5 +22,38 @@ extension UITextField {
         self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0
+    }
+}
+
+extension matrix_float4x4{
+    func toFloatMatrix() -> [[Float]]{
+        
+        var matrix = [[Float]]()
+        
+        var vector = [Float]()
+        for num in self.columns.0 {
+            vector.append(num)
+        }
+        matrix.append(vector)
+        
+        vector = [Float]()
+        for num in self.columns.1 {
+            vector.append(num)
+        }
+        matrix.append(vector)
+        
+        vector = [Float]()
+        for num in self.columns.2 {
+            vector.append(num)
+        }
+        matrix.append(vector)
+        
+        vector = [Float]()
+        for num in self.columns.3 {
+            vector.append(num)
+        }
+        matrix.append(vector)
+        
+        return matrix
     }
 }

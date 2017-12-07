@@ -13,6 +13,7 @@ class Circuit: Codable{
     //MARK: Properties
     var id: Int?
     var location: Location?
+    var bows = [Bow]()
     
     init() {
         id = nil

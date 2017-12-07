@@ -8,22 +8,19 @@
 
 import UIKit
 import MapKit
+import SceneKit
 
-class SaveARViewController: UIViewController, CircuitARSCNViewDelegate {
+class SaveARViewController: UIViewController {    
     
     var arSceneView: SavableCircuitARSCNView!
     var locationManager: CLLocationManager = CLLocationManager()
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view = SavableCircuitARSCNView(frame: self.view.frame, locationManager: locationManager)
         arSceneView = self.view as! SavableCircuitARSCNView!
-        arSceneView.circuitDelegate = self
-        
+        arSceneView.circuitWillAppear()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,23 +29,13 @@ class SaveARViewController: UIViewController, CircuitARSCNViewDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.startUpdatingHeading()
         locationManager.startUpdatingLocation()
-        arSceneView.circuitWillAppear()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    func didEndCircuit(seconds: UInt8, milliseconds: UInt8) {
-        let circuitDataManager = CircuitDataManager()
-        circuitDataManager.create(circuit: arSceneView.circuit!) { (c) in
-            return
-        }
-        
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? RankingTableViewController{
             destination.isLocalRanking = true
@@ -60,6 +47,7 @@ class SaveARViewController: UIViewController, CircuitARSCNViewDelegate {
             locationManager.requestWhenInUseAuthorization()
         }
     }
+    
     
     
 }

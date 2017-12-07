@@ -50,13 +50,4 @@ class LocalCircuitARSCNView: CircuitARSCNView{
         }
     }
     
-    override func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        super.renderer(renderer, didAdd: node, for: anchor)
-        if anchor.isKind(of: ARBowAnchor.self) {
-            let newBow = bow.clone()
-            newBow.eulerAngles.y = (self.session.currentFrame?.camera.eulerAngles.y)!
-            node.addChildNode(newBow)
-        }
-    }
-    
 }

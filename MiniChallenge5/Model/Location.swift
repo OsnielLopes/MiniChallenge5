@@ -7,10 +7,15 @@
 //
 
 import Foundation
+import MapKit
 
 struct Location: Codable {
     var acuraccy: Double
     var magneticHeading: Double
     var latitude: Double
     var longitude: Double
+    
+    func toCLLocation() -> CLLocation{
+       return CLLocation(latitude: latitude, longitude: longitude)
+    }
 }

@@ -9,16 +9,20 @@
 import Foundation
 
 class CircuitDataManager : CircuitDataManagerProtocol{
-    
-    func getCircuitLocations(callback: @escaping ([Int : Bow]) -> ()) {
-        var locations: [Int : Bow] = [Int : Bow]()
-        self.read(callback: {circuits in
-            circuits.forEach({circuit in
-                locations[circuit.id!] = circuit.bows.first!
-            })
-            callback(locations)
-        })
+    func getCircuitLocations(callback: @escaping ([Int : Location]) -> ()) {
+        //
     }
+    
+    
+//    func getCircuitLocations(callback: @escaping ([Int : Bow]) -> ()) {
+//        var locations: [Int : Bow] = [Int : Bow]()
+//        self.read(callback: {circuits in
+//            circuits.forEach({circuit in
+////                locations[circuit.id!] = circuit.bows.first!
+//            })
+//            callback(locations)
+//        })
+//    }
     
     //MARK: Create Circuit
     func create(circuit: Circuit, callback: @escaping (_ : Circuit) -> Void){

@@ -20,16 +20,16 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     var startTime = TimeInterval()
     var isTimeCounting = false
     var circuitDelegate: CircuitARSCNViewDelegate?
+    var circuit: Circuit!
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: frame, options: nil)
         setUp()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUp()
-        print(self.frame.width)
     }
     
     func setUp(){
@@ -93,6 +93,12 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
              changes in the plane anchor as plane estimation continues.
              */
             node.addChildNode(planeNode)
+        } else
+            if anchor.isKind(of: ARBowAnchor.self) {
+                let newBow = bow.clone()
+                newBow.eulerAngles.y = (self.session.currentFrame?.camera.eulerAngles.y)!
+                node.addChildNode(newBow)
+            
         }
     }
     
@@ -174,7 +180,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
         }
     }
     
-    private func didEndCircuit() -> Bool{
+    func didEndCircuit() -> Bool{
         var didEnd: Bool = true
         for bow in bows {
             didEnd = didEnd && bow.didPass

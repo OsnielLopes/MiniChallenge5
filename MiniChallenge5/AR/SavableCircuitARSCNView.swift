@@ -13,29 +13,18 @@ import MapKit
 class SavableCircuitARSCNView: CircuitARSCNView, CLLocationManagerDelegate{
     
     var locationManager:CLLocationManager!
-    var circuit: Circuit?
     
     init(frame: CGRect, locationManager: CLLocationManager) {
         super.init(frame: frame)
         self.locationManager = locationManager
-        let location = Location(acuraccy: (self.locationManager.location?.horizontalAccuracy)!,
-                                magneticHeading: (self.locationManager.heading?.magneticHeading)!,
-                                latitude: (self.locationManager.location?.coordinate.latitude)!,
-                                longitude: (self.locationManager.location?.coordinate.longitude)!)
-        circuit = Circuit(location: location)
+        locationManager.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        let location = Location(acuraccy: (self.locationManager.location?.horizontalAccuracy)!,
-                                magneticHeading: (self.locationManager.heading?.magneticHeading)!,
-                                latitude: (self.locationManager.location?.coordinate.latitude)!,
-                                longitude: (self.locationManager.location?.coordinate.longitude)!)
-        circuit = Circuit(location: location)
     }
     
-    
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let location = touches.first!.location(in: self)
@@ -53,6 +42,7 @@ class SavableCircuitARSCNView: CircuitARSCNView, CLLocationManagerDelegate{
         if let closestResult = results.last {
             
             let matrix = SCNMatrix4(closestResult.worldTransform)
+
             
             //creates a indentity matriz that translates the point 1.5 meter up
             let translate = simd_float4x4(SCNMatrix4Translate(matrix, 0, 1.5, 0))
@@ -64,21 +54,39 @@ class SavableCircuitARSCNView: CircuitARSCNView, CLLocationManagerDelegate{
         }
     }
     
+    //MARK: ARSCNSceneDelegate
+    
     override func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         super.renderer(renderer, didAdd: node, for: anchor)
-        if anchor.isKind(of: ARBowAnchor.self) {
-            let newBow = bow.clone()
-            newBow.eulerAngles.y = (self.session.currentFrame?.camera.eulerAngles.y)!
-            node.addChildNode(newBow)
+        if anchor.isKind(of: ARBowAnchor.self){
+            circuit.bows.append(Bow(worldTransform: anchor.transform.toFloatMatrix()))
         }
+        
     }
     
-
-    
     override func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        print("Circuit = \(circuit != nil), endCircuit? \(self.didEndCircuit()), bows = \(self.bows.count)")
+        if circuit != nil && self.didEndCircuit() && self.bows.count >= 2{
+            DispatchQueue.main.async {
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
+                    appDelegate.circuit = self.circuit
+                }
+            }
+            
+        }
         super.renderer(renderer, updateAtTime: time)
-        print(self.locationManager.heading?.magneticHeading)
-        print("Acuraccy \(self.locationManager.location?.horizontalAccuracy)")
+    }
+
+    //MARK: CLLocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        if circuit == nil {
+        let location = Location(acuraccy: (self.locationManager.location?.horizontalAccuracy)!,
+                                magneticHeading: (self.locationManager.heading?.magneticHeading)!,
+                                latitude: (self.locationManager.location?.coordinate.latitude)!,
+                                longitude: (self.locationManager.location?.coordinate.longitude)!)
+        circuit = Circuit(location: location)
+        }
+
     }
     
     

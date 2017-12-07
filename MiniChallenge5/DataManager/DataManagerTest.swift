@@ -84,11 +84,11 @@ class DataManagerTest{
     func testCircuitDataManager(){
         let circuitDataManager: CircuitDataManager = CircuitDataManager()
         var circuit: Circuit = Circuit()
-        circuit.bows.append(Bow(latitude: 10, longitude: 20))
-        circuit.bows.append(Bow(latitude: 30, longitude: 50))
-        circuit.bows.append(Bow(latitude: 60, longitude: 70))
-        circuit.bows.append(Bow(latitude: 80, longitude: 90))
-        circuit.bows.append(Bow(latitude: 100, longitude: 110))
+//        circuit.bows.append(Bow(latitude: 10, longitude: 20))
+//        circuit.bows.append(Bow(latitude: 30, longitude: 50))
+//        circuit.bows.append(Bow(latitude: 60, longitude: 70))
+//        circuit.bows.append(Bow(latitude: 80, longitude: 90))
+//        circuit.bows.append(Bow(latitude: 100, longitude: 110))
         
         circuitDataManager.create(circuit: circuit, callback: {
             print("***Created Circuit: \($0)***")

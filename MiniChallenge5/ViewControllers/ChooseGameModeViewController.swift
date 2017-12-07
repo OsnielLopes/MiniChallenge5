@@ -34,7 +34,10 @@ class ChooseGameModeViewController: UIViewController {
         super.viewDidLoad()
         if !Reachability.isConnectedToNetwork(){
             playTheLocalCircuitButton.isEnabled = false
-        }else if closestCircuitId == nil{
+        }
+        if closestCircuitId != nil || (UIApplication.shared.delegate as! AppDelegate).circuit != nil{
+            playTheLocalCircuitButton.isEnabled = true
+        } else {
             playTheLocalCircuitButton.isEnabled = false
         }
     }
@@ -51,11 +54,11 @@ class ChooseGameModeViewController: UIViewController {
         checkLocationAuthorizationStatus()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        print(self.locationManager.location?.coordinate.latitude  )
+        
         circuitManager.getCircuitLocations { (circuits) in
             for (id, location) in circuits{
                 let newLocation = CLLocation(latitude: CLLocationDegrees(location.latitude), longitude: CLLocationDegrees(location.longitude))
-                if newLocation.distance(from: self.locationManager.location!) < 200 {
+                if newLocation.distance(from: self.locationManager.location!) < location.acuraccy + (self.locationManager.location?.horizontalAccuracy)! {
                     self.closestCircuitId = id
                     break
                 }
@@ -91,14 +94,12 @@ class ChooseGameModeViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    /*
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if let cloudCircuit = segue.destination as? CloudARCircuitViewController {
+            cloudCircuit.id = closestCircuitId
+        }
      }
-     */
     
 }

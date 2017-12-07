@@ -7,15 +7,10 @@
 //
 
 import Foundation
+import SceneKit
 
 struct Bow: Codable{
     //MARK: Properties
-    var latitude: Double
-    var longitude: Double
+    var worldTransform: [[Float]]!
     
-    //MARK: initializers
-    init(latitude: Double, longitude: Double) {
-        self.latitude = latitude
-        self.longitude = longitude
-    }
 }
