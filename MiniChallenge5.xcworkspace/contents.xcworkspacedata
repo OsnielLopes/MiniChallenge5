@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/viniciuscano/Git/MiniChallenge5/MiniChallenge5/ViewControllers/HistoryViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:MiniChallenge5.xcodeproj">
    </FileRef>
    <FileRef
