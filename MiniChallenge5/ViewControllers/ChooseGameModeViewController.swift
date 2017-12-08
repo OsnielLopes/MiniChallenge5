@@ -41,12 +41,7 @@ class ChooseGameModeViewController: UIViewController {
         if !Reachability.isConnectedToNetwork(){
             playTheLocalCircuitButton.isEnabled = false
         }
-        if (UIApplication.shared.delegate as! AppDelegate).circuit != nil{
-            playTheLocalCircuitButton.isEnabled = true
-        } else {
-            playTheLocalCircuitButton.isEnabled = false
-        }
-        
+
         CloudRanking.clean()
     }
     
@@ -80,12 +75,21 @@ class ChooseGameModeViewController: UIViewController {
                     DispatchQueue.main.async {
                         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                             appDelegate.circuit = circuit
+                            self.playMyCircuitButton.isEnabled = true
                         }
                     }
                     
                     break
                 }
             }
+            DispatchQueue.main.async {
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    if appDelegate.circuit == nil {
+                    self.playMyCircuitButton.isEnabled = false
+                    }
+                }
+            }
+            
         }
                 break
         }

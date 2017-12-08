@@ -17,6 +17,10 @@ class CloudRanking: Ranking {
     
     static func add(_ play: Play) {
         plays.append(play)
+        plays = plays.sorted { (a, b) -> Bool in
+            return a.milliseconds < b.milliseconds && a.seconds < b.seconds
+        }
+        
     }
     
     static func getPlays() -> [Play]{
