@@ -14,7 +14,7 @@ class PlayDataManager{
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(play)
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/play")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/play")!
             var request = URLRequest(url: url)
             request.addValue(Session.shared?.token ?? "", forHTTPHeaderField: "x-access-token")
             request.httpMethod = "POST"
@@ -45,7 +45,7 @@ class PlayDataManager{
     
     //MARK: Read all Plays
     func read(callback: @escaping (_ : [Play]) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/play")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/play")!
         
         var request = URLRequest(url: url)
         request.addValue(Session.shared?.token ?? "", forHTTPHeaderField: "x-access-token")
@@ -71,7 +71,7 @@ class PlayDataManager{
     
     //MARK: Read Play by id
     func readById(id: Int, callback: @escaping (_ : Play) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/\(id)")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/play/\(id)")!
         
         var request = URLRequest(url: url)
         request.addValue(Session.shared?.token ?? "", forHTTPHeaderField: "x-access-token")
@@ -97,7 +97,7 @@ class PlayDataManager{
     
     //MARK: Read Plays by Player
     func readByPlayer(playerID: Int, callback: @escaping (_ : [Play]) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/player/\(playerID)")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/play/player/\(playerID)")!
         
         var request = URLRequest(url: url)
         request.addValue(Session.shared?.token ?? "", forHTTPHeaderField: "x-access-token")
@@ -123,7 +123,7 @@ class PlayDataManager{
     
     //MARK: Read Plays by Circuit
     func readByCircuit(circuitID: Int, callback: @escaping (_ : [Play]) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/circuit/\(circuitID)")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/play/circuit/\(circuitID)")!
         
         var request = URLRequest(url: url)
         request.addValue(Session.shared?.token ?? "", forHTTPHeaderField: "x-access-token")
@@ -151,7 +151,7 @@ class PlayDataManager{
     func update(play: Play, callback: @escaping (_ : Play) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/\(play.id!)")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/play/\(play.id!)")!
             var p = play
             p.id = nil
             let jsonData = try jsonEncoder.encode(p)
@@ -185,7 +185,7 @@ class PlayDataManager{
     func delete(id: Int, callback: @escaping (_ : Play) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/play/\(id)")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/play/\(id)")!
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             request.addValue(Session.shared?.token ?? "", forHTTPHeaderField: "x-access-token")
