@@ -58,7 +58,7 @@ class CloudARCircuitViewController: UIViewController, CLLocationManagerDelegate 
         if !self.view.isKind(of: SCNView.self){
         if abs(newHeading.magneticHeading - (circuit.location?.magneticHeading)!) < 10{
             if (locationManager.location?.distance(from: (circuit.location?.toCLLocation())!))! <
-                Double((locationManager.location?.horizontalAccuracy)!) + Double((circuit.location?.acuraccy)!) {
+                Double((locationManager.location?.horizontalAccuracy)!) + Double((circuit.location?.accuracy)!) {
                 let circuitScn = CloudCircuitARSCNView(frame: self.view.frame, circuit: circuit)
                 self.view = circuitScn
             }

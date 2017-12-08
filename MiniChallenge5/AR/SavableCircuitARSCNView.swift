@@ -80,7 +80,7 @@ class SavableCircuitARSCNView: CircuitARSCNView, CLLocationManagerDelegate{
     //MARK: CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         if circuit == nil {
-        let location = Location(acuraccy: (self.locationManager.location?.horizontalAccuracy)!,
+            let location = Location(accuracy: (self.locationManager.location?.horizontalAccuracy)!,
                                 magneticHeading: (self.locationManager.heading?.magneticHeading)!,
                                 latitude: (self.locationManager.location?.coordinate.latitude)!,
                                 longitude: (self.locationManager.location?.coordinate.longitude)!)
