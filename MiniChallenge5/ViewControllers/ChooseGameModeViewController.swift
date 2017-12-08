@@ -46,6 +46,8 @@ class ChooseGameModeViewController: UIViewController {
         } else {
             playTheLocalCircuitButton.isEnabled = false
         }
+        
+        CloudRanking.clean()
     }
     
     override func didReceiveMemoryWarning() {

@@ -7,21 +7,28 @@
 //
 
 import Foundation
+import UIKit
 
 class CloudRanking: Ranking {
-    
+
+
+    private static var dataManager = PlayDataManager()
     private static var plays = [Play]()
     
     static func add(_ play: Play) {
-        //
+        plays.append(play)
     }
     
-    static func getPlays() -> [Play] {
+    static func getPlays() -> [Play]{
         return plays
     }
     
-    static func getPlayAtIndex(_ i: Int) -> Play {
-        return plays.first!
+    static func getPlayAtIndex(_ i: Int) -> Play{
+        return plays[i]
+    }
+    
+    static func clean() {
+            plays.removeAll()
     }
     
     

@@ -31,5 +31,4 @@ class CloudCircuitARSCNView: CircuitARSCNView {
         }
     }
     
-    
 }

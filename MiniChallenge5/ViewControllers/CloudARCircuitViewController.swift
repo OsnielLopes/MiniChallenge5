@@ -10,9 +10,10 @@ import UIKit
 import MapKit
 import SceneKit
 
-class CloudARCircuitViewController: UIViewController {
+class CloudARCircuitViewController: UIViewController, CircuitARSCNViewDelegate {
     
     let circuitDataManager = CircuitDataManager()
+    let playDataManager = PlayDataManager()
     var circuit: Circuit!
     var scnView: SCNView!
     
@@ -32,6 +33,23 @@ class CloudARCircuitViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? RankingTableViewController{
+            destination.isLocalRanking = false
+        }
+    }
+    
+    func didEndCircuit(seconds: UInt8, milliseconds: UInt8) {
+        playDataManager.readByCircuit(circuitID: circuit.id!) { (plays) in
+            for p in plays {
+                CloudRanking.add(p)
+            }
+        }
+        CloudRanking.add(Play(id: nil, circuitID: circuit.id!, player: (Session.shared?.player)!, seconds: Int(seconds), milliseconds: Int(milliseconds)))
+        self.performSegue(withIdentifier: "toRankingFromCloudCircuit", sender: "nil")
+    }
+    
     
     /*
      // MARK: - Navigation

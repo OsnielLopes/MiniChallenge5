@@ -14,6 +14,7 @@ class SavableCircuitARSCNView: CircuitARSCNView, CLLocationManagerDelegate{
     
     var locationManager:CLLocationManager!
     var circuitDataManager = CircuitDataManager()
+    var jaCriou = false
     
     init(frame: CGRect, locationManager: CLLocationManager) {
         super.init(frame: frame)
@@ -67,8 +68,10 @@ class SavableCircuitARSCNView: CircuitARSCNView, CLLocationManagerDelegate{
     
     override func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         print("Circuit = \(circuit != nil), endCircuit? \(self.didEndCircuit()), bows = \(self.bows.count)")
-        if circuit != nil && self.didEndCircuit() && self.bows.count >= 2{
+        if circuit != nil && self.didEndCircuit() && self.bows.count >= 2 && !jaCriou{
+            
             circuitDataManager.create(circuit: self.circuit) { (c) in
+                self.jaCriou = true
                 print("Circuito salvo")
             }
 //            DispatchQueue.main.async {

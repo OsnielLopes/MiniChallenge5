@@ -10,6 +10,7 @@ import Foundation
 
 class LocalRanking: Ranking {
     
+
     private static var plays = [Play]()
     
     static func add(_ play: Play){
