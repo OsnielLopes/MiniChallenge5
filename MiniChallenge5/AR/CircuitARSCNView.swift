@@ -102,6 +102,12 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
                 let newBow = bow.clone()
                 newBow.eulerAngles.y = (self.session.currentFrame?.camera.eulerAngles.y)!
                 node.addChildNode(newBow)
+//                let modelScene = SCNScene(named:
+//                    "art.scnassets/HackerBow.dae")!
+//                
+//                let nodeModel =  modelScene.rootNode.childNode(
+//                    withName: "hacker", recursively: true)
+//                node.addChildNode(nodeModel!)
                 print("----------só confirmando o anchor que foi adicionado---------------")
             
         }
@@ -157,6 +163,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
                 
                 self.node(for: closerBow!)?.childNodes[0].geometry = pinkGeometry
                 
+
                 let distance = closerBow?.distance(from: currentFrame.camera)
                 
                 if distance! < 0.2 {

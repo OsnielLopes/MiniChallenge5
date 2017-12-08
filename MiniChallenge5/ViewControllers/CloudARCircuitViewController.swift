@@ -13,28 +13,18 @@ import SceneKit
 class CloudARCircuitViewController: UIViewController {
     
     let circuitDataManager = CircuitDataManager()
-    var id: Int!
     var circuit: Circuit!
     var scnView: SCNView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.scnView = CloudCircuitARSCNView(frame: self.view.frame, circuit: circuit)
-        self.view = scnView
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
         if let delegate =  UIApplication.shared.delegate as? AppDelegate{
             if delegate.circuit != nil {
                 self.circuit = delegate.circuit
-            } else if id != nil {
-                circuitDataManager.readById(id: id, callback: { (circuit) in
-                    self.circuit = circuit
-                })
             }
         }
+        super.viewDidLoad()
+        self.scnView = CloudCircuitARSCNView(frame: self.view.frame, circuit: circuit)
+        self.view = scnView
         
     }
     

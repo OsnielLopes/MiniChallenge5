@@ -23,7 +23,6 @@ class ChooseGameModeViewController: UIViewController {
     //MARK: Properties
     let locationManager:CLLocationManager = CLLocationManager()
     let circuitManager:CircuitDataManager = CircuitDataManager()
-    var closestCircuitId:Int?
     
     //MARK: Life cicle functions
     override func viewDidLoad() {
@@ -42,7 +41,7 @@ class ChooseGameModeViewController: UIViewController {
         if !Reachability.isConnectedToNetwork(){
             playTheLocalCircuitButton.isEnabled = false
         }
-        if closestCircuitId != nil || (UIApplication.shared.delegate as! AppDelegate).circuit != nil{
+        if (UIApplication.shared.delegate as! AppDelegate).circuit != nil{
             playTheLocalCircuitButton.isEnabled = true
         } else {
             playTheLocalCircuitButton.isEnabled = false
@@ -69,11 +68,17 @@ class ChooseGameModeViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-        circuitManager.getCircuitLocations { (circuits) in
-            for (id, location) in circuits{
-                let newLocation = CLLocation(latitude: CLLocationDegrees(location.latitude), longitude: CLLocationDegrees(location.longitude))
-                if newLocation.distance(from: self.locationManager.location!) < location.accuracy + (self.locationManager.location?.horizontalAccuracy)! {
-                    self.closestCircuitId = id
+        circuitManager.read { (circuits) in
+            for circuit in circuits {
+                let location = circuit.location
+                let newLocation = CLLocation(latitude: CLLocationDegrees((location?.latitude)!), longitude: CLLocationDegrees((location?.longitude)!))
+                if newLocation.distance(from: self.locationManager.location!) < (location?.accuracy)! + (self.locationManager.location?.horizontalAccuracy)! {
+                    DispatchQueue.main.async {
+                        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                            appDelegate.circuit = circuit
+                        }
+                    }
+                    
                     break
                 }
             }
@@ -85,7 +90,7 @@ class ChooseGameModeViewController: UIViewController {
         super.viewDidAppear(animated)
         if !Reachability.isConnectedToNetwork(){
             self.showDialog(errorMessage: "You can't play online because you don't have internet connection.")
-        }else if closestCircuitId == nil{
+        }else if (UIApplication.shared.delegate as! AppDelegate).circuit == nil{
             self.showDialog(errorMessage: "You can't play online because there's no circuit nearby.")
         }
     }
@@ -107,13 +112,4 @@ class ChooseGameModeViewController: UIViewController {
                 handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-     // MARK: - Navigation
-    
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cloudCircuit = segue.destination as? CloudARCircuitViewController {
-            cloudCircuit.id = closestCircuitId
-        }
-     }
-    
 }

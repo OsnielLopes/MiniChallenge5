@@ -10,10 +10,11 @@ import UIKit
 import MapKit
 import SceneKit
 
-class SaveARViewController: UIViewController {    
+class SaveARViewController: UIViewController {
     
     var arSceneView: SavableCircuitARSCNView!
     var locationManager: CLLocationManager = CLLocationManager()
+    var circuitDataManager = CircuitDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,5 @@ class SaveARViewController: UIViewController {
             locationManager.requestWhenInUseAuthorization()
         }
     }
-    
-    
     
 }

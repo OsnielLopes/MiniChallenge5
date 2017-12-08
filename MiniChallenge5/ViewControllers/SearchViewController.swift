@@ -16,7 +16,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     let circuitDataManager = CircuitDataManager()
     let locationManager = CLLocationManager()
     var circuit: Circuit!
-    var id: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +33,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         if let delegate =  UIApplication.shared.delegate as? AppDelegate{
             if delegate.circuit != nil {
                 self.circuit = delegate.circuit
-            } else if id != nil {
-                circuitDataManager.readById(id: id, callback: { (circuit) in
-                    self.circuit = circuit
-                })
             }
         }
     }
@@ -64,6 +59,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             
             if metersDistance < Double((locationManager.location?.horizontalAccuracy)!) + Double((circuit.location?.accuracy)!) {
+                self.locationManager.delegate = nil
                     self.performSegue(withIdentifier: "toCloudArCircuit", sender: nil)
                 }
             }
