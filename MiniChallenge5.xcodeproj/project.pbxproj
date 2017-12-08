@@ -19,6 +19,7 @@
 		457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457789C61FCF388200DDB63B /* PlayerDataManager.swift */; };
 		459E73181FD8124700149531 /* PreferencesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E73171FD8124700149531 /* PreferencesDataManager.swift */; };
 		45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */; };
+		45C5BD871FDAF23D0078FAED /* HIstoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C5BD861FDAF23D0078FAED /* HIstoryViewController.swift */; };
 		45D0D6EB1FD854F2007FD811 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0D6EA1FD854F2007FD811 /* Reachability.swift */; };
 		49400F2E1FD84B8100BCFB46 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF811FCB699700CEA93A /* Bow.swift */; };
 		49400F301FD8584B00BCFB46 /* RankingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49400F2F1FD8584B00BCFB46 /* RankingProtocol.swift */; };
@@ -52,7 +53,6 @@
 		B022730C1FCDEB65002050FD /* CIND.otf in Resources */ = {isa = PBXBuildFile; fileRef = B02273091FCDEB65002050FD /* CIND.otf */; };
 		B022730D1FCDEB65002050FD /* CIND_promo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B022730A1FCDEB65002050FD /* CIND_promo.jpg */; };
 		B022730E1FCDEB65002050FD /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = B022730B1FCDEB65002050FD /* Readme.txt */; };
-		B03CCBD71FDAEC3200F9279A /* HistoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CCBD61FDAEC3200F9279A /* HistoriaViewController.swift */; };
 		B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */; };
 		B0D3F71A1FB3979F002CD1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D3F7191FB3979F002CD1BB /* Main.storyboard */; };
 		B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC31FB4B7050058992D /* MenuViewController.swift */; };
@@ -93,6 +93,7 @@
 		457789C61FCF388200DDB63B /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDataManager.swift; sourceTree = "<group>"; };
 		459E73171FD8124700149531 /* PreferencesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesDataManager.swift; sourceTree = "<group>"; };
 		45C4BA8C1FD09FA900D49027 /* PlayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDataManager.swift; sourceTree = "<group>"; };
+		45C5BD861FDAF23D0078FAED /* HIstoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIstoryViewController.swift; sourceTree = "<group>"; };
 		45D0D6EA1FD854F2007FD811 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		49400F2F1FD8584B00BCFB46 /* RankingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingProtocol.swift; sourceTree = "<group>"; };
 		49400F311FD85A9E00BCFB46 /* CloudRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudRanking.swift; sourceTree = "<group>"; };
@@ -137,7 +138,6 @@
 		B02273091FCDEB65002050FD /* CIND.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIND.otf; sourceTree = "<group>"; };
 		B022730A1FCDEB65002050FD /* CIND_promo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CIND_promo.jpg; sourceTree = "<group>"; };
 		B022730B1FCDEB65002050FD /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
-		B03CCBD61FDAEC3200F9279A /* HistoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoriaViewController.swift; path = /Users/viniciuscano/Git/MiniChallenge5/MiniChallenge5/ViewControllers/HistoriaViewController.swift; sourceTree = "<absolute>"; };
 		B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B0D3F7191FB3979F002CD1BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0E69CC31FB4B7050058992D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -343,7 +343,6 @@
 		B0AD2D381FCA27960028CA39 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B03CCBD61FDAEC3200F9279A /* HistoriaViewController.swift */,
 				49FADE361FD99D9D00A4C830 /* CloudARCircuitViewController.swift */,
 				495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */,
 				B0E69CC31FB4B7050058992D /* MenuViewController.swift */,
@@ -356,6 +355,7 @@
 				49C0AF831FCB961B00CEA93A /* RankingTableViewController.swift */,
 				49400F331FD873A100BCFB46 /* SaveARViewController.swift */,
 				49C77ED11FDA43EA00F35756 /* SearchViewController.swift */,
+				45C5BD861FDAF23D0078FAED /* HIstoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -667,6 +667,7 @@
 				B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */,
 				49955F8D1FD986CA00F04162 /* CloudCircuitARSCNView.swift in Sources */,
 				49C77ED21FDA43EA00F35756 /* SearchViewController.swift in Sources */,
+				45C5BD871FDAF23D0078FAED /* HIstoryViewController.swift in Sources */,
 				B0E69CC81FB4EF790058992D /* AboutViewController.swift in Sources */,
 				457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */,
 				457789C51FCF387300DDB63B /* Player.swift in Sources */,
@@ -684,7 +685,6 @@
 				49400F361FD8775400BCFB46 /* SavableCircuitARSCNView.swift in Sources */,
 				49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */,
 				49C0AF8A1FCB9E3200CEA93A /* PlayTableViewCell.swift in Sources */,
-				B03CCBD71FDAEC3200F9279A /* HistoriaViewController.swift in Sources */,
 				45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */,
 				451582E31FD309FC004249D2 /* DataManagerTest.swift in Sources */,
 				451BA6CC1FD05FF800C783D9 /* Play.swift in Sources */,
@@ -860,7 +860,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.CyberRunner;
@@ -876,7 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.CyberRunner;
