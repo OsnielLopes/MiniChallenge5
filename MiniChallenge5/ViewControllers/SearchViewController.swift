@@ -56,11 +56,11 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         let angleDistance = newHeading.magneticHeading - (circuit.location?.magneticHeading)!
         let metersDistance = Double((locationManager.location?.distance(from: (circuit.location?.toCLLocation())!))!)
-        self.distanceLabel.text = "You are \(metersDistance) meters from the circuit."
+        self.distanceLabel.text = NSString(format: "You are %.2f meters from the circuit.", metersDistance) as String
         if angleDistance < -10 {
-            self.directionLabel.text = "Turn \((angleDistance+10) * (-1)) degrees to the right."
+            self.directionLabel.text = NSString(format: "Turn %.2f degrees to the right.", (angleDistance+10) * (-1)) as String
         } else if angleDistance > 10 {
-            self.directionLabel.text = "Turn \((angleDistance-10)) degrees to the left."
+            self.directionLabel.text = NSString(format: "Turn %.2f degrees to the left.", (angleDistance-10)) as String 
         } else {
             
                 if metersDistance < Double((locationManager.location?.horizontalAccuracy)!) + Double((circuit.location?.acuraccy)!) {
