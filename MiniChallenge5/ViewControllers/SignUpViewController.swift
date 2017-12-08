@@ -30,6 +30,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var usernameTextFieldLeadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var segmentedControlTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var segmentedControlLeadingConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var signUpButtonTopConstraint: NSLayoutConstraint!
     
     
@@ -92,6 +95,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         usernameTextFieldLeadingConstraint.constant = self.view.frame.size.width * 0.106
         nameTextField.setBottomBorder()
         nameTextField.attributedPlaceholder = NSAttributedString(string: " Name", attributes:[NSAttributedStringKey.foregroundColor : UIColor(red: 255.0/255.0, green: 255.0/255, blue: 255.0/255, alpha: 1)])
+        
+        segmentedControlTopConstraint.constant = self.view.frame.size.height * 0.685
+        segmentedControlLeadingConstraint.constant = self.view.frame.size.width * 0.106
         
         signUpButtonTopConstraint.constant = self.view.frame.size.height * 0.760
     }
