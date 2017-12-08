@@ -52,6 +52,7 @@
 		B022730C1FCDEB65002050FD /* CIND.otf in Resources */ = {isa = PBXBuildFile; fileRef = B02273091FCDEB65002050FD /* CIND.otf */; };
 		B022730D1FCDEB65002050FD /* CIND_promo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B022730A1FCDEB65002050FD /* CIND_promo.jpg */; };
 		B022730E1FCDEB65002050FD /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = B022730B1FCDEB65002050FD /* Readme.txt */; };
+		B03CCBD51FDABE7800F9279A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CCBD41FDABE7700F9279A /* HistoryViewController.swift */; };
 		B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */; };
 		B0D3F71A1FB3979F002CD1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D3F7191FB3979F002CD1BB /* Main.storyboard */; };
 		B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC31FB4B7050058992D /* MenuViewController.swift */; };
@@ -136,6 +137,7 @@
 		B02273091FCDEB65002050FD /* CIND.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIND.otf; sourceTree = "<group>"; };
 		B022730A1FCDEB65002050FD /* CIND_promo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CIND_promo.jpg; sourceTree = "<group>"; };
 		B022730B1FCDEB65002050FD /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		B03CCBD41FDABE7700F9279A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = /Users/viniciuscano/Git/MiniChallenge5/MiniChallenge5/ViewControllers/HistoryViewController.swift; sourceTree = "<absolute>"; };
 		B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B0D3F7191FB3979F002CD1BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0E69CC31FB4B7050058992D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				49FADE361FD99D9D00A4C830 /* CloudARCircuitViewController.swift */,
+				B03CCBD41FDABE7700F9279A /* HistoryViewController.swift */,
 				495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */,
 				B0E69CC31FB4B7050058992D /* MenuViewController.swift */,
 				B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */,
@@ -689,6 +692,7 @@
 				495246D11FD8D3F100D8818D /* Location.swift in Sources */,
 				457789AC1FC9FE4700DDB63B /* Faction.swift in Sources */,
 				49C0AF861FCB963300CEA93A /* LocalRanking.swift in Sources */,
+				B03CCBD51FDABE7800F9279A /* HistoryViewController.swift in Sources */,
 				49400F301FD8584B00BCFB46 /* RankingProtocol.swift in Sources */,
 				457789AF1FC9FE9500DDB63B /* FactionDataManager.swift in Sources */,
 				457789BF1FCB493600DDB63B /* CircuitDataManager.swift in Sources */,
@@ -856,7 +860,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.CyberRunner;
@@ -872,7 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53BLZ9DZN8;
+				DEVELOPMENT_TEAM = C45KF93FKW;
 				INFOPLIST_FILE = MiniChallenge5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.Mackenzie.MackMobile.CyberRunner;
