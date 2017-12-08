@@ -203,9 +203,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duf-ez-lWF">
-                                <rect key="frame" x="40" y="149" width="295" height="168"/>
-                                <string key="text">Em um tempo nao muito distante, apos a queda do regime totalitarista, tres grupos almejavam o poder. Os designers, com suas ideias inovadoras. Os engenheiros, que detinham o poder da construção e os Hackers, que contavam com a ajuda da tecnologia. Escolha uma destas classes para representar.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duf-ez-lWF">
+                                <rect key="frame" x="40" y="149" width="295" height="154"/>
+                                <string key="text">A long time ago, after the fall of totlitarian regime, three groups needed power. The designers, with their innovative ideas. The engineers, who held the power of the building. And the hackers, who used the technology to their advantage. Choose one of the classes to represent you.</string>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
