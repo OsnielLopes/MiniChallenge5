@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 struct Location: Codable {
-    var acuraccy: Double
+    var accuracy: Double
     var magneticHeading: Double
     var latitude: Double
     var longitude: Double

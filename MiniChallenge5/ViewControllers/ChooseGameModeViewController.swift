@@ -72,7 +72,7 @@ class ChooseGameModeViewController: UIViewController {
         circuitManager.getCircuitLocations { (circuits) in
             for (id, location) in circuits{
                 let newLocation = CLLocation(latitude: CLLocationDegrees(location.latitude), longitude: CLLocationDegrees(location.longitude))
-                if newLocation.distance(from: self.locationManager.location!) < location.acuraccy + (self.locationManager.location?.horizontalAccuracy)! {
+                if newLocation.distance(from: self.locationManager.location!) < location.accuracy + (self.locationManager.location?.horizontalAccuracy)! {
                     self.closestCircuitId = id
                     break
                 }
