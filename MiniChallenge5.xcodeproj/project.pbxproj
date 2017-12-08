@@ -136,7 +136,6 @@
 		B02273091FCDEB65002050FD /* CIND.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIND.otf; sourceTree = "<group>"; };
 		B022730A1FCDEB65002050FD /* CIND_promo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CIND_promo.jpg; sourceTree = "<group>"; };
 		B022730B1FCDEB65002050FD /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
-		B03CCBD41FDABE7700F9279A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = /Users/viniciuscano/Git/MiniChallenge5/MiniChallenge5/ViewControllers/HistoryViewController.swift; sourceTree = "<absolute>"; };
 		B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B0D3F7191FB3979F002CD1BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0E69CC31FB4B7050058992D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -343,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				49FADE361FD99D9D00A4C830 /* CloudARCircuitViewController.swift */,
-				B03CCBD41FDABE7700F9279A /* HistoryViewController.swift */,
 				495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */,
 				B0E69CC31FB4B7050058992D /* MenuViewController.swift */,
 				B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */,
