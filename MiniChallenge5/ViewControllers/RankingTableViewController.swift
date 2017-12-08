@@ -60,7 +60,7 @@ class RankingTableViewController: UITableViewController {
         cell.name.text = "\(indexPath.row+1)º \(play.player.name)"
         let seconds = play.seconds
         let milliseconds = play.milliseconds
-        let strSeconds = String(format: "%03d", seconds)
+        let strSeconds = String(format: "%02d", seconds)
         let strmilliseconds = String(format: "%02d", milliseconds)
         cell.time.text = "\(strSeconds):\(strmilliseconds)"
         cell.backgroundView?.alpha = 0.5

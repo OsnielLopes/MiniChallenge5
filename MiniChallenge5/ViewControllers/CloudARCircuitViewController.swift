@@ -31,6 +31,10 @@ class CloudARCircuitViewController: UIViewController, CircuitARSCNViewDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        scnView.circuitWillAppear()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
