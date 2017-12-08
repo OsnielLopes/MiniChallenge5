@@ -48,25 +48,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Osniel Teixeira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnF-0o-iBj">
-                                <rect key="frame" x="145" y="170" width="116" height="21"/>
+                                <rect key="frame" x="145" y="170" width="179.5" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinicius Cano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxC-dv-jPX">
-                                <rect key="frame" x="145" y="410" width="109.5" height="21"/>
+                                <rect key="frame" x="145" y="410" width="157" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renan Germano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-yH-KcU">
-                                <rect key="frame" x="145" y="290" width="131.5" height="21"/>
+                                <rect key="frame" x="145" y="290" width="186" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rz-7D-wyA">
-                                <rect key="frame" x="112" y="80" width="151.5" height="35"/>
+                                <rect key="frame" x="66.5" y="80" width="242.5" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-Rg-SB4">
-                                <rect key="frame" x="141" y="100" width="93" height="35"/>
+                                <rect key="frame" x="123" y="100" width="129" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -204,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv1-2D-6uf">
-                                <rect key="frame" x="133.5" y="100" width="108" height="35"/>
+                                <rect key="frame" x="116" y="100" width="143" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -240,13 +240,15 @@
                                     <action selector="signUpButtonTapped:" destination="hek-EA-wvm" eventType="touchUpInside" id="LrI-59-ykc"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uMS-UZ-wpR">
-                                <rect key="frame" x="40" y="468" width="295" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uMS-UZ-wpR">
+                                <rect key="frame" x="83" y="457" width="209" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <segments>
                                     <segment title="Designer"/>
                                     <segment title="Engineer"/>
                                     <segment title="Hacker"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.16860446333885193" green="0.16864064335823059" blue="0.16860216856002808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -255,8 +257,10 @@
                             <constraint firstItem="S1y-Im-Uqi" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="4Tf-b1-6vK"/>
                             <constraint firstItem="JXK-vL-oHk" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="4Uo-B0-jcT"/>
                             <constraint firstAttribute="bottom" secondItem="S1y-Im-Uqi" secondAttribute="bottom" constant="445" id="4jR-bR-XZR"/>
+                            <constraint firstItem="uMS-UZ-wpR" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="457" id="5zV-Ky-zzY"/>
                             <constraint firstItem="XgI-4S-wnE" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="7z2-0l-WAM"/>
                             <constraint firstAttribute="bottom" secondItem="XgI-4S-wnE" secondAttribute="bottom" constant="235" id="8lj-r8-xSz"/>
+                            <constraint firstItem="uMS-UZ-wpR" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="83" id="BRw-Wu-WgY"/>
                             <constraint firstItem="wQL-yr-7Pk" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="CLM-Jb-3j8"/>
                             <constraint firstItem="BPq-hm-ZNm" firstAttribute="leading" secondItem="nnQ-PN-3Ep" secondAttribute="leading" constant="40" id="ElP-94-jIx"/>
                             <constraint firstItem="XgI-4S-wnE" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="387" id="LDn-Ih-UmX"/>
@@ -291,6 +295,8 @@
                         <outlet property="passwordTextFieldBottomConstraint" destination="l6A-EO-xbQ" id="AL9-3e-0HR"/>
                         <outlet property="passwordTextFieldLeadingConstraint" destination="4Uo-B0-jcT" id="JBI-45-5fh"/>
                         <outlet property="passwordTextFieldTopConstraint" destination="ujy-Nv-H0l" id="faJ-Rp-78U"/>
+                        <outlet property="segmentedControlLeadingConstraint" destination="BRw-Wu-WgY" id="KYN-ME-x76"/>
+                        <outlet property="segmentedControlTopConstraint" destination="5zV-Ky-zzY" id="zlF-ed-PhO"/>
                         <outlet property="signUpButton" destination="wQL-yr-7Pk" id="OYN-Sh-rXW"/>
                         <outlet property="signUpButtonTopConstraint" destination="kAa-hl-2J3" id="qgu-Je-5lF"/>
                         <outlet property="titleLabelTopConstraint" destination="S3R-QV-ZhV" id="6f6-zL-GLL"/>
