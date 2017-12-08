@@ -55,6 +55,8 @@ class AboutViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.backgroundColor = nil
+        
         // Implementação das constraints
         titleLabelConstraint.constant = self.view.frame.size.height * 0.119
 
