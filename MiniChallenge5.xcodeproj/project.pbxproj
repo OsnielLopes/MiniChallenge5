@@ -52,6 +52,7 @@
 		B022730C1FCDEB65002050FD /* CIND.otf in Resources */ = {isa = PBXBuildFile; fileRef = B02273091FCDEB65002050FD /* CIND.otf */; };
 		B022730D1FCDEB65002050FD /* CIND_promo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B022730A1FCDEB65002050FD /* CIND_promo.jpg */; };
 		B022730E1FCDEB65002050FD /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = B022730B1FCDEB65002050FD /* Readme.txt */; };
+		B03CCBD71FDAEC3200F9279A /* HistoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CCBD61FDAEC3200F9279A /* HistoriaViewController.swift */; };
 		B0AD2D371FC8B5FF0028CA39 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */; };
 		B0D3F71A1FB3979F002CD1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D3F7191FB3979F002CD1BB /* Main.storyboard */; };
 		B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E69CC31FB4B7050058992D /* MenuViewController.swift */; };
@@ -136,6 +137,7 @@
 		B02273091FCDEB65002050FD /* CIND.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIND.otf; sourceTree = "<group>"; };
 		B022730A1FCDEB65002050FD /* CIND_promo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CIND_promo.jpg; sourceTree = "<group>"; };
 		B022730B1FCDEB65002050FD /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		B03CCBD61FDAEC3200F9279A /* HistoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoriaViewController.swift; path = /Users/viniciuscano/Git/MiniChallenge5/MiniChallenge5/ViewControllers/HistoriaViewController.swift; sourceTree = "<absolute>"; };
 		B0AD2D361FC8B5FF0028CA39 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B0D3F7191FB3979F002CD1BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0E69CC31FB4B7050058992D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		B0AD2D381FCA27960028CA39 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B03CCBD61FDAEC3200F9279A /* HistoriaViewController.swift */,
 				49FADE361FD99D9D00A4C830 /* CloudARCircuitViewController.swift */,
 				495B49AF1FD7166D00A0F500 /* ChooseGameModeViewController.swift */,
 				B0E69CC31FB4B7050058992D /* MenuViewController.swift */,
@@ -681,6 +684,7 @@
 				49400F361FD8775400BCFB46 /* SavableCircuitARSCNView.swift in Sources */,
 				49C0AF8D1FCDD3FC00CEA93A /* CircuitDataManagerProtocol.swift in Sources */,
 				49C0AF8A1FCB9E3200CEA93A /* PlayTableViewCell.swift in Sources */,
+				B03CCBD71FDAEC3200F9279A /* HistoriaViewController.swift in Sources */,
 				45C4BA8D1FD09FA900D49027 /* PlayDataManager.swift in Sources */,
 				451582E31FD309FC004249D2 /* DataManagerTest.swift in Sources */,
 				451BA6CC1FD05FF800C783D9 /* Play.swift in Sources */,

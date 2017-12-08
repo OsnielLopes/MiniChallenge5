@@ -195,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="-3100" y="403"/>
         </scene>
-        <!--View Controller-->
+        <!--Historia View Controller-->
         <scene sceneID="I4L-Oj-XWd">
             <objects>
-                <viewController id="uQr-0B-frD" sceneMemberID="viewController">
+                <viewController id="uQr-0B-frD" customClass="HistoriaViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JaV-mZ-Dd0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,6 +230,9 @@
                         <viewLayoutGuide key="safeArea" id="Wah-DY-ere"/>
                     </view>
                     <connections>
+                        <outlet property="historiaLabelLeadingConstraint" destination="vhD-1G-0RX" id="TJL-0S-CyP"/>
+                        <outlet property="historiaLabelTopConstraint" destination="PV8-tf-6hg" id="UIc-MI-5X8"/>
+                        <outlet property="historiaLabelTrailingConstraint" destination="n8I-Qs-MwU" id="wqA-SJ-8yg"/>
                         <outlet property="signUpButtonTopConstraint" destination="exL-ux-CG7" id="mXv-sf-jcz"/>
                     </connections>
                 </viewController>
