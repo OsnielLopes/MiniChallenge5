@@ -10,7 +10,14 @@ import UIKit
 import MapKit
 
 class ChooseGameModeViewController: UIViewController {
-    //MARK: Outlest
+    //MARK: Constraints
+    @IBOutlet weak var manRunningTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var playMyCircuitButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var playLocalCircuitButtonTopConstraint: NSLayoutConstraint!
+    
+    
+    //MARK: Outlets
+    @IBOutlet weak var playMyCircuitButton: UIButton!
     @IBOutlet weak var playTheLocalCircuitButton: UIButton!
     
     //MARK: Properties
@@ -50,6 +57,12 @@ class ChooseGameModeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         self.navigationController?.navigationBar.backgroundColor = nil
+        
+        // Definição de constraints
+        manRunningTopConstraint.constant = self.view.frame.size.height * 0.149
+        playMyCircuitButtonTopConstraint.constant = self.view.frame.size.height * 0.547
+        playLocalCircuitButtonTopConstraint.constant = self.view.frame.size.height * 0.674
+
         
         checkLocationAuthorizationStatus()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

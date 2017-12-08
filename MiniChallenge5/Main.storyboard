@@ -48,25 +48,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Osniel Teixeira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnF-0o-iBj">
-                                <rect key="frame" x="145" y="170" width="116" height="21"/>
+                                <rect key="frame" x="145" y="170" width="179.5" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinicius Cano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxC-dv-jPX">
-                                <rect key="frame" x="145" y="410" width="109.5" height="21"/>
+                                <rect key="frame" x="145" y="410" width="157" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renan Germano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-yH-KcU">
-                                <rect key="frame" x="145" y="290" width="131.5" height="21"/>
+                                <rect key="frame" x="145" y="290" width="186" height="18"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rz-7D-wyA">
-                                <rect key="frame" x="112" y="80" width="151.5" height="35"/>
+                                <rect key="frame" x="66.5" y="80" width="242.5" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-Rg-SB4">
-                                <rect key="frame" x="141" y="100" width="93" height="35"/>
+                                <rect key="frame" x="123" y="100" width="129" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -204,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv1-2D-6uf">
-                                <rect key="frame" x="133.5" y="100" width="108" height="35"/>
+                                <rect key="frame" x="116" y="100" width="143" height="30"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -343,6 +343,9 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="HFJ-8i-vkK" firstAttribute="centerX" secondItem="F3S-2Y-AcB" secondAttribute="centerX" id="QvN-Uq-yWE"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -378,27 +381,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6c-wI-Qd1">
-                                <rect key="frame" x="87" y="245" width="200" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="PlayMyCircuit_Button"/>
-                                <connections>
-                                    <segue destination="i85-ZI-DMa" kind="show" id="zB4-tK-xkl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pE9-F2-E0s">
-                                <rect key="frame" x="87" y="365" width="200" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pE9-F2-E0s">
+                                <rect key="frame" x="87" y="420" width="200" height="45"/>
                                 <state key="normal" image="PlayLocalCircuit_Button"/>
                                 <connections>
                                     <segue destination="m1m-3y-t6c" kind="show" id="Xcb-Al-lqG"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Man running" translatesAutoresizingMaskIntoConstraints="NO" id="cMm-4U-UVN">
+                                <rect key="frame" x="102" y="100" width="171" height="213"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="RwJ-rb-UYh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6c-wI-Qd1">
+                                <rect key="frame" x="87.5" y="340" width="200" height="45"/>
+                                <state key="normal" image="PlayMyCircuit_Button"/>
+                                <connections>
+                                    <segue destination="i85-ZI-DMa" kind="show" id="zB4-tK-xkl"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cMm-4U-UVN" firstAttribute="top" secondItem="pNK-zz-kGx" secondAttribute="top" constant="100" id="76f-l4-oYP"/>
+                            <constraint firstItem="j6c-wI-Qd1" firstAttribute="top" secondItem="pNK-zz-kGx" secondAttribute="top" constant="340" id="NXL-l3-RD7"/>
+                            <constraint firstItem="cMm-4U-UVN" firstAttribute="centerX" secondItem="pNK-zz-kGx" secondAttribute="centerX" id="Ogn-b2-pRs"/>
+                            <constraint firstItem="pE9-F2-E0s" firstAttribute="centerX" secondItem="pNK-zz-kGx" secondAttribute="centerX" id="P4x-6O-HWa"/>
+                            <constraint firstItem="pE9-F2-E0s" firstAttribute="top" secondItem="pNK-zz-kGx" secondAttribute="top" constant="420" id="lz1-rg-M3T"/>
+                            <constraint firstItem="j6c-wI-Qd1" firstAttribute="centerX" secondItem="pNK-zz-kGx" secondAttribute="centerX" id="nTf-qp-06A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Qw-29-mq8"/>
                     </view>
                     <connections>
+                        <outlet property="manRunningTopConstraint" destination="76f-l4-oYP" id="oCu-Sm-Hft"/>
+                        <outlet property="playLocalCircuitButtonTopConstraint" destination="lz1-rg-M3T" id="j9e-vD-GsR"/>
+                        <outlet property="playMyCircuitButton" destination="j6c-wI-Qd1" id="tck-eo-e70"/>
+                        <outlet property="playMyCircuitButtonTopConstraint" destination="NXL-l3-RD7" id="15t-DP-8Ro"/>
                         <outlet property="playTheLocalCircuitButton" destination="pE9-F2-E0s" id="y12-Eq-jMd"/>
                     </connections>
                 </viewController>
@@ -562,6 +581,7 @@
         <image name="About_Button" width="200" height="45"/>
         <image name="Circle" width="1034" height="967"/>
         <image name="Circuits_Button" width="200" height="45"/>
+        <image name="Man running" width="171" height="185"/>
         <image name="Osniel" width="400" height="400"/>
         <image name="PlayLocalCircuit_Button" width="200" height="45"/>
         <image name="PlayMyCircuit_Button" width="200" height="45"/>
