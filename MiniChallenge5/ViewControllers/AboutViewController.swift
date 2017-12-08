@@ -55,6 +55,7 @@ class AboutViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = nil
         
         // Implementação das constraints

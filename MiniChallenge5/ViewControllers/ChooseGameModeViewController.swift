@@ -56,6 +56,7 @@ class ChooseGameModeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = nil
         
         // Definição de constraints
