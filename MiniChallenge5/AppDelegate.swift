@@ -46,6 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.circuit = nil
         DispatchQueue.main.async {
             if let token = self.preferencesDataManager.token{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let mainMenuViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu")
+                let navigationController = UINavigationController(rootViewController: mainMenuViewController)
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = navigationController
+                self.window?.makeKeyAndVisible()
+                
                 self.playerDataManager.readByToken(token: token) {
                     if let player = $0{
                         let session: Session = Session(player: player, token: token)
@@ -56,15 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }else{
                     print("Ther isn't internet connection!")
             }
-
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-            let mainMenuViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu")
-            let navigationController = UINavigationController(rootViewController: mainMenuViewController)
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = navigationController
-            self.window?.makeKeyAndVisible()
-
         }
     
 

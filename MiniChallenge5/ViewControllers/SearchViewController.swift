@@ -63,7 +63,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             self.directionLabel.text = NSString(format: "Turn %.2f degrees to the left.", (angleDistance-10)) as String 
         } else {
             
-                if metersDistance < Double((locationManager.location?.horizontalAccuracy)!) + Double((circuit.location?.acuraccy)!) {
+            if metersDistance < Double((locationManager.location?.horizontalAccuracy)!) + Double((circuit.location?.accuracy)!) {
                     self.performSegue(withIdentifier: "toCloudArCircuit", sender: nil)
                 }
             }
