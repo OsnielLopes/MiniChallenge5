@@ -30,7 +30,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
 //            print("\n\n***Encoded Data!***")
 //            print(String.init(data: jsonData, encoding: .utf8))
             
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/circuit")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/circuit")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -63,7 +63,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
     //MARK: Read all Circuits
     func read(callback: @escaping (_ : [Circuit]) -> Void){
 //        print("\n\n***READ***")
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/circuit")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/circuit")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -90,7 +90,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
     //MARK: Read Circuit by id
     func readById(id: Int, callback: @escaping (_ : Circuit) -> Void){
 //        print("\n\n***READ BY ID***")
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/circuit/\(id)")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/circuit/\(id)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -124,7 +124,7 @@ class CircuitDataManager : CircuitDataManagerProtocol{
 //        print("\n\n***DELETE***")
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/circuit/\(id)")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/circuit/\(id)")!
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             

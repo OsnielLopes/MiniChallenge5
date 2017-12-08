@@ -12,7 +12,7 @@ class PlayerDataManager{
     
     //MARK: Create Player
     func create(name: String, email: String, password: String, factionID: Int, callback: @escaping (_ : Session?) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/player")!
         
         let json: [String:Any] = ["name": name, "email": email, "password":password, "faction_id": factionID]
         let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .sortedKeys)
@@ -42,7 +42,7 @@ class PlayerDataManager{
     
     //MARK: Read all Players
     func read(callback: @escaping (_ : [Player]) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/player")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -64,7 +64,7 @@ class PlayerDataManager{
     
     //MARK: Read Player by id
     func readById(id: Int, callback: @escaping (_ : Player) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/\(id)")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/player/\(id)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -86,7 +86,7 @@ class PlayerDataManager{
     
     //MARK: Read Player by e-mail
     func readByEmail(email: String, callback: @escaping (_ : Player?) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/email/\(email)")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/player/email/\(email)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -110,7 +110,7 @@ class PlayerDataManager{
     
     //MARK: Read Players by Faction
     func readByPlayer(factionID: Int, callback: @escaping (_ : [Player]) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/faction/\(factionID)")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/player/faction/\(factionID)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -132,7 +132,7 @@ class PlayerDataManager{
     
     //MARK: Read Player by token
     func readByToken(token: String, callback: @escaping (_ : Player?) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/token")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/player/token")!
         
         var request = URLRequest(url: url)
         request.addValue(token, forHTTPHeaderField: "x-access-token")
@@ -162,7 +162,7 @@ class PlayerDataManager{
     func update(player: Player, callback: @escaping (_ : Player) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/\(player.id!)")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/player/\(player.id!)")!
             var p = player
             p.id = nil
             let jsonData = try jsonEncoder.encode(p)
@@ -195,7 +195,7 @@ class PlayerDataManager{
     func delete (id: Int, callback: @escaping (_ : Player) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/\(id)")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/player/\(id)")!
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             
@@ -226,7 +226,7 @@ class PlayerDataManager{
             let json: [String:Any] = ["email": email, "password":password]
             let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .sortedKeys)
             
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/player/login")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/player/login")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")

@@ -15,7 +15,7 @@ class FactionDataManager{
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(faction)
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/faction")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/faction")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -43,7 +43,7 @@ class FactionDataManager{
     
     //MARK: Read all Factions
     func read(callback: @escaping (_ : [Faction]) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/faction")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/faction")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -66,7 +66,7 @@ class FactionDataManager{
     
     //MARK: Read Fation by id
     func readById(id: Int, callback: @escaping (_ : Faction) -> Void){
-        let url = URL(string: "https://cyber-runner-development.herokuapp.com/faction/\(id)")!
+        let url = URL(string: "https://cyber-runner.herokuapp.com/faction/\(id)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -90,7 +90,7 @@ class FactionDataManager{
     func update (faction: Faction, callback: @escaping (_ : Faction) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/faction/\(faction.id!)")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/faction/\(faction.id!)")!
             var f = faction
             f.id = nil
             let jsonData = try jsonEncoder.encode(f)
@@ -123,7 +123,7 @@ class FactionDataManager{
     func delete (id: Int, callback: @escaping (_ : Faction) -> Void){
         let jsonEncoder = JSONEncoder()
         do {
-            let url = URL(string: "https://cyber-runner-development.herokuapp.com/faction/\(id)")!
+            let url = URL(string: "https://cyber-runner.herokuapp.com/faction/\(id)")!
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             
