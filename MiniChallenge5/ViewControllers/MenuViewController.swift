@@ -21,12 +21,6 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataManagerTest().testCircuitDataManager()
-        let dataManagerTest: DataManagerTest = DataManagerTest()
-//        dataManagerTest.testFactionDataManager()
-//        dataManagerTest.testPlayerDataManager()
-//        dataManagerTest.testCircuitDataManager()
-//        dataManagerTest.testPlayDataManager()
         
         //Coloca imagem e filtro no background da view
         let backgroundImage = UIImageView(frame: self.view.frame)
