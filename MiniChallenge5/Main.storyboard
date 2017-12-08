@@ -391,7 +391,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play the local Circuit"/>
                                 <connections>
-                                    <segue destination="m1m-3y-t6c" kind="show" id="Xcb-Al-lqG"/>
+                                    <segue destination="O0K-Tx-w8H" kind="show" id="atG-MT-eLu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -405,6 +405,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cld-Nf-JCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-375.19999999999999" y="404.34782608695656"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vv9-kf-14B">
+            <objects>
+                <viewController id="O0K-Tx-w8H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xTZ-fK-lVt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Looking for the circuit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvn-nX-ave">
+                                <rect key="frame" x="41" y="181" width="291" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5N-DO-DS3">
+                                <rect key="frame" x="41" y="438" width="291" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3w-l5-kuw">
+                                <rect key="frame" x="41" y="323" width="291" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vKi-i6-ob9"/>
+                    </view>
+                    <connections>
+                        <segue destination="m1m-3y-t6c" kind="show" id="qJg-Zj-eSw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RdU-ew-5vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613.60000000000002" y="405.24737631184411"/>
         </scene>
         <!--CloudAR Circuit View Controller-->
         <scene sceneID="Xgg-oR-9Vk">
@@ -422,7 +463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F99-M0-dKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="404"/>
+            <point key="canvasLocation" x="1471" y="406"/>
         </scene>
         <!--SaveAR View Controller-->
         <scene sceneID="yRx-js-qLV">
@@ -440,7 +481,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDM-mA-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="-375"/>
+            <point key="canvasLocation" x="1338" y="-412"/>
         </scene>
         <!--Ranking-->
         <scene sceneID="MP8-zV-u4f">
@@ -489,7 +530,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRd-yM-Kqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="407"/>
+            <point key="canvasLocation" x="2449" y="407"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jKe-vH-GWr">
@@ -571,6 +612,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oJy-zL-amU"/>
-        <segue reference="JLr-ee-Scu"/>
+        <segue reference="9Ur-6p-ioS"/>
     </inferredMetricsTieBreakers>
 </document>

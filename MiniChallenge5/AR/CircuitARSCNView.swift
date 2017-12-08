@@ -21,6 +21,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     var isTimeCounting = false
     var circuitDelegate: CircuitARSCNViewDelegate?
     var circuit: Circuit!
+    var defaultBowAnchors: [ARBowAnchor]?
     
     override init(frame: CGRect) {
         super.init(frame: frame, options: nil)
@@ -59,6 +60,8 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
         //set up geometries
         purpleGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 89/255, green: 53/255, blue: 182/255, alpha: 1)
         pinkGeometry.firstMaterial?.diffuse.contents = UIColor.init(red: 237/255, green: 85/255, blue: 123/255, alpha: 1)
+        
+       print("----------aqui estou no metodo setup da classe CircuitARSCNView---------------")
     }
     
     func circuitWillAppear() {
@@ -70,6 +73,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if anchor.isKind(of: ARPlaneAnchor.self){
+            
             // Place content only for anchors found by plane detection.
             guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
             
@@ -98,6 +102,7 @@ class CircuitARSCNView: ARSCNView, ARSCNViewDelegate {
                 let newBow = bow.clone()
                 newBow.eulerAngles.y = (self.session.currentFrame?.camera.eulerAngles.y)!
                 node.addChildNode(newBow)
+                print("----------só confirmando o anchor que foi adicionado---------------")
             
         }
     }
