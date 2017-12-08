@@ -19,6 +19,23 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Coloca imagem e filtro no background da view
+        let backgroundImage = UIImageView(frame: self.view.frame)
+        let filterImage = UIImageView(frame: self.view.frame)
+        
+        backgroundImage.image = UIImage(named: "background_image")
+        filterImage.image = UIImage(named: "filter")
+        
+        self.view.insertSubview(filterImage, at: 0)
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        // Deixa a navigation bar transparente
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        // Deixa a navigation bar sem sombra
+        navigationController?.navigationBar.shadowImage = UIImage()
+
 
         // Do any additional setup after loading the view.
     }
