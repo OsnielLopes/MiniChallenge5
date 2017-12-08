@@ -322,7 +322,6 @@
                                 <rect key="frame" x="87" y="350" width="200" height="45"/>
                                 <state key="normal" image="Play_Button"/>
                                 <connections>
-                                    <action selector="playButton:" destination="RO2-zD-AVY" eventType="touchUpInside" id="dex-9p-KCU"/>
                                     <segue destination="Rx9-yF-55j" kind="show" id="c9Q-kL-DGl"/>
                                 </connections>
                             </button>
@@ -386,7 +385,7 @@
                                 <rect key="frame" x="87" y="420" width="200" height="45"/>
                                 <state key="normal" image="PlayLocalCircuit_Button"/>
                                 <connections>
-                                    <segue destination="m1m-3y-t6c" kind="show" id="Xcb-Al-lqG"/>
+                                    <segue destination="O0K-Tx-w8H" kind="show" id="Xm7-Jt-sYZ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Man running" translatesAutoresizingMaskIntoConstraints="NO" id="cMm-4U-UVN">
@@ -399,7 +398,7 @@
                                 <rect key="frame" x="87.5" y="340" width="200" height="45"/>
                                 <state key="normal" image="PlayMyCircuit_Button"/>
                                 <connections>
-                                    <segue destination="O0K-Tx-w8H" kind="show" id="atG-MT-eLu"/>
+                                    <segue destination="i85-ZI-DMa" kind="show" id="HOE-fJ-qxp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -426,10 +425,10 @@
             </objects>
             <point key="canvasLocation" x="-375.19999999999999" y="404.34782608695656"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="vv9-kf-14B">
             <objects>
-                <viewController id="O0K-Tx-w8H" sceneMemberID="viewController">
+                <viewController id="O0K-Tx-w8H" customClass="SearchViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xTZ-fK-lVt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -460,7 +459,9 @@
                         <viewLayoutGuide key="safeArea" id="vKi-i6-ob9"/>
                     </view>
                     <connections>
-                        <segue destination="m1m-3y-t6c" kind="show" id="qJg-Zj-eSw"/>
+                        <outlet property="directionLabel" destination="I3w-l5-kuw" id="NrO-CA-xi2"/>
+                        <outlet property="distanceLabel" destination="R5N-DO-DS3" id="3LC-qF-IxD"/>
+                        <segue destination="m1m-3y-t6c" kind="show" identifier="toCloudArCircuit" id="qJg-Zj-eSw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RdU-ew-5vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -477,6 +478,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sGF-cV-23d"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="bi4-ZA-JbG" kind="show" id="9Ur-6p-ioS"/>
                     </connections>
