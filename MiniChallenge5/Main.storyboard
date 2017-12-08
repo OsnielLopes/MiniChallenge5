@@ -204,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duf-ez-lWF">
-                                <rect key="frame" x="40" y="149" width="295" height="168"/>
+                                <rect key="frame" x="40" y="149" width="295" height="114.5"/>
                                 <string key="text">Em um tempo nao muito distante, apos a queda do regime totalitarista, tres grupos almejavam o poder. Os designers, com suas ideias inovadoras. Os engenheiros, que detinham o poder da construção e os Hackers, que contavam com a ajuda da tecnologia. Escolha uma destas classes para representar.</string>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -600,7 +600,14 @@
                             <outlet property="delegate" destination="bi4-ZA-JbG" id="grw-3E-2w7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ranking" id="mg5-An-XfO"/>
+                    <navigationItem key="navigationItem" title="Ranking" id="mg5-An-XfO">
+                        <barButtonItem key="leftBarButtonItem" title="OK" id="NKP-e3-ZaJ">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Rx9-yF-55j" kind="show" id="Y7d-9T-1Md"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRd-yM-Kqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -690,5 +697,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="oJy-zL-amU"/>
         <segue reference="9Ur-6p-ioS"/>
+        <segue reference="Y7d-9T-1Md"/>
     </inferredMetricsTieBreakers>
 </document>

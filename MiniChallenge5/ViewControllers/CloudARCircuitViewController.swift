@@ -15,7 +15,8 @@ class CloudARCircuitViewController: UIViewController, CircuitARSCNViewDelegate {
     let circuitDataManager = CircuitDataManager()
     let playDataManager = PlayDataManager()
     var circuit: Circuit!
-    var scnView: SCNView!
+    //scnView tava como scnview
+    var scnView: CloudCircuitARSCNView!
     
     override func viewDidLoad() {
         if let delegate =  UIApplication.shared.delegate as? AppDelegate{
@@ -25,6 +26,7 @@ class CloudARCircuitViewController: UIViewController, CircuitARSCNViewDelegate {
         }
         super.viewDidLoad()
         self.scnView = CloudCircuitARSCNView(frame: self.view.frame, circuit: circuit)
+        self.scnView.circuitDelegate = self
         self.view = scnView
         
     }
@@ -45,9 +47,13 @@ class CloudARCircuitViewController: UIViewController, CircuitARSCNViewDelegate {
             for p in plays {
                 CloudRanking.add(p)
             }
+            CloudRanking.add(Play(id: nil, circuitID: self.circuit.id!, player: (Session.shared?.player)!, seconds: Int(seconds), milliseconds: Int(milliseconds)))
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "toRankingFromCloudCircuit", sender: "nil")
+            }
+            
         }
-        CloudRanking.add(Play(id: nil, circuitID: circuit.id!, player: (Session.shared?.player)!, seconds: Int(seconds), milliseconds: Int(milliseconds)))
-        self.performSegue(withIdentifier: "toRankingFromCloudCircuit", sender: "nil")
+        
     }
     
     

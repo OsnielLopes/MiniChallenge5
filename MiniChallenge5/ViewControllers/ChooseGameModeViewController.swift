@@ -70,6 +70,8 @@ class ChooseGameModeViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
+        while true {
+            if locationManager.location != nil {
         circuitManager.read { (circuits) in
             for circuit in circuits {
                 let location = circuit.location
@@ -84,6 +86,9 @@ class ChooseGameModeViewController: UIViewController {
                     break
                 }
             }
+        }
+                break
+        }
         }
         self.navigationController?.navigationBar.tintColor = UIColor.black
     }
