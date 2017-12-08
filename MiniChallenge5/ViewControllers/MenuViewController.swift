@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MenuViewController: UIViewController {
     
@@ -17,6 +18,10 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var locationsMapButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var aboutButtonConstraint: NSLayoutConstraint!
+    
+    // Audio
+    var Sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("C", ofType: "m4a"))
+    var audioPlayer = AVAudioPlayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +65,19 @@ class MenuViewController: UIViewController {
         locationsMapButtonConstraint.constant = self.view.frame.size.height * 0.652
         aboutButtonConstraint.constant = self.view.frame.size.height * 0.779
     }
+    
+    @IBAction func playButton(_ sender: Any) {
+        let CatSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("", ofType: "mp3")!)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOfURL: CatSound)
+            audioPlayer.prepareToPlay()
+        } catch {
+            print("Audio problem!")
+        }
+        audioPlayer.play()
+    }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
