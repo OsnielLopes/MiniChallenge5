@@ -43,11 +43,15 @@ class CloudARCircuitViewController: UIViewController, CircuitARSCNViewDelegate {
     }
     
     func didEndCircuit(seconds: UInt8, milliseconds: UInt8) {
+        let play = Play(id: nil, circuitID: self.circuit.id!, player: (Session.shared?.player)!, seconds: Int(seconds), milliseconds: Int(milliseconds))
+        playDataManager.create(play: play) { (uahsdfh) in
+            //
+        }
         playDataManager.readByCircuit(circuitID: circuit.id!) { (plays) in
             for p in plays {
                 CloudRanking.add(p)
             }
-            CloudRanking.add(Play(id: nil, circuitID: self.circuit.id!, player: (Session.shared?.player)!, seconds: Int(seconds), milliseconds: Int(milliseconds)))
+            CloudRanking.add(play)
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "toRankingFromCloudCircuit", sender: "nil")
             }
