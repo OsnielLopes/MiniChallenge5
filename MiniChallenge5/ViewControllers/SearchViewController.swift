@@ -60,7 +60,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         if angleDistance < -10 {
             self.directionLabel.text = NSString(format: "Turn %.2f degrees to the right.", (angleDistance+10) * (-1)) as String
         } else if angleDistance > 10 {
-            self.directionLabel.text = NSString(format: "Turn %.2f degrees to the left.", (angleDistance-10)) as String 
+            self.directionLabel.text = NSString(format: "Turn %.2f degrees to the left.", (angleDistance-10)) as String
         } else {
             
                 if metersDistance < Double((locationManager.location?.horizontalAccuracy)!) + Double((circuit.location?.acuraccy)!) {
