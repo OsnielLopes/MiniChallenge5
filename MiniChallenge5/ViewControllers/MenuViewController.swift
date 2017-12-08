@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MenuViewController: UIViewController {
     
@@ -50,6 +51,7 @@ class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = nil
         
         // Constraints
@@ -59,6 +61,8 @@ class MenuViewController: UIViewController {
         locationsMapButtonConstraint.constant = self.view.frame.size.height * 0.652
         aboutButtonConstraint.constant = self.view.frame.size.height * 0.779
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
