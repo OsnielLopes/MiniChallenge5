@@ -39,12 +39,13 @@ class DataManagerTest{
     }
     
     func testPlayerDataManager(){
-        let playerDataManager: PlayerDataManager = PlayerDataManager()
-        let factionDatamanager: FactionDataManager = FactionDataManager()
-        
+//        let playerDataManager: PlayerDataManager = PlayerDataManager()
+//        let factionDatamanager: FactionDataManager = FactionDataManager()
+//        
 //        factionDatamanager.readById(id: 3, callback: {
 //            let player: Player = Player(id: nil, name: "Renan Soares Germano", email: "renan.rsg@hotmail.com", password: "abcdef", faction: $0)
-//            playerDataManager.create(player: player, callback: {
+//            
+//            playerDataManager.create(name: player.name, email: player.email!, password: "12345678", factionID: 2,  callback: {
 //                print("***Created Session: \($0!)***")
 //                var createdSession = $0!
 //                Session.shared = createdSession
@@ -83,16 +84,30 @@ class DataManagerTest{
     
     func testCircuitDataManager(){
         let circuitDataManager: CircuitDataManager = CircuitDataManager()
+        print("***CIRCUIT LOCATIONS***")
+        circuitDataManager.getCircuitLocations(callback: {locations in
+            locations.forEach({location in
+                print("Circuit: \(location.key) - Location: \(location.value)")
+            })
+        })
+        
+        
         var circuit: Circuit = Circuit()
-//        circuit.bows.append(Bow(latitude: 10, longitude: 20))
-//        circuit.bows.append(Bow(latitude: 30, longitude: 50))
-//        circuit.bows.append(Bow(latitude: 60, longitude: 70))
-//        circuit.bows.append(Bow(latitude: 80, longitude: 90))
-//        circuit.bows.append(Bow(latitude: 100, longitude: 110))
+        let location: Location = Location(accuracy: 10, magneticHeading: 10, latitude: 10, longitude: 10)
+        var m: [[Float]] = [[Float]]()
+        m.append([10,20,30,40])
+        m.append([50, 60,70,80])
+        m.append([90,100,110,120])
+        m.append([130,140,150,160])
+        var b1: Bow = Bow(); b1.worldTransform = m
+        var b2: Bow = Bow(); b2.worldTransform = m
+        var b3: Bow = Bow(); b3.worldTransform = m
+        circuit.location = location
+        circuit.bows = [b1, b2, b3]
         
         circuitDataManager.create(circuit: circuit, callback: {
             print("***Created Circuit: \($0)***")
-            var newCircuit = $0
+            let newCircuit = $0
             
             circuitDataManager.read(callback: {
                 print("\n***Circuits***")
