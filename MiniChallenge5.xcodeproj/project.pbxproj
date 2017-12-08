@@ -46,6 +46,7 @@
 		49C0AF911FCF157900CEA93A /* CircuitARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */; };
 		49C0AF941FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift */; };
 		49C0AF961FD1BCE000CEA93A /* LocalARCircuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0AF951FD1BCE000CEA93A /* LocalARCircuitViewController.swift */; };
+		49C77ED21FDA43EA00F35756 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C77ED11FDA43EA00F35756 /* SearchViewController.swift */; };
 		49FADE371FD99D9D00A4C830 /* CloudARCircuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FADE361FD99D9D00A4C830 /* CloudARCircuitViewController.swift */; };
 		4E61A50783D6CB220B032375 /* Pods_MiniChallenge5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3772D916E126B62DD19A67FF /* Pods_MiniChallenge5UITests.framework */; };
 		B022730C1FCDEB65002050FD /* CIND.otf in Resources */ = {isa = PBXBuildFile; fileRef = B02273091FCDEB65002050FD /* CIND.otf */; };
@@ -124,6 +125,7 @@
 		49C0AF901FCF157900CEA93A /* CircuitARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircuitARSCNView.swift; path = MiniChallenge5/AR/CircuitARSCNView.swift; sourceTree = SOURCE_ROOT; };
 		49C0AF931FCF3E6000CEA93A /* CircuitARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitARSCNViewDelegate.swift; sourceTree = "<group>"; };
 		49C0AF951FD1BCE000CEA93A /* LocalARCircuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalARCircuitViewController.swift; sourceTree = "<group>"; };
+		49C77ED11FDA43EA00F35756 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		49FADE361FD99D9D00A4C830 /* CloudARCircuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudARCircuitViewController.swift; sourceTree = "<group>"; };
 		5885A99FD75184EE377452D0 /* Pods-MiniChallenge5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5UITests/Pods-MiniChallenge5UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E4CD335496BCE8F7D32985C /* Pods-MiniChallenge5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniChallenge5.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniChallenge5/Pods-MiniChallenge5.debug.xcconfig"; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				49C0AF891FCB9E3200CEA93A /* PlayTableViewCell.swift */,
 				49C0AF831FCB961B00CEA93A /* RankingTableViewController.swift */,
 				49400F331FD873A100BCFB46 /* SaveARViewController.swift */,
+				49C77ED11FDA43EA00F35756 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				4996C90A1FB20F0200A9C1FB /* Extensions.swift in Sources */,
 				B0E69CC41FB4B7050058992D /* MenuViewController.swift in Sources */,
 				49955F8D1FD986CA00F04162 /* CloudCircuitARSCNView.swift in Sources */,
+				49C77ED21FDA43EA00F35756 /* SearchViewController.swift in Sources */,
 				B0E69CC81FB4EF790058992D /* AboutViewController.swift in Sources */,
 				457789C71FCF388200DDB63B /* PlayerDataManager.swift in Sources */,
 				457789C51FCF387300DDB63B /* Player.swift in Sources */,

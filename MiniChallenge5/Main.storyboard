@@ -48,25 +48,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Osniel Teixeira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnF-0o-iBj">
-                                <rect key="frame" x="145" y="170" width="179.5" height="18"/>
+                                <rect key="frame" x="145" y="170" width="116" height="21"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinicius Cano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxC-dv-jPX">
-                                <rect key="frame" x="145" y="410" width="157" height="18"/>
+                                <rect key="frame" x="145" y="410" width="109.5" height="21"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renan Germano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-yH-KcU">
-                                <rect key="frame" x="145" y="290" width="186" height="18"/>
+                                <rect key="frame" x="145" y="290" width="131.5" height="21"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rz-7D-wyA">
-                                <rect key="frame" x="66.5" y="80" width="242.5" height="30"/>
+                                <rect key="frame" x="112" y="80" width="151.5" height="35"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-Rg-SB4">
-                                <rect key="frame" x="123" y="100" width="129" height="30"/>
+                                <rect key="frame" x="141" y="100" width="93" height="35"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -204,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv1-2D-6uf">
-                                <rect key="frame" x="116" y="100" width="143" height="30"/>
+                                <rect key="frame" x="133.5" y="100" width="108" height="35"/>
                                 <fontDescription key="fontDescription" name="CyberpunkIsNotDead" family="Cyberpunk Is Not Dead" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -240,9 +240,8 @@
                                     <action selector="signUpButtonTapped:" destination="hek-EA-wvm" eventType="touchUpInside" id="LrI-59-ykc"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uMS-UZ-wpR">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uMS-UZ-wpR">
                                 <rect key="frame" x="40" y="468" width="295" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Designer"/>
                                     <segment title="Engineer"/>
@@ -265,6 +264,7 @@
                             <constraint firstItem="Hv1-2D-6uf" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="PmC-Sx-Te2"/>
                             <constraint firstItem="Hv1-2D-6uf" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="100" id="S3R-QV-ZhV"/>
                             <constraint firstItem="XgI-4S-wnE" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="dZr-X6-bNc"/>
+                            <constraint firstItem="uMS-UZ-wpR" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="hQH-xQ-gTw"/>
                             <constraint firstItem="S1y-Im-Uqi" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="177" id="iWs-dL-vX4"/>
                             <constraint firstItem="wQL-yr-7Pk" firstAttribute="top" secondItem="coK-Bx-VSE" secondAttribute="top" constant="507" id="kAa-hl-2J3"/>
                             <constraint firstItem="S1y-Im-Uqi" firstAttribute="centerX" secondItem="coK-Bx-VSE" secondAttribute="centerX" id="l4S-uc-SdT"/>
@@ -343,6 +343,9 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="HFJ-8i-vkK" firstAttribute="centerX" secondItem="F3S-2Y-AcB" secondAttribute="centerX" id="QvN-Uq-yWE"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -378,33 +381,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6c-wI-Qd1">
-                                <rect key="frame" x="136" y="252" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play My Circuit"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pE9-F2-E0s">
+                                <rect key="frame" x="87" y="420" width="200" height="45"/>
+                                <state key="normal" image="PlayLocalCircuit_Button"/>
                                 <connections>
-                                    <segue destination="i85-ZI-DMa" kind="show" id="zB4-tK-xkl"/>
+                                    <segue destination="O0K-Tx-w8H" kind="show" id="Xm7-Jt-sYZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pE9-F2-E0s">
-                                <rect key="frame" x="117" y="372" width="140" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play the local Circuit"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Man running" translatesAutoresizingMaskIntoConstraints="NO" id="cMm-4U-UVN">
+                                <rect key="frame" x="102" y="100" width="171" height="213"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="RwJ-rb-UYh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6c-wI-Qd1">
+                                <rect key="frame" x="87.5" y="340" width="200" height="45"/>
+                                <state key="normal" image="PlayMyCircuit_Button"/>
                                 <connections>
-                                    <segue destination="m1m-3y-t6c" kind="show" id="Xcb-Al-lqG"/>
+                                    <segue destination="i85-ZI-DMa" kind="show" id="HOE-fJ-qxp"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cMm-4U-UVN" firstAttribute="top" secondItem="pNK-zz-kGx" secondAttribute="top" constant="100" id="76f-l4-oYP"/>
+                            <constraint firstItem="j6c-wI-Qd1" firstAttribute="top" secondItem="pNK-zz-kGx" secondAttribute="top" constant="340" id="NXL-l3-RD7"/>
+                            <constraint firstItem="cMm-4U-UVN" firstAttribute="centerX" secondItem="pNK-zz-kGx" secondAttribute="centerX" id="Ogn-b2-pRs"/>
+                            <constraint firstItem="pE9-F2-E0s" firstAttribute="centerX" secondItem="pNK-zz-kGx" secondAttribute="centerX" id="P4x-6O-HWa"/>
+                            <constraint firstItem="pE9-F2-E0s" firstAttribute="top" secondItem="pNK-zz-kGx" secondAttribute="top" constant="420" id="lz1-rg-M3T"/>
+                            <constraint firstItem="j6c-wI-Qd1" firstAttribute="centerX" secondItem="pNK-zz-kGx" secondAttribute="centerX" id="nTf-qp-06A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Qw-29-mq8"/>
                     </view>
                     <connections>
+                        <outlet property="manRunningTopConstraint" destination="76f-l4-oYP" id="oCu-Sm-Hft"/>
+                        <outlet property="playLocalCircuitButtonTopConstraint" destination="lz1-rg-M3T" id="j9e-vD-GsR"/>
+                        <outlet property="playMyCircuitButton" destination="j6c-wI-Qd1" id="tck-eo-e70"/>
+                        <outlet property="playMyCircuitButtonTopConstraint" destination="NXL-l3-RD7" id="15t-DP-8Ro"/>
                         <outlet property="playTheLocalCircuitButton" destination="pE9-F2-E0s" id="y12-Eq-jMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cld-Nf-JCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-375.19999999999999" y="404.34782608695656"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="vv9-kf-14B">
+            <objects>
+                <viewController id="O0K-Tx-w8H" customClass="SearchViewController" customModule="MiniChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xTZ-fK-lVt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Looking for the circuit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvn-nX-ave">
+                                <rect key="frame" x="41" y="181" width="291" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5N-DO-DS3">
+                                <rect key="frame" x="41" y="438" width="291" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3w-l5-kuw">
+                                <rect key="frame" x="41" y="323" width="291" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vKi-i6-ob9"/>
+                    </view>
+                    <connections>
+                        <outlet property="directionLabel" destination="I3w-l5-kuw" id="NrO-CA-xi2"/>
+                        <outlet property="distanceLabel" destination="R5N-DO-DS3" id="3LC-qF-IxD"/>
+                        <segue destination="m1m-3y-t6c" kind="show" identifier="toCloudArCircuit" id="qJg-Zj-eSw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RdU-ew-5vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613.60000000000002" y="405.24737631184411"/>
         </scene>
         <!--CloudAR Circuit View Controller-->
         <scene sceneID="Xgg-oR-9Vk">
@@ -416,13 +478,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sGF-cV-23d"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="bi4-ZA-JbG" kind="show" id="9Ur-6p-ioS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F99-M0-dKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="404"/>
+            <point key="canvasLocation" x="1471" y="406"/>
         </scene>
         <!--SaveAR View Controller-->
         <scene sceneID="yRx-js-qLV">
@@ -440,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDM-mA-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="-375"/>
+            <point key="canvasLocation" x="1338" y="-412"/>
         </scene>
         <!--Ranking-->
         <scene sceneID="MP8-zV-u4f">
@@ -489,7 +553,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRd-yM-Kqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="407"/>
+            <point key="canvasLocation" x="2449" y="407"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jKe-vH-GWr">
@@ -562,7 +626,10 @@
         <image name="About_Button" width="200" height="45"/>
         <image name="Circle" width="1034" height="967"/>
         <image name="Circuits_Button" width="200" height="45"/>
+        <image name="Man running" width="171" height="185"/>
         <image name="Osniel" width="400" height="400"/>
+        <image name="PlayLocalCircuit_Button" width="200" height="45"/>
+        <image name="PlayMyCircuit_Button" width="200" height="45"/>
         <image name="Play_Button" width="200" height="45"/>
         <image name="Renan" width="397" height="400"/>
         <image name="SignIn_Button" width="200" height="45"/>
@@ -571,6 +638,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oJy-zL-amU"/>
-        <segue reference="JLr-ee-Scu"/>
+        <segue reference="9Ur-6p-ioS"/>
     </inferredMetricsTieBreakers>
 </document>

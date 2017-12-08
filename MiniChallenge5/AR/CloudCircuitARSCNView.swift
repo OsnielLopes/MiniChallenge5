@@ -25,6 +25,8 @@ class CloudCircuitARSCNView: CircuitARSCNView {
     func createCircuit() {
         for bow in circuit.bows{
             let bowAnchor = ARBowAnchor(transform: matrix_float4x4(float4(bow.worldTransform[0]), float4(bow.worldTransform[1]), float4(bow.worldTransform[2]), float4(bow.worldTransform[3])))
+            print("----------aqui estou adicionando nodes do circuito---------------")
+            bows.append(bowAnchor)
             self.session.add(anchor: bowAnchor)
         }
     }
